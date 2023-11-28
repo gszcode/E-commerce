@@ -1,0 +1,23 @@
+@import '../../index.scss';
+
+.container {
+  @include width-height(100%, 50px);
+  @include flex(row, space-between, center);
+  background-color: $background-color;
+  padding: 0 20px;
+  border-bottom: $border-color;
+  .title_container {
+    @include flex(row, space-evenly, center, 35px);
+    .title {
+      @include size-weight(16px, 500);
+      color: #888;
+      span {
+        @include size-weight(16px, 700);
+        color: $hover-color;
+      }
+    }
+  }
+  .icons {
+    @include flex(row, space-evenly, center, 35px);
+  }
+}
