@@ -1,0 +1,29 @@
+@import '../../index.scss';
+
+.container {
+  padding: 50px 30px;
+  text-align: center;
+  .title {
+    @include size-weight(24px, 500);
+    color: $text-color;
+  }
+  .span {
+    @include size-weight(16px, 500);
+    color: $text-color;
+  }
+  .form {
+    @include width-height(85%, auto);
+    @include flex(column, center, center, 30px);
+    margin: 50px auto;
+    padding: 40px;
+    border: $border-color;
+  }
+  .already_account {
+    @include size-weight(14px, 400);
+    width: 100%;
+    color: $hover-color;
+    &:hover {
+      color: $text-color-secondary;
+    }
+  }
+}
