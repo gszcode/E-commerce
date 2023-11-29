@@ -1,0 +1,16 @@
+@import '../../index.scss';
+
+.btn {
+  @include size-weight(14px, 400);
+  padding: 8px 18px;
+  border: 2px solid $hover-color;
+  color: $hover-color;
+  background-color: $background-color;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: $hover-color;
+    color: $background-color;
+  }
+}
