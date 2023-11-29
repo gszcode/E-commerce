@@ -1,0 +1,18 @@
+@import '../../index.scss';
+
+.check {
+  @include flex(row, flex-start, center, 7px);
+  flex-wrap: nowrap;
+  width: 80%;
+  margin: 0 auto;
+  p {
+    @include size-weight(12px, 300);
+    color: 777777;
+  }
+  a {
+    color: $hover-color;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
