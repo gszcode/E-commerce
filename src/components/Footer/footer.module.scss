@@ -1,0 +1,57 @@
+@import '../../index.scss';
+
+.container {
+  background-color: #f9f9f9;
+  padding: 20px 40px;
+  .offers_container {
+    @include flex(column, center, center, 10px);
+    .span {
+      @include size-weight(16px, 600);
+      color: $text-color;
+    }
+    .input_container {
+      width: 80%;
+      margin: 0 auto;
+      position: relative;
+      input {
+        @include width-height(100%, 37px);
+        padding: 2px 15px;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        color: $text-color-secondary;
+        &:focus {
+          border: 1px solid $hover-color;
+        }
+      }
+      img {
+        @include width-height(37px, 37px);
+        background-color: $hover-color;
+        padding: 5px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        border-radius: 0 5px 5px 0;
+      }
+    }
+    .check {
+      @include flex(row, flex-start, center, 7px);
+      flex-wrap: nowrap;
+      width: 80%;
+      margin: 0 auto;
+      p {
+        @include size-weight(12px, 300);
+        color: 777777;
+      }
+      a {
+        color: $hover-color;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+  .links {
+    margin: 50px 0;
+  }
+}
