@@ -1,6 +1,8 @@
 import styles from './login.module.scss'
 import BreadCrumbs from '../../components/BreadCrumbs'
 import { Link } from 'react-router-dom'
+import LoginInput from '../../components/InputLoginRegister'
+import Button from '../../components/Button'
 
 const Login = () => {
   return (
@@ -14,15 +16,17 @@ const Login = () => {
         </p>
 
         <form className={styles.form}>
-          <div className={styles.input_container}>
-            <label>E-MAIL</label>
-            <input type="text" placeholder="Introduce tu e-mail de usuario" />
-          </div>
-          <div className={styles.input_container}>
-            <label>PASSWORD</label>
-            <input type="text" placeholder="Introduce tu clave de usuario" />
-          </div>
-          <button className={styles.btn}>CONTINUAR</button>
+          <LoginInput
+            labelText="E-MAIL"
+            textType="email"
+            textPlaceholder="Introduce tu e-mail de usuario"
+          />
+          <LoginInput
+            labelText="PASSWORD"
+            textType="password"
+            textPlaceholder="Introduce tu clave de usuario"
+          />
+          <Button text="CONTINUAR" />
           <Link to="/" className={styles.forgot}>
             ¿Has olvidado la contraseña?
           </Link>
