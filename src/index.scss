@@ -18,6 +18,7 @@ $hover-color: #c508c5;
 @mixin flex($direction, $justify, $align, $gap: 0) {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: $direction;
   justify-content: $justify;
   align-items: $align;
   gap: $gap;
