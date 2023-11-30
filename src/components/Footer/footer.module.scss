@@ -1,8 +1,8 @@
 @import '../../index.scss';
 
 .container {
+  padding: 30px 0;
   background-color: #f9f9f9;
-  padding: 20px 40px;
   .offers_container {
     @include flex(column, center, center, 10px);
     .span {
@@ -28,30 +28,37 @@
         @include width-height(37px, 37px);
         background-color: $hover-color;
         padding: 5px;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
         position: absolute;
         right: 0;
         top: 0;
-        border-radius: 0 5px 5px 0;
-      }
-    }
-    .check {
-      @include flex(row, flex-start, center, 7px);
-      flex-wrap: nowrap;
-      width: 80%;
-      margin: 0 auto;
-      p {
-        @include size-weight(12px, 300);
-        color: 777777;
-      }
-      a {
-        color: $hover-color;
+        transition: opacity 0.3s ease;
         &:hover {
-          opacity: 0.7;
+          opacity: 0.8;
         }
       }
     }
   }
   .links {
-    margin: 50px 0;
+    margin: 50px 40px;
+  }
+}
+
+// Media queries
+@media (min-width: 1024px) {
+  .container {
+    padding: 0;
+    .offers_container {
+      @include flex(row, space-evenly, center, 10px);
+      padding: 20px 50px;
+      background-color: #c508c537;
+      .input_container {
+        width: 30%;
+      }
+    }
+    .links {
+      @include flex(row, space-evenly, baseline);
+    }
   }
 }

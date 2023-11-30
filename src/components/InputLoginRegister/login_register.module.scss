@@ -22,3 +22,10 @@
     }
   }
 }
+
+// Media querys
+@media (min-width: 1024px) {
+  .input_container {
+    width: 85%;
+  }
+}

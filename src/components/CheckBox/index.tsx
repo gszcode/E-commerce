@@ -5,11 +5,13 @@ interface PropsCheck {
   text: string
   linkText: string
   href: string
+  footerStyle: boolean
 }
 
-const CheckBox = ({ text, linkText, href }: PropsCheck) => {
+const CheckBox = ({ text, linkText, href, footerStyle }: PropsCheck) => {
+  console.log(footerStyle)
   return (
-    <div className={styles.check}>
+    <div className={footerStyle ? styles.footerStyle : styles.check}>
       <input type="checkbox" />
       <p>
         {text} <Link to={`/${href}`}>{linkText}</Link>

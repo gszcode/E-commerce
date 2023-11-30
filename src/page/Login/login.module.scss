@@ -17,42 +17,6 @@
     margin: 50px auto;
     padding: 40px;
     border: $border-color;
-    .input_container {
-      @include width-height(100%, 75px);
-      label {
-        @include size-weight(14px, 600);
-        display: block;
-        text-align: start;
-        color: $text-color;
-      }
-      input {
-        @include width-height(100%, 40px);
-        background-color: $background-secondary;
-        border: none;
-        padding: 2px 15px;
-        color: $text-color-secondary;
-        border-radius: 5px;
-        outline: none;
-        &:focus {
-          background-color: $background-color;
-          border: 1px solid $hover-color;
-        }
-      }
-    }
-    .btn {
-      @include size-weight(14px, 400);
-      padding: 8px 18px;
-      border: 2px solid $hover-color;
-      color: $hover-color;
-      background-color: $background-color;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      &:hover {
-        background-color: $hover-color;
-        color: $background-color;
-      }
-    }
   }
   .forgot {
     @include size-weight(14px, 400);
@@ -65,3 +29,10 @@
 }
 
 // Media querys
+@media (min-width: 1024px) {
+  .container {
+    .form {
+      width: 50%;
+    }
+  }
+}

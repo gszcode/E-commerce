@@ -8,9 +8,9 @@ interface Props {
 }
 
 function Accordion(props: Props) {
-  const [active, setActive] = useState(false)
+  const [active, setActive] = useState(true)
   const content = useRef<HTMLDivElement>(null)
-  const [height, setHeight] = useState('0px')
+  const [height, setHeight] = useState(`${content?.current?.scrollHeight}px`)
 
   useEffect(() => {
     console.log('Height for ', props.title, ': ', height)
@@ -18,7 +18,7 @@ function Accordion(props: Props) {
 
   function toggleAccordion() {
     setActive(!active)
-    setHeight(active ? '0px' : `${content?.current?.scrollHeight}px`)
+    setHeight(!active ? `${content?.current?.scrollHeight}px` : '0')
   }
 
   return (

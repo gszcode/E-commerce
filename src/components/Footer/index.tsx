@@ -15,6 +15,7 @@ const Footer = () => {
           text="He leído y estoy conforme con la"
           linkText="Política de Protección de Datos"
           href="/"
+          footerStyle={true}
         />
       </div>
       <div className={styles.links}>
