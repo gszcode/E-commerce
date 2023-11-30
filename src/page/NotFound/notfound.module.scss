@@ -1,0 +1,62 @@
+@import '../../index.scss';
+
+.container {
+  @include width-height(100%, 100%);
+  .not_found {
+    @include width-height(300px, 120px);
+    @include flex(column, center, center);
+    margin: 100px auto;
+    border-radius: 5px;
+    border: 2px solid hsl(1.73913043, 64.48598131%, 50%);
+    background-color: hsl(1.73913043, 64.48598131%, 95%);
+    color: hsl(1.73913043, 64.48598131%, 50%);
+    padding: 0 15px;
+    .icon {
+      @include width-height(100%, auto);
+      @include flex(row, flex-start, center, 5px);
+      img {
+        @include width-height(30px, 30px);
+      }
+      span {
+        @include size-weight(16px, bold);
+      }
+    }
+    .error {
+      @include size-weight(14px, bold);
+    }
+  }
+  .back_container {
+    @include flex(column, center, center, 15px);
+    margin: -40px auto 50px auto;
+    .back {
+      @include flex(row, center, center, 5px);
+      @include size-weight(14px, 300);
+      text-align: center;
+      color: $text-color;
+      border-radius: 8px;
+      background-color: #d9d9d9;
+      border: 2px solid transparent;
+      padding: 8px 18px;
+      letter-spacing: 0.03em;
+      transition: all 0.3s ease;
+      img {
+        @include width-height(20px, 20px);
+      }
+      &:hover {
+        border: 2px solid #d9d9d9;
+        background-color: $background-color;
+      }
+    }
+    .back_home {
+      @include size-weight(12px, 600);
+      color: $background-color;
+      background-color: $hover-color;
+      border: 2px solid transparent;
+      &:hover {
+        color: $hover-color;
+        border: 2px solid $hover-color;
+        background-color: $background-color;
+      }
+    }
+  }
+}
