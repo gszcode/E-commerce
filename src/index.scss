@@ -34,15 +34,20 @@ $hover-color: #c508c5;
 
 // general styles
 .icon {
-  width: 18px;
-  height: 18px;
+  @include width-height(18px, 18px);
   cursor: pointer;
   transition: all 0.3 ease;
   img {
-    width: 100%;
-    height: 100%;
+    @include width-height(100%, 100%);
     &:hover {
       transform: scale(1.1);
     }
+  }
+}
+
+// Media queries
+@media (min-width: 768px) {
+  .icon {
+    @include width-height(22px, 22px);
   }
 }

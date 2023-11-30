@@ -5,7 +5,7 @@ const SMNavbar = () => {
   return (
     <nav className={styles.container}>
       <div className={styles.title_container}>
-        <div className={`icon`} title="Menú">
+        <div className={`icon ${styles.bars}`} title="Menú">
           <img src="/icons/bars.svg" alt="Bars Icon" />
         </div>
         <Link to="/" className={styles.title} title="Título">
