@@ -1,7 +1,7 @@
 @import '../../index.scss';
 
 .container {
-  padding: 5px 15px;
+  padding: 5px 20px;
   background-color: #f2f2f2;
   .title {
     color: #919191;
@@ -12,5 +12,12 @@
     .page {
       color: #777777;
     }
+  }
+}
+
+// Media queries
+@media (min-width: 1024px) {
+  .container {
+    padding: 5px 35px;
   }
 }
