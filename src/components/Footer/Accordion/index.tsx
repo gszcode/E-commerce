@@ -46,7 +46,9 @@ function Accordion(props: Props) {
                 {link}
               </Link>
             ) : (
-              <p className={styles.link}>{link}</p>
+              <p className={styles.link} key={link}>
+                {link}
+              </p>
             )
           )}
         </div>

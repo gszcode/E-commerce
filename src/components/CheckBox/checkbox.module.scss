@@ -6,7 +6,10 @@
   flex-wrap: nowrap;
   width: 80%;
   margin: 0 auto;
-  p {
+  input {
+    cursor: pointer;
+  }
+  label {
     @include size-weight(12px, 300);
     color: 777777;
   }
@@ -22,7 +25,7 @@
 @media (min-width: 1024px) {
   .check,
   .footerStyle {
-    p {
+    label {
       font-size: 14px;
     }
   }

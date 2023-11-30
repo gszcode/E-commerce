@@ -27,6 +27,9 @@ const Login = () => {
             textPlaceholder="Introduce tu clave de usuario"
           />
           <Button text="CONTINUAR" />
+          <Link to="/register" className={styles.create_account}>
+            Crear una cuenta.
+          </Link>
           <Link to="/" className={styles.forgot}>
             ¿Has olvidado la contraseña?
           </Link>

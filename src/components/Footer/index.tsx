@@ -16,6 +16,7 @@ const Footer = () => {
           linkText="Política de Protección de Datos"
           href="/"
           footerStyle={true}
+          idFor="data_protection"
         />
       </div>
       <div className={styles.links}>

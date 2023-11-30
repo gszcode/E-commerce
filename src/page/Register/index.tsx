@@ -45,14 +45,16 @@ const Register = () => {
             text="He leído y acepto la"
             linkText="Política de Privacidad"
             href="/"
+            idFor="privacy_policy"
           />
           <CheckBox
             text="He leído y acepto las"
             linkText="Condiciones generales de compra"
             href="/"
+            idFor="purchase_conditions"
           />
           <Button text="REGISTRARSE" />
-          <Link to="/" className={styles.already_account}>
+          <Link to="/login" className={styles.already_account}>
             ¿Ya tienes una cuenta?
           </Link>
         </form>
