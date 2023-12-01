@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import styles from './smnavbar.module.scss'
+import LGNavbar from '../LGNavbar'
 
 const SMNavbar = () => {
   return (
@@ -12,6 +13,8 @@ const SMNavbar = () => {
           minimo <span>shoes</span>
         </Link>
       </div>
+      {/* Menu Escritorio */}
+      <LGNavbar />
       <div className={styles.icons}>
         <div className={`icon`} title="Buscar">
           <img src="/icons/search.svg" alt="Search Icon" />

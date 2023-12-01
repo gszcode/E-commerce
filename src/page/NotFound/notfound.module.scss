@@ -60,3 +60,13 @@
     }
   }
 }
+
+// Media querys
+@media (min-width: 1024px) {
+  .container {
+    .back_container {
+      flex-direction: row;
+      gap: 30px;
+    }
+  }
+}
