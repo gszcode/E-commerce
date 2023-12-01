@@ -28,9 +28,9 @@
     .title_container {
       @include flex(row, space-evenly, center, 35px);
       .title {
-        font-size: 20px;
+        font-size: 30px;
         span {
-          font-size: 20px;
+          font-size: 30px;
         }
       }
     }
