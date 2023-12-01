@@ -1,0 +1,73 @@
+@import '../../index.scss';
+
+.banner_section {
+  @include width-height(100%, 100px);
+  position: relative;
+  overflow: hidden;
+  img {
+    @include width-height(100%, 100%);
+    object-fit: cover;
+    transition: transform 1s ease;
+  }
+  .title_section {
+    @include size-weight(14px, 300);
+    color: $text-color;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    transition: all 0.3s ease;
+  }
+  &:hover img {
+    transform: scale(1.1, 1.1);
+  }
+  &:hover .title_section {
+    color: $background-secondary;
+    background-color: $hover-color;
+  }
+}
+
+// Media queries
+@media (min-width: 500px) {
+  .banner_section {
+    @include width-height(100%, 150px);
+  }
+}
+
+@media (min-width: 640px) {
+  .banner_section {
+    @include width-height(100%, 208px);
+  }
+}
+
+@media (min-width: 768px) {
+  .banner_section:nth-child(1) {
+    grid-column: span 2;
+  }
+  .banner_section:nth-child(2) {
+    height: 100%;
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 3;
+  }
+  .banner_section:nth-child(5) {
+    grid-column: span 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .banner_section:nth-child(1) {
+    grid-column: 1;
+  }
+  .banner_section:nth-child(2) {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 2;
+  }
+  .banner_section:nth-child(5) {
+    grid-column: 3 / span 1;
+    grid-row: 2;
+  }
+}
