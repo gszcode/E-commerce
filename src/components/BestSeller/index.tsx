@@ -9,7 +9,8 @@ const products = [
     title: 'Product 1',
     rating: 4,
     description: 'Description for Product 1',
-    price: 50
+    price: 50,
+    prev_price: 60
   },
   {
     id: 2,
@@ -17,7 +18,8 @@ const products = [
     title: 'Product 2',
     rating: 3,
     description: 'Description for Product 2',
-    price: 35
+    price: 35,
+    prev_price: 45
   },
   {
     id: 3,
@@ -25,7 +27,8 @@ const products = [
     title: 'Product 3',
     rating: 4,
     description: 'Description for Product 3',
-    price: 50
+    price: 50,
+    prev_price: 60
   },
   {
     id: 4,
@@ -33,7 +36,8 @@ const products = [
     title: 'Product 4',
     rating: 3,
     description: 'Description for Product 4',
-    price: 35
+    price: 35,
+    prev_price: 45
   }
 ]
 

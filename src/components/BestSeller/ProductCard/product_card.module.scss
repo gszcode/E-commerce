@@ -29,8 +29,13 @@
       @include size-weight(15px, 400);
       color: $text-color;
       .price {
-        @include size-weight(16px, 600);
+        @include size-weight(16px, 500);
         color: $price-color;
+      }
+      .prev_price {
+        @include size-weight(16px, 500);
+        color: $text-color;
+        text-decoration: line-through;
       }
     }
   }

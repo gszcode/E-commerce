@@ -9,6 +9,7 @@ interface Product {
   rating: number
   description: string
   price: number
+  prev_price: number
 }
 
 interface CarouselProps {

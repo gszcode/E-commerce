@@ -8,6 +8,7 @@ interface Product {
   rating: number
   description: string
   price: number
+  prev_price: number
 }
 
 const ProductCard = ({
@@ -16,7 +17,8 @@ const ProductCard = ({
   title,
   rating,
   description,
-  price
+  price,
+  prev_price
 }: Product) => {
   return (
     <div key={id} className={styles.carousel_item}>
@@ -30,7 +32,8 @@ const ProductCard = ({
         </div>
         <p className={styles.description}>{description}</p>
         <p className={styles.price_text}>
-          precio: <span className={styles.price}>${price}</span>
+          precio: <span className={styles.price}>${price}</span>{' '}
+          <span className={styles.prev_price}>${prev_price}</span>
         </p>
       </div>
 
