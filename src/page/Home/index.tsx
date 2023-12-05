@@ -1,4 +1,4 @@
-import BestSeller from '../../components/BestSeller'
+import Offers from '../../components/Offers'
 import HomeBanner from '../../components/HomeBanner'
 import styles from './home.module.scss'
 import banner from '/assets/home_banner.webp'
@@ -47,7 +47,7 @@ const Home = () => {
         />
       </div>
 
-      <BestSeller />
+      <Offers />
     </section>
   )
 }
