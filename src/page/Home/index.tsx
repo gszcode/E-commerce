@@ -1,3 +1,4 @@
+import BestSeller from '../../components/BestSeller'
 import HomeBanner from '../../components/HomeBanner'
 import styles from './home.module.scss'
 import banner from '/assets/home_banner.webp'
@@ -45,6 +46,8 @@ const Home = () => {
           href="home"
         />
       </div>
+
+      <BestSeller />
     </section>
   )
 }
