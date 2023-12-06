@@ -1,0 +1,27 @@
+@import 'public/index.scss';
+
+.brand {
+  @include width-height(270px, 110px);
+  display: block;
+  padding: 8px 18px;
+  border-radius: 6px;
+  box-shadow: 1px 1px 3px rgb(186, 186, 186);
+  img {
+    @include width-height(100%, 100%);
+    object-fit: contain;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+  }
+  &:hover img {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+// Media queries
+@media (min-width: 768px) {
+  .brand {
+    @include width-height(315px, 125px);
+    padding: 14px 18px;
+  }
+}
