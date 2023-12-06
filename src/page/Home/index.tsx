@@ -7,13 +7,14 @@ import banner_02 from '/assets/home_section_banner_02.jpg'
 import banner_03 from '/assets/home_section_banner_03.jpg'
 import banner_04 from '/assets/home_section_banner_04.jpg'
 import banner_05 from '/assets/home_section_banner_05.jpg'
+import Banner from '../../components/Banner'
 
 const Home = () => {
   return (
     <section className={styles.container}>
-      <div className={styles.banner}>
-        <img src={banner} alt="Banner Image" />
-      </div>
+      <Banner img={banner} alt="Banner Outlet" />
+
+      {/* Banner sections */}
       <div className={styles.sections}>
         <HomeBanner
           img={banner_01}
@@ -47,7 +48,14 @@ const Home = () => {
         />
       </div>
 
+      {/* Offer component */}
       <Offers />
+
+      <Banner
+        img="/assets/outlet_banner.webp"
+        alt="Banner Outlet"
+        style="outlet"
+      />
     </section>
   )
 }

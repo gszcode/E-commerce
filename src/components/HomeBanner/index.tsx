@@ -1,3 +1,4 @@
+import { convertUppercase } from '../../utils/convertUppercase'
 import styles from './home_banner.module.scss'
 import { Link } from 'react-router-dom'
 
@@ -9,8 +10,7 @@ interface PropsBanner {
 }
 
 const HomeBanner = ({ img, altText, title, href }: PropsBanner) => {
-  const firstLetter = title.slice(0, 1)
-  const restLetters = title.slice(1).toLocaleLowerCase()
+  const { firstLetter, restLetters } = convertUppercase(title)
 
   return (
     <Link
