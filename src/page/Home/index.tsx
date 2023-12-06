@@ -8,6 +8,7 @@ import banner_03 from '/assets/home_section_banner_03.jpg'
 import banner_04 from '/assets/home_section_banner_04.jpg'
 import banner_05 from '/assets/home_section_banner_05.jpg'
 import Banner from '../../components/Banner'
+import Brands from '../../components/Brands'
 
 const Home = () => {
   return (
@@ -51,11 +52,15 @@ const Home = () => {
       {/* Offer component */}
       <Offers />
 
+      {/* Banner component */}
       <Banner
         img="/assets/outlet_banner.webp"
         alt="Banner Outlet"
         style="outlet"
       />
+
+      {/* Brands component */}
+      <Brands />
     </section>
   )
 }
