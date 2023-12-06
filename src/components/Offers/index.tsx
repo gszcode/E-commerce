@@ -1,5 +1,5 @@
 import TitleSubtitle from '../Title-Subtitle'
-import Carousel from './Carousel'
+import Carousel from '../Carousel'
 import styles from './offers.module.scss'
 import { products } from '../../json/offers_products'
 
