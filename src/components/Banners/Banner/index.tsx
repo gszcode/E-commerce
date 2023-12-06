@@ -1,4 +1,4 @@
-import { convertUppercase } from '../../utils/convertUppercase'
+import { convertUppercase } from '../../../utils/convertUppercase'
 import styles from './home_banner.module.scss'
 import { Link } from 'react-router-dom'
 
@@ -9,7 +9,7 @@ interface PropsBanner {
   href: string
 }
 
-const HomeBanner = ({ img, altText, title, href }: PropsBanner) => {
+const Banner = ({ img, altText, title, href }: PropsBanner) => {
   const { firstLetter, restLetters } = convertUppercase(title)
 
   return (
@@ -24,4 +24,4 @@ const HomeBanner = ({ img, altText, title, href }: PropsBanner) => {
   )
 }
 
-export default HomeBanner
+export default Banner

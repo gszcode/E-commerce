@@ -7,7 +7,7 @@ interface BannerProps {
   style?: string
 }
 
-const Banner = ({ img, alt, style }: BannerProps) => {
+const BannerSection = ({ img, alt, style }: BannerProps) => {
   return (
     <div
       className={`${styles.container} ${style === 'outlet' && styles.outlet}`}
@@ -24,4 +24,4 @@ const Banner = ({ img, alt, style }: BannerProps) => {
   )
 }
 
-export default Banner
+export default BannerSection
