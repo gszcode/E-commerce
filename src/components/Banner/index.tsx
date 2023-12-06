@@ -8,7 +8,6 @@ interface BannerProps {
 }
 
 const Banner = ({ img, alt, style }: BannerProps) => {
-  console.log(style)
   return (
     <div
       className={`${styles.container} ${style === 'outlet' && styles.outlet}`}

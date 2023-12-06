@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import styles from './accordion.module.scss'
 import { Link } from 'react-router-dom'
 
@@ -11,10 +11,6 @@ function Accordion(props: Props) {
   const [active, setActive] = useState(true)
   const content = useRef<HTMLDivElement>(null)
   const [height, setHeight] = useState(`${content?.current?.scrollHeight}px`)
-
-  useEffect(() => {
-    console.log('Height for ', props.title, ': ', height)
-  }, [height, props.title])
 
   function toggleAccordion() {
     setActive(!active)
