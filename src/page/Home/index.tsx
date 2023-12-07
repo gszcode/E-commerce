@@ -6,6 +6,7 @@ import Brands from '../../components/Brands'
 import Banners from '../../components/Banners'
 import BannerSection from '../../components/BannerSection'
 import Opinions from '../../components/Opinions'
+import Services from '../../components/Services'
 
 const Home = () => {
   return (
@@ -26,6 +27,9 @@ const Home = () => {
 
       {/* Opinions component */}
       <Opinions />
+
+      {/* Services component */}
+      <Services />
     </section>
   )
 }
