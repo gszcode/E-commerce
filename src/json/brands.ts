@@ -1,4 +1,6 @@
-export const brands = [
+import { Brand } from '../typescript/interfaces/brand.interface'
+
+export const brands: Array<Brand> = [
   {
     id: 1,
     image: '/assets/brand_01.png',
