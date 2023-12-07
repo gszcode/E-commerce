@@ -7,6 +7,7 @@ const Banners = () => {
     <div className={styles.sections}>
       {banners.map((banner) => (
         <Banner
+          key={banner.id}
           img={banner.image}
           altText={banner.altText}
           title={banner.title}
