@@ -54,6 +54,9 @@ const Footer = () => {
           ]}
         />
       </div>
+      <div className={styles.payment_cards}>
+        <img src="/assets/footer_01.png" alt="Secure payment" />
+      </div>
     </footer>
   )
 }
