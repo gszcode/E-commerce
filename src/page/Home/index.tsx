@@ -5,6 +5,7 @@ import bannerOutlet from '/assets/outlet_banner.webp'
 import Brands from '../../components/Brands'
 import Banners from '../../components/Banners'
 import BannerSection from '../../components/BannerSection'
+import Opinions from '../../components/Opinions'
 
 const Home = () => {
   return (
@@ -22,6 +23,9 @@ const Home = () => {
 
       {/* Brands component */}
       <Brands />
+
+      {/* Opinions component */}
+      <Opinions />
     </section>
   )
 }
