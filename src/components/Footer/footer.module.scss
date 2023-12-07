@@ -43,6 +43,9 @@
   .links {
     margin: 50px 40px;
   }
+  .payment_cards {
+    @include flex(row, center, center);
+  }
 }
 
 // Media queries
