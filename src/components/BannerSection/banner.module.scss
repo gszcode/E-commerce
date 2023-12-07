@@ -2,6 +2,7 @@
 
 .container {
   @include width-height(100%, auto);
+  padding-top: 50px;
   img {
     @include width-height(100%, 100%);
     object-fit: cover;
@@ -12,4 +13,11 @@
   margin: 20px 0;
   background-color: $hover-color;
   position: relative;
+}
+
+// Media queries
+@media (min-width: 1024px) {
+  .container {
+    padding-top: 60px;
+  }
 }

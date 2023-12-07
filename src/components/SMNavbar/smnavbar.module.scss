@@ -6,6 +6,8 @@
   background-color: $background-color;
   padding: 0 20px;
   border-bottom: $border-color;
+  position: fixed;
+  z-index: 1000;
   .title_container {
     @include flex(row, space-evenly, center, 35px);
     .title {
