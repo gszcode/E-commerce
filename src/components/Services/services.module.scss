@@ -1,0 +1,15 @@
+@import 'public/index.scss';
+
+.container {
+  @include flex(row, center, center);
+  margin: 70px 0;
+}
+
+// Media queries
+@media (min-width: 768px) {
+  .container {
+    .services_container {
+      @include flex(row, space-evenly, center);
+    }
+  }
+}

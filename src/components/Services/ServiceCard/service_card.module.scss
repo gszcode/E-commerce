@@ -1,0 +1,33 @@
+@import 'public/index.scss';
+
+.service {
+  @include flex(row, flex-start, flex-start, 15px);
+  min-width: 240px;
+  flex-wrap: nowrap;
+  padding: 0 10px;
+  margin: 20px 0;
+  img {
+    @include width-height(40px, 40px);
+  }
+  .title {
+    @include size-weight(16px, 600);
+    color: $text-color;
+  }
+  .description {
+    @include size-weight(12px, 300);
+    max-width: 200px;
+    color: $text-color;
+  }
+}
+
+// Media queries
+@media (min-width: 768px) {
+  .service {
+    .title {
+      font-size: 18px;
+    }
+    .description {
+      font-size: 14px;
+    }
+  }
+}
