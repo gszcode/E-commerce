@@ -34,5 +34,32 @@ export const products = [
     description: 'Description for Product 4',
     price: 35,
     prev_price: 45
+  },
+  {
+    id: 5,
+    image: '/assets/offers_02.webp',
+    title: 'Product 5',
+    rating: 3,
+    description: 'Description for Product 5',
+    price: 35,
+    prev_price: 45
+  },
+  {
+    id: 6,
+    image: '/assets/offers_03.jpg',
+    title: 'Product 6',
+    rating: 4,
+    description: 'Description for Product 6',
+    price: 50,
+    prev_price: 60
+  },
+  {
+    id: 7,
+    image: '/assets/offers_04.jpg',
+    title: 'Product 7',
+    rating: 3,
+    description: 'Description for Product 7',
+    price: 35,
+    prev_price: 45
   }
 ]
