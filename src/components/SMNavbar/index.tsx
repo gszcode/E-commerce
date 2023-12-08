@@ -1,30 +1,38 @@
 import { Link } from 'react-router-dom'
 import styles from './smnavbar.module.scss'
 import LGNavbar from '../LGNavbar'
+import Menu from './Menu'
+import { useState } from 'react'
+import Image from '../Image'
 
 const SMNavbar = () => {
+  const [openMenu, setOpenMenu] = useState(false)
+
+  const handleOpenMenu = () => {
+    setOpenMenu((prev) => !prev)
+  }
+
   return (
     <nav className={styles.container}>
       <div className={styles.title_container}>
-        <div className={`icon ${styles.bars}`} title="Menú">
-          <img src="/icons/bars.svg" alt="Bars Icon" />
-        </div>
+        <button onClick={handleOpenMenu} className={styles.bars} title="Menú">
+          <Image img="bars" alt="Bars" title="Menú" />
+        </button>
         <Link to="/" className={styles.title} title="Título">
           minimo <span>shoes</span>
         </Link>
       </div>
+
+      {/* Menu mobile */}
+      <Menu openMenu={openMenu} handleOpenMenu={handleOpenMenu} />
+
       {/* Menu Escritorio */}
       <LGNavbar />
+
       <div className={styles.icons}>
-        <div className={`icon`} title="Buscar">
-          <img src="/icons/search.svg" alt="Search Icon" />
-        </div>
-        <div className={`icon`} title="Carrito">
-          <img src="/icons/cart.svg" alt="Cart Icon" />
-        </div>
-        <div className={`icon`} title="Mi cuenta">
-          <img src="/icons/user.svg" alt="User Icon" />
-        </div>
+        <Image img="search" alt="Search" title="Buscar" />
+        <Image img="cart" alt="Cart" title="Carrito" />
+        <Image img="user" alt="User" title="Mi cuenta" />
       </div>
     </nav>
   )
