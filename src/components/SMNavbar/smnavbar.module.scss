@@ -18,6 +18,11 @@
         color: $hover-color;
       }
     }
+    .bars {
+      border: none;
+      background-color: $background-color;
+      height: 20px;
+    }
   }
   .icons {
     @include flex(row, space-evenly, center, 35px);
