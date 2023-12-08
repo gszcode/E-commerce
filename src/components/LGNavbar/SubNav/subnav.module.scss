@@ -1,0 +1,30 @@
+@import 'public/index.scss';
+
+.subnav {
+  background-color: $background-color;
+  border: 1px solid #e7e7e7;
+  padding: 20px 30px;
+  position: absolute;
+  bottom: -145px;
+  z-index: 99;
+  display: none;
+  &.open {
+    display: block;
+  }
+  .sub_list {
+    @include flex(column, center, center, 15px);
+    a {
+      @include size-weight(13px, 400);
+      color: $text-color-secondary;
+      transition: color 0.3s ease;
+      &:hover {
+        color: $hover-color;
+      }
+    }
+  }
+}
+
+.clothes_list,
+.home_list {
+  @extend .subnav;
+}
