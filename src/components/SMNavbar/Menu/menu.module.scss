@@ -1,0 +1,67 @@
+@import 'public/index.scss';
+
+.menu_container {
+  @include width-height(100%, 100%);
+  min-height: 100vh;
+  background-color: $background-color;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 100%;
+  transition: margin 0.4s ease;
+  .header {
+    @include flex(row, space-between, center);
+    padding: 5px 20px;
+    border-bottom: $border-color;
+    .title {
+      @include size-weight(16px, 600);
+      color: $text-color;
+    }
+    .close {
+      @include width-height(40px, 40px);
+      padding: 10px;
+      border: none;
+      background-color: $background-color;
+      cursor: pointer;
+    }
+  }
+  .list {
+    @include flex(column, center, flex-start, 10px);
+    padding: 15px 20px;
+    .item {
+      @include size-weight(12px, 600);
+      color: $text-color-secondary;
+      transition: color 0.3s ease;
+      &:hover {
+        color: $hover-color;
+      }
+    }
+    .drop {
+      @include flex(row, space-between, center);
+      width: 100%;
+    }
+  }
+}
+.show {
+  margin-right: 0;
+}
+
+// Media queries
+@media (min-width: 768px) {
+  .menu_container {
+    width: 50%;
+    .list {
+      .item {
+        @include size-weight(14px, 500);
+      }
+    }
+  }
+  .show {
+    margin-right: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .menu_container {
+    display: none;
+  }
+}
