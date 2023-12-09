@@ -1,0 +1,30 @@
+@import 'public/index.scss';
+
+.submenu {
+  @include width-height(100%, 100%);
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: $background-color;
+  .back,
+  .sub_list .item {
+    @include flex(row, flex-start, center, 5px);
+    @include size-weight(12px, 600);
+    padding: 15px;
+    color: $text-color-secondary;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    &:hover {
+      color: $hover-color;
+    }
+  }
+  .sub_list {
+    @include flex(column, flex-start, flex-start, 10px);
+    padding: 10px 20px;
+    .item {
+      padding: 0;
+    }
+  }
+}

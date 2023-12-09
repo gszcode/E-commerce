@@ -1,6 +1,10 @@
 import { Link } from 'react-router-dom'
 import styles from './menu.module.scss'
 import Image from '../../Image'
+import { useState } from 'react'
+import { SubMenu as MenuType } from '../../../typescript/types/submenu'
+import SubMenu from '../SubMenu'
+import { clothes_links, home_links } from '../../../json/links'
 
 interface MenuProps {
   openMenu: boolean
@@ -8,6 +12,12 @@ interface MenuProps {
 }
 
 const Menu = ({ openMenu, handleOpenMenu }: MenuProps) => {
+  const [openSubNav, setOpenSubNav] = useState<MenuType>(null)
+
+  const handleOpenSubNav = (menu: MenuType) => {
+    setOpenSubNav(() => (openSubNav === menu ? null : menu))
+  }
+
   return (
     <div className={`${styles.menu_container} ${openMenu && styles.show}`}>
       <div className={styles.header}>
@@ -24,13 +34,36 @@ const Menu = ({ openMenu, handleOpenMenu }: MenuProps) => {
         <Link className={styles.item} to="/">
           INICIO
         </Link>
-        <span className={`${styles.item} ${styles.drop}`}>
-          <p>ROPA</p>
-          <Image img="arrow_right" alt="Arrow Right" title="Ver más de Ropa" />
+        <span onClick={() => handleOpenSubNav('clothes')}>
+          <p className={`${styles.item} ${styles.drop}`}>
+            ROPA
+            <Image
+              img="arrow_right"
+              alt="Arrow Right"
+              title="Ver más de Ropa"
+            />
+          </p>
+          {/* submenu */}
+          {openSubNav === 'clothes' && (
+            <SubMenu
+              handleOpenSubNav={handleOpenSubNav}
+              links={clothes_links}
+            />
+          )}
         </span>
-        <span className={`${styles.item} ${styles.drop}`}>
-          <p>HOGAR</p>
-          <Image img="arrow_right" alt="Arrow Right" title="Ver más de Hogar" />
+        <span onClick={() => handleOpenSubNav('home')}>
+          <p className={`${styles.item} ${styles.drop}`}>
+            HOGAR
+            <Image
+              img="arrow_right"
+              alt="Arrow Right"
+              title="Ver más de Hogar"
+            />
+          </p>
+          {/* submenu */}
+          {openSubNav === 'home' && (
+            <SubMenu handleOpenSubNav={handleOpenSubNav} links={home_links} />
+          )}
         </span>
         <Link className={styles.item} to="/">
           BICICLETAS MONTAÑERAS
