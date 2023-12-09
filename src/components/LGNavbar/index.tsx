@@ -3,28 +3,13 @@ import SubNav from './SubNav'
 import styles from './lgnavbar.module.scss'
 import { Link } from 'react-router-dom'
 import { clothes_links, home_links } from '../../json/links'
-import { OpenSubNavState, SubMenu } from '../../typescript/types/submenu'
+import { SubMenu } from '../../typescript/types/submenu'
 
 const LGNavbar: React.FC = () => {
-  const [openSubNav, setOpenSubNav] = useState<OpenSubNavState>({
-    clothes: false,
-    home: false
-  })
+  const [openSubNav, setOpenSubNav] = useState('')
 
   const handleOpenSubNav = (menu: SubMenu) => {
-    if (menu === 'clothes') {
-      setOpenSubNav((prev) => ({
-        [menu]: !prev[menu],
-        ['home']: false
-      }))
-    }
-
-    if (menu === 'home') {
-      setOpenSubNav((prev) => ({
-        ['clothes']: false,
-        [menu]: !prev[menu]
-      }))
-    }
+    setOpenSubNav((prev) => (prev === menu ? '' : menu))
   }
 
   return (
@@ -40,7 +25,7 @@ const LGNavbar: React.FC = () => {
           ROPA
           {/* submenu */}
           <SubNav
-            isOpen={openSubNav.clothes}
+            openSubNav={openSubNav === 'clothes' && openSubNav}
             links={clothes_links}
             setOpenSubNav={setOpenSubNav}
           />
@@ -52,7 +37,7 @@ const LGNavbar: React.FC = () => {
           HOGAR
           {/* submenu */}
           <SubNav
-            isOpen={openSubNav.home}
+            openSubNav={openSubNav === 'home' && openSubNav}
             links={home_links}
             setOpenSubNav={setOpenSubNav}
           />

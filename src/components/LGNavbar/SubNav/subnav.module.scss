@@ -8,9 +8,6 @@
   bottom: -145px;
   z-index: 99;
   display: none;
-  &.open {
-    display: block;
-  }
   .sub_list {
     @include flex(column, center, center, 15px);
     a {
@@ -24,7 +21,7 @@
   }
 }
 
-.clothes_list,
-.home_list {
-  @extend .subnav;
+.clothes,
+.home {
+  display: block;
 }
