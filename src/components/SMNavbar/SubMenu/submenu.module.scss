@@ -2,11 +2,8 @@
 
 .submenu {
   @include width-height(100%, 100%);
+  @include position(absolute, 0, 0, none, none, 9999);
   min-height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 9999;
   background-color: $background-color;
   .back,
   .sub_list .item {

@@ -26,13 +26,11 @@
       }
       img {
         @include width-height(37px, 37px);
+        @include position(absolute, 0, none, 0, none);
         background-color: $hover-color;
         padding: 5px;
         border-radius: 0 5px 5px 0;
         cursor: pointer;
-        position: absolute;
-        right: 0;
-        top: 0;
         transition: opacity 0.3s ease;
         &:hover {
           opacity: 0.8;

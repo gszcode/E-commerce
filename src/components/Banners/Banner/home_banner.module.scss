@@ -11,15 +11,12 @@
   }
   .title_section {
     @include size-weight(14px, 300);
+    @include position(absolute, 50%, 50%, none, none, 999);
     color: $text-color;
     padding: 8px 15px;
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.9);
-    position: absolute;
-    top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 999;
     transition: all 0.3s ease;
   }
   &:hover img {

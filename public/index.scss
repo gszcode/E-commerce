@@ -33,3 +33,11 @@ $price-color: #f8353e;
   font-size: $size;
   font-weight: $weight;
 }
+@mixin position($position, $top, $left, $right, $bottom, $index: 0) {
+  position: $position;
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $bottom;
+  z-index: $index;
+}

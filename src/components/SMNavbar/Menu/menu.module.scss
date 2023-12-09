@@ -2,11 +2,9 @@
 
 .menu_container {
   @include width-height(100%, 100%);
+  @include position(absolute, 0, none, 0, none);
   min-height: 100vh;
   background-color: $background-color;
-  position: absolute;
-  top: 0;
-  right: 0;
   margin-right: 100%;
   transition: margin 0.4s ease;
   .header {
