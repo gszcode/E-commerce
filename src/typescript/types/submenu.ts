@@ -1,1 +1,1 @@
-export type SubMenu = 'clothes' | 'home' | null
+export type SubMenu = 'clothes' | 'home' | 'user' | null
