@@ -1,18 +1,17 @@
 import { useEffect, useRef } from 'react'
-import { OpenSubNavState } from '../typescript/types/submenu'
 
 export const useCloseDrop = (
-  setOpenSubNav: React.Dispatch<React.SetStateAction<OpenSubNavState>>
+  setOpenSubNav: (value: React.SetStateAction<string>) => void
 ) => {
-  const ref = useRef<HTMLDivElement>(null)
+  const closeRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (ref.current && !ref.current.contains(event.target as Node)) {
-        setOpenSubNav({
-          clothes: false,
-          home: false
-        })
+      if (
+        closeRef.current &&
+        !closeRef.current.contains(event.target as Node)
+      ) {
+        setOpenSubNav('')
       }
     }
 
@@ -23,5 +22,5 @@ export const useCloseDrop = (
     }
   }, [setOpenSubNav])
 
-  return ref
+  return { closeRef }
 }
