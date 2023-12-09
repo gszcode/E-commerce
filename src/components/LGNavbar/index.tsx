@@ -6,10 +6,10 @@ import { clothes_links, home_links } from '../../json/links'
 import { SubMenu } from '../../typescript/types/submenu'
 
 const LGNavbar: React.FC = () => {
-  const [openSubNav, setOpenSubNav] = useState('')
+  const [openSubNav, setOpenSubNav] = useState<SubMenu>(null)
 
   const handleOpenSubNav = (menu: SubMenu) => {
-    setOpenSubNav((prev) => (prev === menu ? '' : menu))
+    setOpenSubNav(() => (openSubNav === menu ? null : menu))
   }
 
   return (

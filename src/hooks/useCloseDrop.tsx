@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react'
+import { SubMenu } from '../typescript/types/submenu'
 
 export const useCloseDrop = (
-  setOpenSubNav: (value: React.SetStateAction<string>) => void
+  setOpenSubNav: (value: React.SetStateAction<SubMenu>) => void
 ) => {
   const closeRef = useRef<HTMLDivElement>(null)
 
@@ -11,7 +12,7 @@ export const useCloseDrop = (
         closeRef.current &&
         !closeRef.current.contains(event.target as Node)
       ) {
-        setOpenSubNav('')
+        setOpenSubNav(null)
       }
     }
 

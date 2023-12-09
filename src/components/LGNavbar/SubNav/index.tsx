@@ -1,6 +1,7 @@
 import styles from './subnav.module.scss'
 import { Link } from 'react-router-dom'
 import { useCloseDrop } from '../../../hooks/useCloseDrop'
+import { SubMenu } from '../../../typescript/types/submenu'
 
 interface Links {
   link: string
@@ -10,7 +11,7 @@ interface Links {
 interface SubNavProps {
   links: Array<Links>
   openSubNav: string | boolean
-  setOpenSubNav: (value: React.SetStateAction<string>) => void
+  setOpenSubNav: (value: React.SetStateAction<SubMenu>) => void
 }
 
 const SubNav = ({ links, openSubNav, setOpenSubNav }: SubNavProps) => {
