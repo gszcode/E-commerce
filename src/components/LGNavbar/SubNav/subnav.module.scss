@@ -1,12 +1,10 @@
 @import 'public/index.scss';
 
 .subnav {
+  @include position(absolute, none, none, none, -145px, 99);
   background-color: $background-color;
   border: 1px solid #e7e7e7;
   padding: 20px 30px;
-  position: absolute;
-  bottom: -145px;
-  z-index: 99;
   display: none;
   .sub_list {
     @include flex(column, center, center, 15px);
@@ -20,8 +18,15 @@
     }
   }
 }
+.user {
+  @include position(absolute, none, none, 0, -90px);
+  padding: 15px;
+  border: none;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
+}
 
 .clothes,
-.home {
+.home,
+.user {
   display: block;
 }

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { clothes_links, home_links } from '../../json/links'
 import { SubMenu } from '../../typescript/types/submenu'
 
-const LGNavbar: React.FC = () => {
+const LGNavbar = () => {
   const [openSubNav, setOpenSubNav] = useState<SubMenu>(null)
 
   const handleOpenSubNav = (menu: SubMenu) => {
@@ -23,24 +23,32 @@ const LGNavbar: React.FC = () => {
           className={`${styles.item} ${styles.clothes}`}
         >
           ROPA
-          {/* submenu */}
-          <SubNav
-            openSubNav={openSubNav === 'clothes' && openSubNav}
-            links={clothes_links}
-            setOpenSubNav={setOpenSubNav}
-          />
+          {
+            /* submenu */
+            openSubNav === 'clothes' && (
+              <SubNav
+                openSubNav={openSubNav}
+                links={clothes_links}
+                setOpenSubNav={setOpenSubNav}
+              />
+            )
+          }
         </span>
         <span
           onClick={() => handleOpenSubNav('home')}
           className={`${styles.item} ${styles.home}`}
         >
           HOGAR
-          {/* submenu */}
-          <SubNav
-            openSubNav={openSubNav === 'home' && openSubNav}
-            links={home_links}
-            setOpenSubNav={setOpenSubNav}
-          />
+          {
+            /* submenu */
+            openSubNav === 'home' && (
+              <SubNav
+                openSubNav={openSubNav}
+                links={home_links}
+                setOpenSubNav={setOpenSubNav}
+              />
+            )
+          }
         </span>
         <Link className={styles.item} to="/mountain-bikes">
           BICICLETAS MONTAÑERA

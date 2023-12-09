@@ -17,6 +17,10 @@ interface SubNavProps {
 const SubNav = ({ links, openSubNav, setOpenSubNav }: SubNavProps) => {
   const { closeRef } = useCloseDrop(setOpenSubNav)
 
+  const handleLinkClick = () => {
+    setOpenSubNav(null)
+  }
+
   return (
     <div
       ref={closeRef}
@@ -24,7 +28,7 @@ const SubNav = ({ links, openSubNav, setOpenSubNav }: SubNavProps) => {
     >
       <ul className={styles.sub_list}>
         {links.map(({ link, href }) => (
-          <Link key={href} to={`/${href}`}>
+          <Link key={href} to={`/${href}`} onClick={handleLinkClick}>
             {link}
           </Link>
         ))}
