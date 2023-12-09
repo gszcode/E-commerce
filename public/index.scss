@@ -41,3 +41,10 @@ $price-color: #f8353e;
   bottom: $bottom;
   z-index: $index;
 }
+
+// Global styles
+.icon_btn {
+  border: none;
+  background-color: #fff;
+  height: 17px;
+}
