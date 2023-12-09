@@ -27,3 +27,14 @@ export const home_links = [
     href: 'several'
   }
 ]
+
+export const user_menu_links = [
+  {
+    link: 'REGISTRARSE',
+    href: 'register'
+  },
+  {
+    link: 'INICIAR SESIÓN',
+    href: 'login'
+  }
+]
