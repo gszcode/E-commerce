@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import SubNav from './SubNav'
+import SubNav from '../SubNav'
 import styles from './lgnavbar.module.scss'
 import { Link } from 'react-router-dom'
-import { clothes_links, home_links } from '../../json/links'
-import { SubMenu } from '../../typescript/types/submenu'
+import { clothes_links, home_links } from '../../../json/links'
+import { SubMenu } from '../../../typescript/types/submenu'
 
 const LGNavbar = () => {
   const [openSubNav, setOpenSubNav] = useState<SubMenu>(null)

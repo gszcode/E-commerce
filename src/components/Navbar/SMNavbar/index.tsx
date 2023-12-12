@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom'
 import styles from './smnavbar.module.scss'
-import LGNavbar from '../LGNavbar'
-import Menu from './Menu'
 import { useState } from 'react'
-import Image from '../Image'
-import { user_menu_links } from '../../json/links'
-import { SubMenu } from '../../typescript/types/submenu'
-import SubNav from '../LGNavbar/SubNav'
+import SubNav from '../SubNav'
+import LGNavbar from '../LGNavbar'
+import { user_menu_links } from '../../../json/links'
+import Image from '../../Image'
+import Menu from '../Menu'
+import { SubMenu } from '../../../typescript/types/submenu'
 
 const SMNavbar = () => {
   const [openMenu, setOpenMenu] = useState(false)
