@@ -2,10 +2,12 @@ import styles from './subnav.module.scss'
 import { Link } from 'react-router-dom'
 import { useCloseDrop } from '../../../hooks/useCloseDrop'
 import { SubMenu } from '../../../typescript/types/submenu'
+import Image from '../../Image'
 
 interface Links {
   link: string
   href: string
+  icon?: string
 }
 
 interface SubNavProps {
@@ -27,8 +29,9 @@ const SubNav = ({ links, openSubNav, setOpenSubNav }: SubNavProps) => {
       className={`${styles.subnav} ${styles[openSubNav as string]}`}
     >
       <ul className={styles.sub_list}>
-        {links.map(({ link, href }) => (
+        {links.map(({ link, href, icon }) => (
           <Link key={href} to={`/${href}`} onClick={handleLinkClick}>
+            {icon && <Image img={icon!} alt={icon!} />}
             {link}
           </Link>
         ))}

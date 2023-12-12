@@ -31,10 +31,12 @@ export const home_links = [
 export const user_menu_links = [
   {
     link: 'Registrarse',
-    href: 'register'
+    href: 'register',
+    icon: 'user_plus'
   },
   {
     link: 'Iniciar sesión',
-    href: 'login'
+    href: 'login',
+    icon: 'user'
   }
 ]
