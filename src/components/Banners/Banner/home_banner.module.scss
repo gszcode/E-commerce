@@ -10,7 +10,7 @@
     transition: transform 1s ease;
   }
   .title_section {
-    @include size-weight(14px, 300);
+    @include size-weight(13px, 300);
     @include position(absolute, 50%, 50%, none, none, 999);
     color: $text-color;
     padding: 8px;
