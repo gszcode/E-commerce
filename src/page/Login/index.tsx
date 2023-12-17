@@ -28,7 +28,7 @@ const Login = () => {
           />
           <Button text="CONTINUAR" />
           <Link to="/register" className={styles.create_account}>
-            ¿Eres nuevo? Crear cuenta.
+            ¿No tienes cuenta? Registrarse.
           </Link>
           <Link to="/" className={styles.forgot}>
             ¿Has olvidado la contraseña?

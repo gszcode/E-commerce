@@ -55,7 +55,7 @@ const Register = () => {
           />
           <Button text="REGISTRARSE" />
           <Link to="/login" className={styles.already_account}>
-            ¿Ya tienes una cuenta?
+            ¿Ya tienes una cuenta? Iniciar Sesión.
           </Link>
         </form>
       </div>

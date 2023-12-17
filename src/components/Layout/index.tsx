@@ -1,5 +1,5 @@
 import Footer from '../Footer'
-import SMNavbar from '../SMNavbar'
+import SMNavbar from '../Navbar/SMNavbar'
 
 const Layout = ({ children }: { children: JSX.Element }) => {
   return (
