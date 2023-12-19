@@ -1,7 +1,7 @@
-@import 'public/index.scss';
+@import '../../index.scss';
 
 .container {
-  padding: 5px 20px;
+  padding: 50px 20px 5px 20px;
   background-color: #f2f2f2;
   .title {
     color: #919191;
@@ -18,7 +18,7 @@
 // Media queries
 @media (min-width: 1024px) {
   .container {
-    padding: 5px 35px;
+    padding: 60px 35px 5px 35px;
     .title {
       font-size: 13px;
     }

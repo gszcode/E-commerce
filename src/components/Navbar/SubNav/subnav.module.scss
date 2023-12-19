@@ -1,4 +1,4 @@
-@import 'public/index.scss';
+@import '../../../index.scss';
 
 .subnav {
   @include position(absolute, none, none, none, -145px, 99);
