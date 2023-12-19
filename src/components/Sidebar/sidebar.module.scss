@@ -1,0 +1,27 @@
+@import '../../index.scss';
+
+.sidebar {
+  display: none;
+  padding: 40px 30px;
+  margin-left: -80px;
+  .list {
+    list-style: none;
+    .item {
+      @include flex(row, flex-start, center, 3px);
+      a {
+        @include size-weight(14px, 300);
+        color: $text-color;
+        transition: color 0.3s ease;
+        &:hover {
+          color: $hover-color;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .sidebar {
+    display: block;
+  }
+}
