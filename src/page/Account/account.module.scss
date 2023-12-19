@@ -1,0 +1,71 @@
+@import '../../index.scss';
+
+.container {
+  .wrapper {
+    @include flex(row, space-evenly, flex-start);
+    .account {
+      @include width-height(100%, auto);
+      padding: 40px 20px;
+      .title {
+        @include size-weight(24px, 500);
+        text-align: center;
+        color: $text-color;
+      }
+      .data_table {
+        margin: 40px 0 20px 0;
+        .subtitle {
+          @include size-weight(18px, 500);
+          text-align: center;
+          color: $text-color;
+        }
+        .table {
+          @include flex(column, center, flex-start);
+          margin-top: 20px;
+          .item {
+            @include width-height(100%, auto);
+            @include size-weight(13px, 400);
+            padding: 15px 0;
+            border-top: $border-color;
+            letter-spacing: 0.5px;
+            strong {
+              margin-right: 5px;
+            }
+            &:last-child {
+              border-bottom: $border-color;
+            }
+          }
+        }
+      }
+      .btn {
+        @include size-weight(14px, 400);
+        padding: 5px 15px;
+        background-color: #e7e7e7;
+        color: $text-color-secondary;
+        border-radius: 5px;
+        transition: background 0.3s ease;
+        &:hover {
+          background-color: #d9d9d9;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    .wrapper {
+      .account {
+        width: 65%;
+      }
+    }
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    .wrapper {
+      .account {
+        width: 70%;
+      }
+    }
+  }
+}
