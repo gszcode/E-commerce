@@ -3,7 +3,7 @@ import styles from './smnavbar.module.scss'
 import { useState } from 'react'
 import SubNav from '../SubNav'
 import LGNavbar from '../LGNavbar'
-import { user_menu_links } from '../../../json/links'
+import { active_user_menu_links, user_menu_links } from '../../../json/links'
 import Image from '../../Image'
 import Menu from '../Menu'
 import { SubMenu } from '../../../typescript/types/submenu'
@@ -11,6 +11,7 @@ import { SubMenu } from '../../../typescript/types/submenu'
 const SMNavbar = () => {
   const [openMenu, setOpenMenu] = useState(false)
   const [openUserMenu, setOpenUserMenu] = useState<SubMenu>(null)
+  const [user, setUser] = useState(false)
 
   const handleOpenMenu = () => {
     setOpenMenu((prev) => !prev)
@@ -47,13 +48,22 @@ const SMNavbar = () => {
         <button onClick={() => handleOpenSubNav('user')} className="icon_btn">
           <Image img="user" alt="User" title="Mi cuenta" />
 
-          {openUserMenu && (
-            <SubNav
-              links={user_menu_links}
-              openSubNav={openUserMenu}
-              setOpenSubNav={setOpenUserMenu}
-            />
-          )}
+          {openUserMenu &&
+            (!user ? (
+              <SubNav
+                links={user_menu_links}
+                openSubNav={openUserMenu}
+                setOpenSubNav={setOpenUserMenu}
+                active={user}
+              />
+            ) : (
+              <SubNav
+                links={active_user_menu_links}
+                openSubNav={openUserMenu}
+                setOpenSubNav={setOpenUserMenu}
+                active={user}
+              />
+            ))}
         </button>
       </div>
     </nav>
