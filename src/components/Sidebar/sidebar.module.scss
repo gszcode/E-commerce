@@ -15,11 +15,15 @@
         &:hover {
           color: $hover-color;
         }
+        &.activeLink {
+          color: $hover-color;
+        }
       }
     }
   }
 }
 
+// Media queries
 @media (min-width: 1024px) {
   .sidebar {
     display: block;
