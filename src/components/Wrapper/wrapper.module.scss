@@ -1,0 +1,5 @@
+@import '../../index.scss';
+
+.wrapper {
+  @include flex(row, space-evenly, flex-start);
+}
