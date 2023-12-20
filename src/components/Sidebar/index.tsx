@@ -12,7 +12,7 @@ const Sidebar = () => {
         </li>
         <li className={styles.item}>
           <Image img="cart" alt="My orders" />
-          <Link to="/my-orders">Mis pedidos</Link>
+          <Link to="/orders">Mis pedidos</Link>
         </li>
         <li className={styles.item}>
           <Image img="heart" alt="My favorite products" />
