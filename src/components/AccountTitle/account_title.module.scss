@@ -1,0 +1,7 @@
+@import '../../index.scss';
+
+.title {
+  @include size-weight(24px, 500);
+  text-align: center;
+  color: $text-color;
+}
