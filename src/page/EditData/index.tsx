@@ -1,10 +1,10 @@
+import styles from './edit_data.module.scss'
 import AccountTitle from '../../components/AccountTitle'
 import BreadCrumbs from '../../components/BreadCrumbs'
 import Button from '../../components/Button'
 import Sidebar from '../../components/Sidebar'
 import Wrapper from '../../components/Wrapper'
-import Input from '../Account/Input'
-import styles from './edit_data.module.scss'
+import Input from './Input'
 
 const EditData = () => {
   return (
