@@ -1,0 +1,11 @@
+@import '../../index.scss';
+
+.container {
+  .orders {
+    @include width-height(69%, auto);
+    padding: 40px 20px;
+    .data {
+      margin: 40px 0;
+    }
+  }
+}
