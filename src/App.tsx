@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout'
 import Home from './page/Home'
 import Login from './page/Login'
@@ -8,18 +8,29 @@ import Account from './page/Account'
 import EditData from './page/EditData'
 import Orders from './page/Orders'
 import FavoriteProducts from './page/FavoriteProducts'
+import { useState } from 'react'
 
 function App() {
+  const [user, setUser] = useState(false)
+
   return (
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
-        <Route path="account" element={<Account />} />
-        <Route path="account/edit-data" element={<EditData />} />
-        <Route path="orders" element={<Orders />} />
-        <Route path="favorite-products" element={<FavoriteProducts />} />
+
+        {user ? (
+          <>
+            <Route path="account" element={<Account />} />
+            <Route path="account/edit-data" element={<EditData />} />
+            <Route path="orders" element={<Orders />} />
+            <Route path="favorite-products" element={<FavoriteProducts />} />
+          </>
+        ) : (
+          <Route path="*" element={<Navigate to="/login" />} />
+        )}
+
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Layout>
