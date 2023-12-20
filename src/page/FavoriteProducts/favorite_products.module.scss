@@ -1,0 +1,17 @@
+@import '../../index.scss';
+
+.container {
+  .products {
+    @include width-height(100%, auto);
+    padding: 40px 20px;
+  }
+}
+
+// Media queries
+@media (min-width: 1024px) {
+  .container {
+    .products {
+      width: 69%;
+    }
+  }
+}
