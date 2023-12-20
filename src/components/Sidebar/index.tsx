@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import styles from './sidebar.module.scss'
 import Image from '../Image'
 
@@ -8,19 +8,27 @@ const Sidebar = () => {
       <ul className={styles.list}>
         <li className={styles.item}>
           <Image img="user" alt="My account" />
-          <Link to="/account">Mi cuenta</Link>
+          <NavLink to="/account" className={styles.activeLink}>
+            Mi cuenta
+          </NavLink>
         </li>
         <li className={styles.item}>
           <Image img="cart" alt="My orders" />
-          <Link to="/my-orders">Mis pedidos</Link>
+          <NavLink to="/my-orders" className={styles.activeLink}>
+            Mis pedidos
+          </NavLink>
         </li>
         <li className={styles.item}>
           <Image img="heart" alt="My favorite products" />
-          <Link to="/favorite-products">Mis productos favoritos</Link>
+          <NavLink to="/favorite-products" className={styles.activeLink}>
+            Mis productos favoritos
+          </NavLink>
         </li>
         <li className={styles.item}>
           <Image img="logout" alt="Logout" />
-          <Link to="/logout">Cerrar sesión</Link>
+          <NavLink to="/logout" className={styles.activeLink}>
+            Cerrar sesión
+          </NavLink>
         </li>
       </ul>
     </div>
