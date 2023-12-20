@@ -14,19 +14,6 @@
       .table {
         @include flex(column, center, flex-start);
         margin-top: 20px;
-        .item {
-          @include width-height(100%, auto);
-          @include size-weight(13px, 400);
-          padding: 15px 0;
-          border-top: $border-color;
-          letter-spacing: 0.5px;
-          strong {
-            margin-right: 5px;
-          }
-          &:last-child {
-            border-bottom: $border-color;
-          }
-        }
       }
     }
     .btn {
