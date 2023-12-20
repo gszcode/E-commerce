@@ -7,11 +7,12 @@ import { active_user_menu_links, user_menu_links } from '../../../json/links'
 import Image from '../../Image'
 import Menu from '../Menu'
 import { SubMenu } from '../../../typescript/types/submenu'
+import SubNavCart from '../SubNavCart'
 
 const SMNavbar = () => {
   const [openMenu, setOpenMenu] = useState(false)
   const [openUserMenu, setOpenUserMenu] = useState<SubMenu>(null)
-  const [user, setUser] = useState(false)
+  const [user, setUser] = useState(true)
 
   const handleOpenMenu = () => {
     setOpenMenu((prev) => !prev)
@@ -44,7 +45,16 @@ const SMNavbar = () => {
 
       <div className={styles.icons}>
         <Image img="search" alt="Search" title="Buscar" />
-        <Image img="cart" alt="Cart" title="Carrito" />
+        <button onClick={() => handleOpenSubNav('cart')} className="icon_btn">
+          <Image img="cart" alt="Cart" title="Carrito" />
+
+          {openUserMenu && (
+            <SubNavCart
+              openSubNav={openUserMenu}
+              setOpenSubNav={setOpenUserMenu}
+            />
+          )}
+        </button>
         <button onClick={() => handleOpenSubNav('user')} className="icon_btn">
           <Image img="user" alt="User" title="Mi cuenta" />
 

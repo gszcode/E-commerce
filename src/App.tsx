@@ -11,7 +11,7 @@ import FavoriteProducts from './page/FavoriteProducts'
 import { useState } from 'react'
 
 function App() {
-  const [user, setUser] = useState(false)
+  const [user, setUser] = useState(true)
 
   return (
     <Layout>
