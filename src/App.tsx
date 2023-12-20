@@ -6,6 +6,7 @@ import Register from './page/Register'
 import NotFound from './page/NotFound'
 import Sofa from './page/Sofa'
 import Account from './page/Account'
+import EditData from './page/EditData'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route path="account" element={<Account />} />
+        <Route path="account/edit-data" element={<EditData />} />
         <Route path="sofas" element={<Sofa />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
