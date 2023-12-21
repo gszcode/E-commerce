@@ -1,0 +1,7 @@
+@import '../../index.scss';
+
+.error {
+  @include size-weight(13px, 300);
+  color: $error-color;
+  text-align: start;
+}
