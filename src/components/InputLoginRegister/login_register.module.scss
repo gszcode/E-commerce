@@ -2,6 +2,7 @@
 
 .input_container {
   @include width-height(100%, 75px);
+  position: relative;
   label {
     @include size-weight(14px, 600);
     display: block;
@@ -20,6 +21,12 @@
       background-color: $background-color;
       border: 1px solid $hover-color;
     }
+  }
+  .eye {
+    background-color: $background-secondary;
+    position: absolute;
+    top: 34px;
+    right: 20px;
   }
 }
 
