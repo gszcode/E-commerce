@@ -15,6 +15,7 @@ $black-color: #000;
 $text-color-secondary: #777;
 $hover-color: #c508c5;
 $price-color: #f8353e;
+$error-color: #ff4747;
 
 // mixins
 @mixin flex($direction, $justify, $align, $gap: 0) {
