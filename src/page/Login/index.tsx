@@ -3,8 +3,19 @@ import BreadCrumbs from '../../components/BreadCrumbs'
 import { Link } from 'react-router-dom'
 import LoginInput from '../../components/InputLoginRegister'
 import Button from '../../components/Button'
+import { useFormik } from 'formik'
 
 const Login = () => {
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+      password: ''
+    },
+    onSubmit: (values) => {
+      alert(JSON.stringify(values))
+    }
+  })
+
   return (
     <section>
       <BreadCrumbs page="Login" />
@@ -15,18 +26,22 @@ const Login = () => {
           COMPRAR CUALQUIER ARTÍCULO DE ESTA WEB.
         </p>
 
-        <form className={styles.form}>
+        <form className={styles.form} onSubmit={formik.handleSubmit}>
           <LoginInput
+            name="email"
             labelText="E-MAIL"
             textType="email"
             textPlaceholder="Introduce tu e-mail de usuario"
+            formik={formik}
           />
           <LoginInput
+            name="password"
             labelText="PASSWORD"
             textType="password"
             textPlaceholder="Introduce tu clave de usuario"
+            formik={formik}
           />
-          <Button text="CONTINUAR" />
+          <Button text="CONTINUAR" type="submit" />
           <Link to="/register" className={styles.create_account}>
             ¿No tienes cuenta? Registrarse.
           </Link>
