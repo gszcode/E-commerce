@@ -11,10 +11,10 @@ interface Links {
 }
 
 interface SubNavProps {
-  links: Array<Links>
+  links?: Array<Links>
   openSubNav: string | boolean
   setOpenSubNav: (value: React.SetStateAction<SubMenu>) => void
-  active: boolean
+  active?: boolean
 }
 
 const SubNav = ({ links, openSubNav, setOpenSubNav, active }: SubNavProps) => {
@@ -32,12 +32,13 @@ const SubNav = ({ links, openSubNav, setOpenSubNav, active }: SubNavProps) => {
       }`}
     >
       <ul className={styles.sub_list}>
-        {links.map(({ link, href, icon }) => (
-          <Link key={href} to={`/${href}`} onClick={handleLinkClick}>
-            {icon && <Image img={icon!} alt={icon!} />}
-            {link}
-          </Link>
-        ))}
+        {links &&
+          links.map(({ link, href, icon }) => (
+            <Link key={href} to={`/${href}`} onClick={handleLinkClick}>
+              {icon && <Image img={icon!} alt={icon!} />}
+              {link}
+            </Link>
+          ))}
       </ul>
     </div>
   )

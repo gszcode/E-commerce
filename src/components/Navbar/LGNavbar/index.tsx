@@ -7,7 +7,6 @@ import { SubMenu } from '../../../typescript/types/submenu'
 
 const LGNavbar = () => {
   const [openSubNav, setOpenSubNav] = useState<SubMenu>(null)
-  console.log(openSubNav)
 
   const handleOpenSubNav = (menu: SubMenu) => {
     setOpenSubNav((prev) => (prev === menu ? null : menu))

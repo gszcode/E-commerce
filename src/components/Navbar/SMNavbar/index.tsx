@@ -12,7 +12,7 @@ import SubNavCart from '../SubNavCart'
 const SMNavbar = () => {
   const [openMenu, setOpenMenu] = useState(false)
   const [openUserMenu, setOpenUserMenu] = useState<SubMenu>(null)
-  const [user, setUser] = useState(true)
+  const [user, setUser] = useState(false)
 
   const handleOpenMenu = () => {
     setOpenMenu((prev) => !prev)
@@ -48,7 +48,7 @@ const SMNavbar = () => {
         <button onClick={() => handleOpenSubNav('cart')} className="icon_btn">
           <Image img="cart" alt="Cart" title="Carrito" />
 
-          {openUserMenu && (
+          {openUserMenu === 'cart' && (
             <SubNavCart
               openSubNav={openUserMenu}
               setOpenSubNav={setOpenUserMenu}
@@ -58,7 +58,7 @@ const SMNavbar = () => {
         <button onClick={() => handleOpenSubNav('user')} className="icon_btn">
           <Image img="user" alt="User" title="Mi cuenta" />
 
-          {openUserMenu &&
+          {openUserMenu === 'user' &&
             (!user ? (
               <SubNav
                 links={user_menu_links}
