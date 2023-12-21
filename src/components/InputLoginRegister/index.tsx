@@ -2,6 +2,7 @@ import { FormikProps } from 'formik'
 import styles from './login_register.module.scss'
 import Image from '../Image'
 import { useState } from 'react'
+import ErrorMessage from '../ErrorMessageInput'
 
 interface PropsInput {
   labelText: string
@@ -35,6 +36,7 @@ const Input = ({
         name={name}
         value={formik.values[name].toString()}
       />
+      <ErrorMessage formik={formik} name={name} />
       {name === 'password' && (
         <button
           type="button"
