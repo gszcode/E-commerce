@@ -4,21 +4,18 @@ import { Link } from 'react-router-dom'
 import CheckBox from '../../components/CheckBox'
 import RegisterInput from '../../components/InputLoginRegister'
 import Button from '../../components/Button'
-import { useFormik } from 'formik'
+import { useFormAuth } from '../../hooks/useFormAuth'
+
+const initialValues = {
+  first_name: '',
+  last_name: '',
+  username: '',
+  email: '',
+  password: ''
+}
 
 const Register = () => {
-  const formik = useFormik({
-    initialValues: {
-      first_name: '',
-      last_name: '',
-      username: '',
-      email: '',
-      password: ''
-    },
-    onSubmit: (values) => {
-      alert(JSON.stringify(values))
-    }
-  })
+  const formik = useFormAuth(initialValues)
 
   return (
     <section>

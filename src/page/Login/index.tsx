@@ -3,18 +3,15 @@ import BreadCrumbs from '../../components/BreadCrumbs'
 import { Link } from 'react-router-dom'
 import LoginInput from '../../components/InputLoginRegister'
 import Button from '../../components/Button'
-import { useFormik } from 'formik'
+import { useFormAuth } from '../../hooks/useFormAuth'
+
+const initialValues = {
+  email: '',
+  password: ''
+}
 
 const Login = () => {
-  const formik = useFormik({
-    initialValues: {
-      email: '',
-      password: ''
-    },
-    onSubmit: (values) => {
-      alert(JSON.stringify(values))
-    }
-  })
+  const formik = useFormAuth(initialValues)
 
   return (
     <section>
