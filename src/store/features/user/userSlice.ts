@@ -3,7 +3,7 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 import { User, UserApi } from '../../../typescript/interfaces/user.interface'
 
 const initialState: UserApi = {
-  user: false
+  user: null
 }
 
 export const userSlice = createSlice({
@@ -12,9 +12,12 @@ export const userSlice = createSlice({
   reducers: {
     setUserData: (state, action: PayloadAction<User>) => {
       state.user = action.payload
+    },
+    setClearUser: (state) => {
+      state.user = null
     }
   }
 })
 
-export const { setUserData } = userSlice.actions
+export const { setUserData, setClearUser } = userSlice.actions
 export default userSlice.reducer
