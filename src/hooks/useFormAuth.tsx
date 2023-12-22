@@ -39,7 +39,7 @@ export const useFormAuth = (initialValues: Auth) => {
         }
       }
 
-      if (response.data.error || response.data.error)
+      if (response.data.error || response.data.errors)
         notifyError(response.data.error || response.data.errors)
     }
   })
