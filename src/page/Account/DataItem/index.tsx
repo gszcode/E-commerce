@@ -2,7 +2,7 @@ import styles from './data_item.module.scss'
 
 interface ItemProps {
   label: string
-  data: string
+  data?: string
 }
 
 const DataItem = ({ label, data }: ItemProps) => {
