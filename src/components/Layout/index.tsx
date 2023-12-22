@@ -1,7 +1,7 @@
-import { ToastContainer } from 'react-toastify'
 import Footer from '../Footer'
 import SMNavbar from '../Navbar/SMNavbar'
-import { Slide } from 'react-toastify'
+import { Slide, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const Layout = ({ children }: { children: JSX.Element }) => {
   return (
