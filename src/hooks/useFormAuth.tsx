@@ -15,6 +15,7 @@ export const useFormAuth = (initialValues: Auth) => {
     const validateEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
 
     if (!validateEmail.test(values.email!)) errors.email = 'Email invalido'
+    if (values.password.length < 7) errors.password = 'Mínimo 8 caracteres'
     for (const value in values) {
       if (!values[value]) errors[value] = 'Este campo es requerido'
     }
