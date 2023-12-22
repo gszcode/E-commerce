@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { useCloseDrop } from '../../../hooks/useCloseDrop'
 import { SubMenu } from '../../../typescript/types/submenu'
 import Image from '../../Image'
+import { useDispatch } from 'react-redux'
+import { setClearUser } from '../../../store/features/user/userSlice'
 
 interface Links {
   link: string
@@ -19,9 +21,14 @@ interface SubNavProps {
 
 const SubNav = ({ links, openSubNav, setOpenSubNav, active }: SubNavProps) => {
   const { closeRef } = useCloseDrop(setOpenSubNav)
+  const dispatch = useDispatch()
 
   const handleLinkClick = () => {
     setOpenSubNav(null)
+  }
+
+  const handleLogout = () => {
+    dispatch(setClearUser())
   }
 
   return (
@@ -34,7 +41,13 @@ const SubNav = ({ links, openSubNav, setOpenSubNav, active }: SubNavProps) => {
       <ul className={styles.sub_list}>
         {links &&
           links.map(({ link, href, icon }) => (
-            <Link key={href} to={`/${href}`} onClick={handleLinkClick}>
+            <Link
+              key={href}
+              to={`/${href}`}
+              onClick={
+                link === 'Cerrar sesión' ? handleLogout : handleLinkClick
+              }
+            >
               {icon && <Image img={icon!} alt={icon!} />}
               {link}
             </Link>

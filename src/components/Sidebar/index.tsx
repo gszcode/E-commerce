@@ -1,8 +1,16 @@
 import { Link } from 'react-router-dom'
 import styles from './sidebar.module.scss'
 import Image from '../Image'
+import { useDispatch } from 'react-redux'
+import { setClearUser } from '../../store/features/user/userSlice'
 
 const Sidebar = () => {
+  const dispatch = useDispatch()
+
+  const handleLogout = () => {
+    dispatch(setClearUser())
+  }
+
   return (
     <div className={styles.sidebar}>
       <ul className={styles.list}>
@@ -20,7 +28,9 @@ const Sidebar = () => {
         </li>
         <li className={styles.item}>
           <Image img="logout" alt="Logout" />
-          <Link to="/logout">Cerrar sesión</Link>
+          <Link to="/logout" onClick={handleLogout}>
+            Cerrar sesión
+          </Link>
         </li>
       </ul>
     </div>

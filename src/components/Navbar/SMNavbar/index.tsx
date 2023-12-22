@@ -14,7 +14,7 @@ import { UserApi } from '../../../typescript/interfaces/user.interface'
 const SMNavbar = () => {
   const [openMenu, setOpenMenu] = useState(false)
   const [openUserMenu, setOpenUserMenu] = useState<SubMenu>(null)
-  const { user } = useSelector((state: UserApi) => state)
+  const { user } = useSelector((state: UserApi) => state.user as UserApi)
 
   const handleOpenMenu = () => {
     setOpenMenu((prev) => !prev)
@@ -35,7 +35,7 @@ const SMNavbar = () => {
           <Image img="bars" alt="Bars" title="Menú" />
         </button>
         <Link to="/" className={styles.title} title="Título">
-          minimo <span>shoes</span>
+          imperio <span>shoes</span>
         </Link>
       </div>
 
@@ -60,22 +60,14 @@ const SMNavbar = () => {
         <button onClick={() => handleOpenSubNav('user')} className="icon_btn">
           <Image img="user" alt="User" title="Mi cuenta" />
 
-          {openUserMenu === 'user' &&
-            (!user ? (
-              <SubNav
-                links={user_menu_links}
-                openSubNav={openUserMenu}
-                setOpenSubNav={setOpenUserMenu}
-                active={user && true}
-              />
-            ) : (
-              <SubNav
-                links={active_user_menu_links}
-                openSubNav={openUserMenu}
-                setOpenSubNav={setOpenUserMenu}
-                active={user && true}
-              />
-            ))}
+          {openUserMenu === 'user' && (
+            <SubNav
+              links={user ? active_user_menu_links : user_menu_links}
+              openSubNav={openUserMenu}
+              setOpenSubNav={setOpenUserMenu}
+              active={user && true}
+            />
+          )}
         </button>
       </div>
     </nav>
