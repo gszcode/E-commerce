@@ -10,6 +10,8 @@ import Orders from './page/Orders'
 import FavoriteProducts from './page/FavoriteProducts'
 import { useSelector } from 'react-redux'
 import { UserApi } from './typescript/interfaces/user.interface'
+import axios from 'axios'
+axios.defaults.withCredentials = true
 
 function App() {
   const { user } = useSelector((state: UserApi) => state.user as UserApi)
