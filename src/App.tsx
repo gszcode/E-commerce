@@ -12,14 +12,14 @@ import { useSelector } from 'react-redux'
 import { UserApi } from './typescript/interfaces/user.interface'
 
 function App() {
-  const { user } = useSelector((state: UserApi) => state)
+  const { user } = useSelector((state: UserApi) => state.user as UserApi)
 
   return (
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
 
-        {user ? (
+        {user !== null && user !== undefined ? (
           <>
             <Route path="account" element={<Account />} />
             <Route path="account/edit-data" element={<EditData />} />
