@@ -35,6 +35,7 @@ const Input = ({
         onChange={formik.handleChange}
         name={name}
         value={formik.values[name].toString()}
+        autoComplete="current-password"
       />
       <ErrorMessage formik={formik} name={name} />
       {name === 'password' && (

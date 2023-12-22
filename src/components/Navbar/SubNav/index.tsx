@@ -14,7 +14,7 @@ interface SubNavProps {
   links?: Array<Links>
   openSubNav: string | boolean
   setOpenSubNav: (value: React.SetStateAction<SubMenu>) => void
-  active?: boolean
+  active?: boolean | null
 }
 
 const SubNav = ({ links, openSubNav, setOpenSubNav, active }: SubNavProps) => {

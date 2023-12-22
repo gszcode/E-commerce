@@ -14,7 +14,7 @@ const CheckBox = ({ text, linkText, href, footerStyle, idFor }: PropsCheck) => {
     <div className={footerStyle ? styles.footerStyle : styles.check}>
       <input id={idFor} type="checkbox" />
       <label htmlFor={idFor}>
-        {text} <Link to={`/${href}`}>{linkText}</Link>
+        {text} <Link to={`${href}`}>{linkText}</Link>
       </label>
     </div>
   )

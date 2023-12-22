@@ -1,22 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import { UserSlice } from '../../../typescript/interfaces/user.interface'
+import { User, UserApi } from '../../../typescript/interfaces/user.interface'
 
-const initialState: UserSlice = {
-  message: '',
-  data: null
+const initialState: UserApi = {
+  user: false
 }
 
 export const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    getUserData: (state, action: PayloadAction<UserSlice>) => {
-      state.message = action.payload.message
-      state.data = action.payload.data
+    setUserData: (state, action: PayloadAction<User>) => {
+      state.user = action.payload
     }
   }
 })
 
-export const { getUserData } = userSlice.actions
+export const { setUserData } = userSlice.actions
 export default userSlice.reducer

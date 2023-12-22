@@ -8,17 +8,16 @@ import Account from './page/Account'
 import EditData from './page/EditData'
 import Orders from './page/Orders'
 import FavoriteProducts from './page/FavoriteProducts'
-import { useState } from 'react'
+import { useSelector } from 'react-redux'
+import { UserApi } from './typescript/interfaces/user.interface'
 
 function App() {
-  const [user, setUser] = useState(false)
+  const { user } = useSelector((state: UserApi) => state)
 
   return (
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="login" element={<Login />} />
-        <Route path="register" element={<Register />} />
 
         {user ? (
           <>
@@ -26,9 +25,14 @@ function App() {
             <Route path="account/edit-data" element={<EditData />} />
             <Route path="orders" element={<Orders />} />
             <Route path="favorite-products" element={<FavoriteProducts />} />
+            <Route path="*" element={<Navigate to="/account" />} />
           </>
         ) : (
-          <Route path="*" element={<Navigate to="/login" />} />
+          <>
+            <Route path="login" element={<Login />} />
+            <Route path="register" element={<Register />} />
+            <Route path="*" element={<Navigate to="/login" />} />
+          </>
         )}
 
         <Route path="*" element={<NotFound />} />
