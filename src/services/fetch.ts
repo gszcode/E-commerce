@@ -13,4 +13,17 @@ const post = async (url: string, data: Auth): Promise<AxiosResponse> => {
   }
 }
 
-export { post }
+const get = async (url: string): Promise<AxiosResponse> => {
+  try {
+    const response = await axios.get(`${api}/${url}`, {
+      withCredentials: true
+    })
+    return response
+  } catch (error) {
+    const axiosError = error as AxiosError
+    if (axiosError.response) return axiosError.response
+    else throw error
+  }
+}
+
+export { post, get }
