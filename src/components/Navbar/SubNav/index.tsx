@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom'
 import { useCloseDrop } from '../../../hooks/useCloseDrop'
 import { SubMenu } from '../../../typescript/types/submenu'
 import Image from '../../Image'
+import { post } from '../../../services/fetch'
 import { useDispatch } from 'react-redux'
-import { setClearUser } from '../../../store/features/user/userSlice'
+import { setUserData } from '../../../store/features/user/userSlice'
 
 interface Links {
   link: string
@@ -27,8 +28,10 @@ const SubNav = ({ links, openSubNav, setOpenSubNav, active }: SubNavProps) => {
     setOpenSubNav(null)
   }
 
-  const handleLogout = () => {
-    dispatch(setClearUser())
+  const handleLogout = async () => {
+    const response = await post('auth/logout')
+    if (response.status === 200)
+      dispatch(setUserData({ user: null, isAuthenticated: false }))
   }
 
   return (
@@ -41,16 +44,19 @@ const SubNav = ({ links, openSubNav, setOpenSubNav, active }: SubNavProps) => {
       <ul className={styles.sub_list}>
         {links &&
           links.map(({ link, href, icon }) => (
-            <Link
-              key={href}
-              to={`/${href}`}
-              onClick={
-                link === 'Cerrar sesión' ? handleLogout : handleLinkClick
-              }
-            >
-              {icon && <Image img={icon!} alt={icon!} />}
-              {link}
-            </Link>
+            <>
+              {link === 'Cerrar sesión' ? (
+                <button className="icon_btn" onClick={handleLogout}>
+                  {icon && <Image img={icon!} alt={icon!} />}
+                  {link}
+                </button>
+              ) : (
+                <Link key={href} to={`/${href}`} onClick={handleLinkClick}>
+                  {icon && <Image img={icon!} alt={icon!} />}
+                  {link}
+                </Link>
+              )}
+            </>
           ))}
       </ul>
     </div>

@@ -14,13 +14,9 @@ export const userSlice = createSlice({
     setUserData: (state, action: PayloadAction<UserApi>) => {
       state.user = action.payload.user
       state.isAuthenticated = action.payload.isAuthenticated
-    },
-    setClearUser: (state) => {
-      state.user = null
-      state.isAuthenticated = false
     }
   }
 })
 
-export const { setUserData, setClearUser } = userSlice.actions
+export const { setUserData } = userSlice.actions
 export default userSlice.reducer

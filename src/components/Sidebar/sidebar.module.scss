@@ -8,13 +8,19 @@
     list-style: none;
     .item {
       @include flex(row, flex-start, center, 3px);
-      a {
+      a,
+      button {
         @include size-weight(14px, 300);
         color: $text-color;
         transition: color 0.3s ease;
         &:hover {
           color: $hover-color;
         }
+      }
+      button {
+        @include width-height(auto, 23px);
+        align-items: start;
+        cursor: pointer;
       }
     }
   }

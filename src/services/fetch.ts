@@ -2,7 +2,7 @@ import axios, { AxiosError, AxiosResponse } from 'axios'
 import { Auth } from '../typescript/interfaces/user.interface'
 const api = 'http://localhost:3000/api/v1'
 
-const post = async (url: string, data: Auth): Promise<AxiosResponse> => {
+const post = async (url: string, data?: Auth): Promise<AxiosResponse> => {
   try {
     const response = await axios.post(`${api}/${url}`, data)
     return response

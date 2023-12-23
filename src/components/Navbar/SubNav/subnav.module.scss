@@ -8,7 +8,8 @@
   display: none;
   .sub_list {
     @include flex(column, center, flex-start, 15px);
-    a {
+    a,
+    button {
       @include size-weight(13px, 400);
       color: $text-color-secondary;
       transition: color 0.3s ease;
@@ -18,6 +19,11 @@
       img {
         margin: 0 5px -3px 0;
       }
+    }
+    button {
+      @include width-height(auto, 23px);
+      align-items: start;
+      cursor: pointer;
     }
   }
 }
