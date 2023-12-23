@@ -13,21 +13,22 @@ import { setUserData } from '../../store/features/user/userSlice'
 
 const Account = () => {
   const dispatch = useDispatch()
-  const { user } = useSelector((state: UserApi) => state.user as UserApi)
+  const { user, isAuthenticated } = useSelector(
+    (state: UserApi) => state.user as UserApi
+  )
 
   useEffect(() => {
     const getUserData = async () => {
       try {
         const response = await get('user/account')
-        dispatch(setUserData(response.data.data))
-        console.log(response)
+        dispatch(setUserData({ user: response.data.data, isAuthenticated }))
       } catch (error) {
         console.log(error)
       }
     }
 
     getUserData()
-  }, [dispatch])
+  }, [dispatch, isAuthenticated])
 
   return (
     <section className={styles.container}>
