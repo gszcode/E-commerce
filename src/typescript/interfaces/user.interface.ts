@@ -12,4 +12,5 @@ export interface Auth extends User {
 
 export interface UserApi {
   user: User | null
+  isAuthenticated?: boolean
 }
