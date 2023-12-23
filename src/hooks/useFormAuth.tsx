@@ -2,13 +2,22 @@ import { useFormik } from 'formik'
 import { Auth } from '../typescript/interfaces/user.interface'
 import { post } from '../services/fetch'
 import { AxiosResponse } from 'axios'
-import { useMessageToast } from './toastSuccess'
+import { messageToast } from '../utils/toastSuccess'
 import { useDispatch } from 'react-redux'
 import { setUserData } from '../store/features/user/userSlice'
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useAuthenticate } from './useAuthenticate'
 
 export const useFormAuth = (initialValues: Auth) => {
-  const { notify, notifyError } = useMessageToast()
+  const { notify, notifyError } = messageToast()
   const dispatch = useDispatch()
+  const { isAuthenticated } = useAuthenticate()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (isAuthenticated) navigate('/account')
+  }, [isAuthenticated, navigate])
 
   const validate = (values: Auth) => {
     const errors: Partial<Auth> = {}
@@ -35,8 +44,9 @@ export const useFormAuth = (initialValues: Auth) => {
       } else {
         response = await post('auth/login', values)
         if (response.status === 200) {
-          notify(response.data.message)
-          dispatch(setUserData(response.data.user))
+          const { message, user } = response.data
+          notify(message)
+          dispatch(setUserData({ user, isAuthenticated: true }))
         }
       }
 
