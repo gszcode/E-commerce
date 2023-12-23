@@ -8,13 +8,12 @@ import Image from '../../Image'
 import Menu from '../Menu'
 import { SubMenu } from '../../../typescript/types/submenu'
 import SubNavCart from '../SubNavCart'
-import { useSelector } from 'react-redux'
-import { UserApi } from '../../../typescript/interfaces/user.interface'
+import { useAuthenticate } from '../../../hooks/useAuthenticate'
 
 const SMNavbar = () => {
   const [openMenu, setOpenMenu] = useState(false)
   const [openUserMenu, setOpenUserMenu] = useState<SubMenu>(null)
-  const { user } = useSelector((state: UserApi) => state.user as UserApi)
+  const { isAuthenticated } = useAuthenticate()
 
   const handleOpenMenu = () => {
     setOpenMenu((prev) => !prev)
@@ -62,10 +61,10 @@ const SMNavbar = () => {
 
           {openUserMenu === 'user' && (
             <SubNav
-              links={user ? active_user_menu_links : user_menu_links}
+              links={isAuthenticated ? active_user_menu_links : user_menu_links}
               openSubNav={openUserMenu}
               setOpenSubNav={setOpenUserMenu}
-              active={user && true}
+              active={isAuthenticated && true}
             />
           )}
         </button>
