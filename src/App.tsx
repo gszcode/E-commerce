@@ -20,7 +20,6 @@ axios.defaults.withCredentials = true
 function App() {
   const dispatch = useDispatch()
   const [loading, setLoading] = useState(true)
-  console.log(loading)
 
   useEffect(() => {
     const checkLogin = async () => {
