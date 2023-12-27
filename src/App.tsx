@@ -11,59 +11,25 @@ import FavoriteProducts from './page/FavoriteProducts'
 import axios from 'axios'
 import ProtectedRoute from './ProtectedRoute'
 import { useEffect, useState } from 'react'
-import Cookies from 'js-cookie'
-import { get } from './services/fetch'
 import { useDispatch } from 'react-redux'
-import { setUserData } from './store/features/user/userSlice'
+import Loader from './components/Loader'
+import { useCheckLogin } from './hooks/useCheckLogin'
 axios.defaults.withCredentials = true
 
 function App() {
   const dispatch = useDispatch()
   const [loading, setLoading] = useState(true)
+  const { checkLogin } = useCheckLogin({ setLoading })
 
   useEffect(() => {
-    const checkLogin = async () => {
-      setLoading(true)
-      const cookies = Cookies.get()
-
-      if (!cookies.token) {
-        dispatch(setUserData({ user: null, isAuthenticated: false }))
-        setLoading(false)
-        return
-      }
-
-      try {
-        const response = await get('auth/verify-token')
-        if (response.status !== 200) {
-          dispatch(setUserData({ user: null, isAuthenticated: false }))
-          return
-        }
-
-        dispatch(setUserData({ user: response.data, isAuthenticated: true }))
-      } catch (error) {
-        dispatch(setUserData({ user: null, isAuthenticated: false }))
-      } finally {
-        setLoading(false)
-      }
-    }
-
     checkLogin()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch])
 
   return (
     <Layout>
       {loading ? (
-        <div
-          style={{
-            height: '70vh',
-            color: 'black',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center'
-          }}
-        >
-          <p>Cargando...</p>
-        </div>
+        <Loader />
       ) : (
         <Routes>
           <Route path="/" element={<Home />} />
