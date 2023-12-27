@@ -49,9 +49,9 @@ const Footer = () => {
           title="CONTACTO"
           links={[
             'minimo-shoes.com',
-            'DIRECCIÓN: Avenida Alameda 74 03803 Alcoy (Alicante) España',
-            'TELÉFONO: 966523583',
-            'E-MAIL: test@mabisy.com'
+            'DIRECCIÓN: Avenida Almendra 44 07888 Alcoya (Buenos Aires) Argentina',
+            'TELÉFONO: 9966451202',
+            'E-MAIL: imperio@shoes.com'
           ]}
         />
       </div>
