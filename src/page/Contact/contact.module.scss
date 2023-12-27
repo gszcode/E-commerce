@@ -1,0 +1,94 @@
+@import '../../index.scss';
+
+.container {
+  .contact {
+    @include flex(column, center, center);
+    padding: 40px 20px;
+    .address_container,
+    .contact_form {
+      @include flex(column, center, center, 10px);
+      margin: 20px 0;
+      .subtitle {
+        @include size-weight(19px, 500);
+        color: $text-color;
+        img {
+          margin-right: 3px;
+        }
+      }
+      .sub_subtitle {
+        @include size-weight(13px, 300);
+        color: $text-color;
+      }
+      p {
+        @include size-weight(13px, 400);
+        color: $text-color;
+        span {
+          color: $hover-color;
+          letter-spacing: 0.5px;
+          font-weight: 300;
+        }
+      }
+    }
+    .contact_form {
+      .form {
+        @include width-height(85%, auto);
+        @include flex(column, center, center, 20px);
+        margin: 15px 0;
+        .data_container {
+          @include width-height(100%, auto);
+          .data {
+            @include flex(column, center, center, 20px);
+          }
+          .data:last-child {
+            margin-top: 20px;
+          }
+          .msg {
+            @include width-height(100%, auto);
+            label {
+              @include size-weight(14px, 600);
+              text-align: start;
+              color: $text-color;
+            }
+            textarea {
+              @include width-height(100%, 200px);
+              background-color: $background-secondary;
+              border: none;
+              padding: 5px 15px;
+              color: $text-color-secondary;
+              border-radius: 5px;
+              outline: none;
+              resize: none;
+              &:focus {
+                background-color: $background-color;
+                border: 1px solid $hover-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Media querys
+@media (min-width: 1024px) {
+  .container {
+    .contact {
+      .contact_form {
+        width: 70%;
+        .form {
+          width: 100%;
+          .data_container {
+            @include flex(row, center, center);
+            .data {
+              width: 50%;
+            }
+            .msg {
+              width: 85%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
