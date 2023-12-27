@@ -2,7 +2,7 @@ import styles from './register.module.scss'
 import BreadCrumbs from '../../components/BreadCrumbs'
 import { Link } from 'react-router-dom'
 import CheckBox from '../../components/CheckBox'
-import RegisterInput from '../../components/InputLoginRegister'
+import RegisterInput from '../../components/Input'
 import Button from '../../components/Button'
 import { useFormAuth } from '../../hooks/useFormAuth'
 

@@ -1,7 +1,7 @@
 import styles from './login.module.scss'
 import BreadCrumbs from '../../components/BreadCrumbs'
 import { Link } from 'react-router-dom'
-import LoginInput from '../../components/InputLoginRegister'
+import LoginInput from '../../components/Input'
 import Button from '../../components/Button'
 import { useFormAuth } from '../../hooks/useFormAuth'
 
