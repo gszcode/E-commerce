@@ -11,7 +11,9 @@ const initialValues = {
   last_name: '',
   username: '',
   email: '',
-  password: ''
+  password: '',
+  privacy_policy: false,
+  purchase_conditions: false
 }
 
 const Register = () => {
@@ -65,14 +67,18 @@ const Register = () => {
           <CheckBox
             text="He leído y acepto la"
             linkText="Política de Privacidad"
-            href="/"
+            href="/privacy-policy"
             idFor="privacy_policy"
+            name="privacy_policy"
+            formik={formik}
           />
           <CheckBox
             text="He leído y acepto las"
             linkText="Condiciones generales de compra"
-            href="/"
+            href="/purchas-conditions"
             idFor="purchase_conditions"
+            name="purchase_conditions"
+            formik={formik}
           />
           <Button text="REGISTRARSE" type="submit" />
           <Link to="/login" className={styles.already_account}>

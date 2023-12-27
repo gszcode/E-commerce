@@ -14,9 +14,10 @@ const Footer = () => {
         <CheckBox
           text="He leído y estoy conforme con la"
           linkText="Política de Protección de Datos"
-          href="/"
+          href="/data-protection"
           footerStyle={true}
           idFor="data_protection"
+          name="data-protection"
         />
       </div>
       <div className={styles.links}>
