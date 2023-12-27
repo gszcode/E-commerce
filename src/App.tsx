@@ -14,6 +14,7 @@ import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import Loader from './components/Loader'
 import { useCheckLogin } from './hooks/useCheckLogin'
+import Contact from './page/Contact'
 axios.defaults.withCredentials = true
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/contact" element={<Contact />} />
 
           <Route element={<ProtectedRoute />}>
             <Route path="/account" element={<Account />} />
