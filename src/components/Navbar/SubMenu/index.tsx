@@ -11,9 +11,10 @@ interface Links {
 interface SubNavProps {
   links: Array<Links>
   handleOpenSubNav: (menu: MenuType) => void
+  handleOpenMenu: () => void
 }
 
-const SubMenu = ({ handleOpenSubNav, links }: SubNavProps) => {
+const SubMenu = ({ handleOpenSubNav, links, handleOpenMenu }: SubNavProps) => {
   return (
     <div className={styles.submenu}>
       <p onClick={() => handleOpenSubNav(null)} className={styles.back}>
@@ -22,7 +23,12 @@ const SubMenu = ({ handleOpenSubNav, links }: SubNavProps) => {
       </p>
       <ul className={styles.sub_list}>
         {links.map(({ link, href }) => (
-          <Link className={styles.item} key={href} to={`/${href}`}>
+          <Link
+            className={styles.item}
+            key={href}
+            to={`/${href}`}
+            onClick={handleOpenMenu}
+          >
             {link}
           </Link>
         ))}

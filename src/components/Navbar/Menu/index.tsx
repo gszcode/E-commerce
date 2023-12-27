@@ -31,7 +31,7 @@ const Menu = ({ openMenu, handleOpenMenu }: MenuProps) => {
         </button>
       </div>
       <ul className={styles.list}>
-        <Link className={styles.item} to="/">
+        <Link className={styles.item} to="/" onClick={handleOpenMenu}>
           INICIO
         </Link>
         <span onClick={() => handleOpenSubNav('clothes')}>
@@ -48,6 +48,7 @@ const Menu = ({ openMenu, handleOpenMenu }: MenuProps) => {
             <SubMenu
               handleOpenSubNav={handleOpenSubNav}
               links={clothes_links}
+              handleOpenMenu={handleOpenMenu}
             />
           )}
         </span>
@@ -62,13 +63,17 @@ const Menu = ({ openMenu, handleOpenMenu }: MenuProps) => {
           </p>
           {/* submenu */}
           {openSubNav === 'home' && (
-            <SubMenu handleOpenSubNav={handleOpenSubNav} links={home_links} />
+            <SubMenu
+              handleOpenSubNav={handleOpenSubNav}
+              links={home_links}
+              handleOpenMenu={handleOpenMenu}
+            />
           )}
         </span>
-        <Link className={styles.item} to="/">
+        <Link className={styles.item} to="/" onClick={handleOpenMenu}>
           BICICLETAS MONTAÑERAS
         </Link>
-        <Link className={styles.item} to="/">
+        <Link className={styles.item} to="/contact" onClick={handleOpenMenu}>
           CONTACTO
         </Link>
       </ul>
