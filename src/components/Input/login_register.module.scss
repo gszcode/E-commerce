@@ -1,0 +1,38 @@
+@import '../../index.scss';
+
+.input_container {
+  @include width-height(100%, 75px);
+  position: relative;
+  label {
+    @include size-weight(14px, 600);
+    display: block;
+    text-align: start;
+    color: $text-color;
+  }
+  input {
+    @include width-height(100%, 40px);
+    background-color: $background-secondary;
+    border: none;
+    padding: 2px 15px;
+    color: $text-color-secondary;
+    border-radius: 5px;
+    outline: none;
+    &:focus {
+      background-color: $background-color;
+      border: 1px solid $hover-color;
+    }
+  }
+  .eye {
+    background-color: $background-secondary;
+    position: absolute;
+    top: 34px;
+    right: 20px;
+  }
+}
+
+// Media querys
+@media (min-width: 1024px) {
+  .input_container {
+    width: 85%;
+  }
+}
