@@ -6,9 +6,9 @@ export interface User {
 }
 
 export interface Auth extends User {
-  privacy_policy: boolean
-  purchase_conditions: boolean
   password: string
+  privacy_policy?: boolean
+  purchase_conditions?: boolean
   [key: string]: string | boolean | undefined
 }
 
