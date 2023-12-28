@@ -4,10 +4,25 @@ import ProductCard from '../../components/ProductCard'
 import styles from './products.module.scss'
 import { products } from '../../json/offers_products'
 import { productsPage } from '../../json/products'
+import ReactPaginate from 'react-paginate'
+import { useState } from 'react'
 
 const productos = [...products, ...productsPage]
 
 const Products = () => {
+  const [currentPage, setCurrentPage] = useState(0)
+  const itemsPerPage = 6
+  const indexOfLastProduct = (currentPage + 1) * itemsPerPage
+  const indexOfFirstProduct = indexOfLastProduct - itemsPerPage
+  const currentProducts = productos.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  )
+
+  const handlePageClick = ({ selected }: { selected: number }) => {
+    setCurrentPage(selected)
+  }
+
   return (
     <section className={styles.container}>
       <BreadCrumbs page="Productos" />
@@ -30,10 +45,19 @@ const Products = () => {
           </select>
         </div>
         <div className={styles.products}>
-          {productos.map((product) => (
+          {currentProducts.map((product) => (
             <ProductCard key={product.id} {...product} />
           ))}
         </div>
+        <ReactPaginate
+          breakLabel="..."
+          nextLabel={<Image img="arrow_right" alt="Next" />}
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={5}
+          pageCount={Math.ceil(productos.length / itemsPerPage)}
+          previousLabel={<Image img="arrow_left" alt="Prev" />}
+          renderOnZeroPageCount={null}
+        />
       </div>
     </section>
   )

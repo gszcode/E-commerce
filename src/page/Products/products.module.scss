@@ -55,6 +55,29 @@
       @include flex(column, center, center, 15px);
       margin: 20px 0;
     }
+    ul {
+      @include flex(row, center, center, 15px);
+      list-style: none;
+      margin-top: 50px;
+      li:first-child,
+      li:last-child {
+        a {
+          @include width-height(17px, 17px);
+          display: block;
+        }
+      }
+      li {
+        @include size-weight(14px, 300);
+        color: $hover-color;
+        padding: 10px 20px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        &:hover {
+          background-color: $background-secondary;
+          color: $text-color;
+        }
+      }
+    }
   }
 }
 
