@@ -34,6 +34,9 @@ const Menu = ({ openMenu, handleOpenMenu }: MenuProps) => {
         <Link className={styles.item} to="/" onClick={handleOpenMenu}>
           INICIO
         </Link>
+        <Link className={styles.item} to="/products" onClick={handleOpenMenu}>
+          PRODUCTOS
+        </Link>
         <span onClick={() => handleOpenSubNav('clothes')}>
           <p className={`${styles.item} ${styles.drop}`}>
             ROPA

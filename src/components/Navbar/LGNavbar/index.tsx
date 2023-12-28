@@ -18,6 +18,9 @@ const LGNavbar = () => {
         <Link className={styles.item} to="/">
           INICIO
         </Link>
+        <Link className={styles.item} to="/products">
+          PRODUCTOS
+        </Link>
         <span
           onClick={() => handleOpenSubNav('clothes')}
           className={`${styles.item} ${styles.clothes}`}

@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 import styles from './carousel.module.scss'
-import ProductCard from './ProductCard'
-import { OfferProduct } from '../../typescript/interfaces/offer_product.interface'
+import ProductCard from '../ProductCard'
+import { Product } from '../../typescript/interfaces/product.interface'
 
 interface CarouselProps {
-  products: OfferProduct[]
+  products: Product[]
 }
 
 const Carousel = ({ products }: CarouselProps) => {
