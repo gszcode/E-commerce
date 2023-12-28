@@ -24,7 +24,9 @@ const ProductCard = ({
         <p className={styles.description}>{description}</p>
         <p className={styles.price_text}>
           precio: <span className={styles.price}>${price}</span>{' '}
-          <span className={styles.prev_price}>${prev_price}</span>
+          {prev_price && (
+            <span className={styles.prev_price}>${prev_price}</span>
+          )}
         </p>
       </div>
 
