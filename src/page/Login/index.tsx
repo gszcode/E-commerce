@@ -42,7 +42,7 @@ const Login = () => {
           <Link to="/register" className={styles.create_account}>
             ¿No tienes cuenta? Registrarse.
           </Link>
-          <Link to="/" className={styles.forgot}>
+          <Link to="/forgot-password" className={styles.forgot}>
             ¿Has olvidado la contraseña?
           </Link>
         </form>

@@ -16,6 +16,7 @@ import Loader from './components/Loader'
 import { useCheckLogin } from './hooks/useCheckLogin'
 import Contact from './page/Contact'
 import Products from './page/Products'
+import ForgotPassword from './page/ForgotPassword'
 axios.defaults.withCredentials = true
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
 
           <Route element={<ProtectedRoute />}>
             <Route path="/account" element={<Account />} />
