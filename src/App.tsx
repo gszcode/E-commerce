@@ -15,8 +15,14 @@ import { useDispatch } from 'react-redux'
 import Loader from './components/Loader'
 import { useCheckLogin } from './hooks/useCheckLogin'
 import Contact from './page/Contact'
-import Products from './page/Products'
 import ForgotPassword from './page/ForgotPassword'
+import AllProducts from './page/Products/AllProducts'
+import PajamaBlanket from './page/Products/ClothesProducts/PajamasBlankets'
+import Underwear from './page/Products/ClothesProducts/Underwear'
+import Sneakers from './page/Products/ClothesProducts/Sneakers'
+import Blankets from './page/Products/HomeProducts/Blankets'
+import Sofas from './page/Products/HomeProducts/Sofas'
+import Several from './page/Products/HomeProducts/Several'
 axios.defaults.withCredentials = true
 
 function App() {
@@ -39,7 +45,13 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/products" element={<Products />} />
+          <Route path="/products" element={<AllProducts />} />
+          <Route path="/products/pajama-blanket" element={<PajamaBlanket />} />
+          <Route path="/products/underwear" element={<Underwear />} />
+          <Route path="/products/sneakers" element={<Sneakers />} />
+          <Route path="/products/blankets" element={<Blankets />} />
+          <Route path="/products/sofas" element={<Sofas />} />
+          <Route path="/products/several" element={<Several />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
 
           <Route element={<ProtectedRoute />}>
