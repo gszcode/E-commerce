@@ -1,30 +1,30 @@
 export const clothes_links = [
   {
     link: 'Pijamas y Batamantas',
-    href: 'pajamas-and-blankets '
+    href: 'products/pajama-blanket'
   },
   {
     link: 'Ropa interior',
-    href: 'underwear'
+    href: 'products/underwear'
   },
   {
     link: 'Zapatillas Deportivas',
-    href: 'sneakers'
+    href: 'products/sneakers'
   }
 ]
 
 export const home_links = [
   {
     link: 'Mantas',
-    href: 'blankets'
+    href: 'products/blankets'
   },
   {
     link: 'Sofás',
-    href: 'sofas'
+    href: 'products/sofas'
   },
   {
     link: 'Varios',
-    href: 'several'
+    href: 'products/several'
   }
 ]
 
@@ -59,7 +59,7 @@ export const active_user_menu_links = [
   },
   {
     link: 'Cerrar sesión',
-    href: 'logput',
+    href: 'logout',
     icon: 'logout'
   }
 ]
