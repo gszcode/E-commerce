@@ -73,7 +73,11 @@ const Menu = ({ openMenu, handleOpenMenu }: MenuProps) => {
             />
           )}
         </span>
-        <Link className={styles.item} to="/" onClick={handleOpenMenu}>
+        <Link
+          className={styles.item}
+          to="/products/mountain-bikes"
+          onClick={handleOpenMenu}
+        >
           BICICLETAS MONTAÑERAS
         </Link>
         <Link className={styles.item} to="/contact" onClick={handleOpenMenu}>

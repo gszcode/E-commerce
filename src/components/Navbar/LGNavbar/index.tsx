@@ -58,7 +58,7 @@ const LGNavbar = () => {
             }
           </span>
         </div>
-        <Link className={styles.item} to="/mountain-bikes">
+        <Link className={styles.item} to="/products/mountain-bikes">
           BICICLETAS MONTAÑERA
         </Link>
         <Link className={styles.item} to="/contact">
