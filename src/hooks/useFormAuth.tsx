@@ -41,11 +41,13 @@ export const useFormAuth = (initialValues: Auth) => {
       if (values.first_name) {
         response = await post('auth/register', values)
         if (response.status === 201) notify(response.data.message)
+        formik.resetForm()
       } else {
         response = await post('auth/login', values)
         if (response.status === 200) {
           const { message, user } = response.data
           notify(message)
+          formik.resetForm()
           dispatch(setUserData({ user, isAuthenticated: true }))
         }
       }
