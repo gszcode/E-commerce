@@ -1,6 +1,5 @@
 import styles from './subnav.module.scss'
 import { Link } from 'react-router-dom'
-import { useCloseDrop } from '../../../hooks/useCloseDrop'
 import { SubMenu } from '../../../typescript/types/submenu'
 import Image from '../../Image'
 import { post } from '../../../services/fetch'
@@ -21,7 +20,6 @@ interface SubNavProps {
 }
 
 const SubNav = ({ links, openSubNav, setOpenSubNav, active }: SubNavProps) => {
-  const { closeRef } = useCloseDrop(setOpenSubNav)
   const dispatch = useDispatch()
 
   const handleLinkClick = () => {
@@ -36,7 +34,6 @@ const SubNav = ({ links, openSubNav, setOpenSubNav, active }: SubNavProps) => {
 
   return (
     <div
-      ref={closeRef}
       className={`${styles.subnav} ${styles[openSubNav as string]} ${
         active && styles.active
       }`}

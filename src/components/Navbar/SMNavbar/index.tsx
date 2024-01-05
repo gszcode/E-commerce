@@ -9,11 +9,13 @@ import Menu from '../Menu'
 import { SubMenu } from '../../../typescript/types/submenu'
 import SubNavCart from '../SubNavCart'
 import { useAuthenticate } from '../../../hooks/useAuthenticate'
+import { useCloseDrop } from '../../../hooks/useCloseDrop'
 
 const SMNavbar = () => {
   const [openMenu, setOpenMenu] = useState(false)
   const [openUserMenu, setOpenUserMenu] = useState<SubMenu>(null)
   const { isAuthenticated } = useAuthenticate()
+  const { closeRef } = useCloseDrop(setOpenUserMenu)
 
   const handleOpenMenu = () => {
     setOpenMenu((prev) => !prev)
@@ -44,7 +46,7 @@ const SMNavbar = () => {
       {/* Menu Escritorio */}
       <LGNavbar />
 
-      <div className={styles.icons}>
+      <div className={styles.icons} ref={closeRef}>
         <Image img="search" alt="Search" title="Buscar" />
         <button onClick={() => handleOpenSubNav('cart')} className="icon_btn">
           <Image img="cart" alt="Cart" title="Carrito" />
