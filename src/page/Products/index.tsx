@@ -6,7 +6,12 @@ import ReactPaginate from 'react-paginate'
 import { useState } from 'react'
 import { Product } from '../../typescript/interfaces/product.interface'
 
-const Products = ({ products }: { products: Array<Product> }) => {
+interface ProductsProps {
+  products: Array<Product>
+  page: string
+}
+
+const Products = ({ products, page = '' }: ProductsProps) => {
   const [currentPage, setCurrentPage] = useState(0)
   const itemsPerPage = 12
   const indexOfLastProduct = (currentPage + 1) * itemsPerPage
@@ -22,7 +27,7 @@ const Products = ({ products }: { products: Array<Product> }) => {
 
   return (
     <section className={styles.container}>
-      <BreadCrumbs page="Productos" />
+      <BreadCrumbs page={`Productos ${page}`} />
       <div className={styles.products_container}>
         <div className={styles.filters}>
           <div className={styles.filter}>

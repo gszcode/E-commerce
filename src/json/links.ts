@@ -1,6 +1,6 @@
 export const clothes_links = [
   {
-    link: 'Pijamas y Batamantas',
+    link: 'Pijamas y Mantas',
     href: 'products/pajama-blanket'
   },
   {
@@ -8,7 +8,7 @@ export const clothes_links = [
     href: 'products/underwear'
   },
   {
-    link: 'Zapatillas Deportivas',
+    link: 'Zapatillas',
     href: 'products/sneakers'
   }
 ]
