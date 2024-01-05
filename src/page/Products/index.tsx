@@ -2,19 +2,16 @@ import BreadCrumbs from '../../components/BreadCrumbs'
 import Image from '../../components/Image'
 import ProductCard from '../../components/ProductCard'
 import styles from './products.module.scss'
-import { products } from '../../json/offers_products'
-import { productsPage } from '../../json/products'
 import ReactPaginate from 'react-paginate'
 import { useState } from 'react'
+import { Product } from '../../typescript/interfaces/product.interface'
 
-const productos = [...products, ...productsPage]
-
-const Products = () => {
+const Products = ({ products }: { products: Array<Product> }) => {
   const [currentPage, setCurrentPage] = useState(0)
-  const itemsPerPage = 6
+  const itemsPerPage = 12
   const indexOfLastProduct = (currentPage + 1) * itemsPerPage
   const indexOfFirstProduct = indexOfLastProduct - itemsPerPage
-  const currentProducts = productos.slice(
+  const currentProducts = products.slice(
     indexOfFirstProduct,
     indexOfLastProduct
   )
@@ -32,7 +29,9 @@ const Products = () => {
             <button title="Filtro">
               <Image img="filter" alt="Filter" /> Filtro
             </button>
-            <span>Mostrados 24 productos de 256</span>
+            <span>
+              Mostrados {itemsPerPage} productos de {products.length}
+            </span>
           </div>
           <select className={styles.select}>
             <option value="1">Selección recomendada</option>
@@ -54,7 +53,7 @@ const Products = () => {
           nextLabel={<Image img="arrow_right" alt="Next" />}
           onPageChange={handlePageClick}
           pageRangeDisplayed={5}
-          pageCount={Math.ceil(productos.length / itemsPerPage)}
+          pageCount={Math.ceil(products.length / itemsPerPage)}
           previousLabel={<Image img="arrow_left" alt="Prev" />}
           renderOnZeroPageCount={null}
         />
