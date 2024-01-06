@@ -1,7 +1,7 @@
 @import '../../index.scss';
 
 .wrapper {
-  min-height: 80vh;
+  min-height: 60vh;
   @include width-height(100%, 100%);
   @include flex(row, space-evenly, flex-start);
 }
