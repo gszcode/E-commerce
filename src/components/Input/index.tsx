@@ -38,7 +38,7 @@ const Input = ({
         autoComplete="current-password"
       />
       <ErrorMessage formik={formik} name={name} />
-      {name === 'password' && (
+      {textType === 'password' && (
         <button
           type="button"
           className={`icon_btn ${styles.eye}`}
