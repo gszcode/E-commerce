@@ -5,6 +5,7 @@ import styles from './products.module.scss'
 import ReactPaginate from 'react-paginate'
 import { useState } from 'react'
 import { Product } from '../../typescript/interfaces/product.interface'
+import NoProducts from './NoProducts'
 
 interface ProductsProps {
   products: Array<Product>
@@ -48,20 +49,26 @@ const Products = ({ products, page = '' }: ProductsProps) => {
             <option value="7">Valoración (de mayor a menor)</option>
           </select>
         </div>
-        <div className={styles.products}>
-          {currentProducts.map((product) => (
-            <ProductCard key={product.id} {...product} />
-          ))}
-        </div>
-        <ReactPaginate
-          breakLabel="..."
-          nextLabel={<Image img="arrow_right" alt="Next" />}
-          onPageChange={handlePageClick}
-          pageRangeDisplayed={5}
-          pageCount={Math.ceil(products.length / itemsPerPage)}
-          previousLabel={<Image img="arrow_left" alt="Prev" />}
-          renderOnZeroPageCount={null}
-        />
+        {products.length > 0 ? (
+          <>
+            <div className={styles.products}>
+              {currentProducts.map((product) => (
+                <ProductCard key={product.id} {...product} />
+              ))}
+            </div>
+            <ReactPaginate
+              breakLabel="..."
+              nextLabel={<Image img="arrow_right" alt="Next" />}
+              onPageChange={handlePageClick}
+              pageRangeDisplayed={5}
+              pageCount={Math.ceil(products.length / itemsPerPage)}
+              previousLabel={<Image img="arrow_left" alt="Prev" />}
+              renderOnZeroPageCount={null}
+            />
+          </>
+        ) : (
+          <NoProducts />
+        )}
       </div>
     </section>
   )
