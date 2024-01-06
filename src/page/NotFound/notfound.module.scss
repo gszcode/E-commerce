@@ -1,6 +1,7 @@
 @import '../../index.scss';
 
 .container {
+  min-height: 80vh;
   @include width-height(100%, 100%);
   .not_found {
     @include width-height(300px, 120px);

@@ -35,7 +35,7 @@ const Products = ({ products, page = '' }: ProductsProps) => {
               <Image img="filter" alt="Filter" /> Filtro
             </button>
             <span>
-              Mostrados {itemsPerPage} productos de {products.length}
+              Mostrados {currentProducts.length} productos de {products.length}
             </span>
           </div>
           <select className={styles.select}>
