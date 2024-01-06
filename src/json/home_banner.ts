@@ -16,9 +16,9 @@ export const banners = [
   {
     id: 3,
     image: '/assets/home_section_banner_03.jpg',
-    altText: 'Mountain Bikes Banner',
-    title: 'BICICLETAS MONTAÑERA',
-    href: 'products/mountain-bikes'
+    altText: 'Sport Products',
+    title: 'DEPORTES',
+    href: 'products/sports'
   },
   {
     id: 4,
