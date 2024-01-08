@@ -1,0 +1,15 @@
+@import '../../index.scss';
+
+.container {
+  @include width-height(80%, auto);
+  margin-top: 100px;
+  border: 1px solid #2badd4;
+  background-color: #eaf7fb;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.25rem;
+  .title {
+    @include size-weight(14px, 300);
+    color: #2badd4;
+    text-align: center;
+  }
+}
