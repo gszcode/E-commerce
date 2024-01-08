@@ -2,7 +2,8 @@
 
 .container {
   .recovery {
-    @include width-height(100%, auto);
+    min-height: 80vh;
+    @include width-height(100%, 100%);
     @include flex(column, center, center);
     padding: 40px 20px;
     .form {
