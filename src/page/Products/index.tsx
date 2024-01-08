@@ -5,7 +5,7 @@ import styles from './products.module.scss'
 import ReactPaginate from 'react-paginate'
 import { useState } from 'react'
 import { Product } from '../../typescript/interfaces/product.interface'
-import NoProducts from './NoProducts'
+import Message from '../../components/Message'
 
 interface ProductsProps {
   products: Array<Product>
@@ -67,7 +67,7 @@ const Products = ({ products, page = '' }: ProductsProps) => {
             />
           </>
         ) : (
-          <NoProducts />
+          <Message message="No se han encontrado productos en esta categoría" />
         )}
       </div>
     </section>
