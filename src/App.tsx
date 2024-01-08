@@ -24,6 +24,7 @@ import Blankets from './page/Products/HomeProducts/Blankets'
 import Sofas from './page/Products/HomeProducts/Sofas'
 import Several from './page/Products/HomeProducts/Several'
 import SportProducts from './page/Products/SportProducts'
+import RecoveryPassword from './page/RecoveryPassword'
 axios.defaults.withCredentials = true
 
 function App() {
@@ -55,6 +56,10 @@ function App() {
           <Route path="/products/several" element={<Several />} />
           <Route path="/products/sports" element={<SportProducts />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route
+            path="/recovery-password/:token"
+            element={<RecoveryPassword />}
+          />
 
           <Route element={<ProtectedRoute />}>
             <Route path="/account" element={<Account />} />
