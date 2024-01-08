@@ -16,3 +16,8 @@ export interface UserApi {
   user: User | null
   isAuthenticated?: boolean
 }
+
+export interface RecoveryPassword {
+  password: string
+  repassword: string
+}
