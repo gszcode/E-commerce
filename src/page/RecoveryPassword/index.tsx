@@ -4,6 +4,7 @@ import Button from '../../components/Button'
 import Input from '../../components/Input'
 import styles from './recovery_pasword.module.scss'
 import { useFormRecoveryPass } from '../../hooks/useFormRecoveryPassword'
+import { useParams } from 'react-router-dom'
 
 const initialValues = {
   password: '',
@@ -11,7 +12,8 @@ const initialValues = {
 }
 
 const RecoveryPassword = () => {
-  const formik = useFormRecoveryPass(initialValues)
+  const { token } = useParams()
+  const formik = useFormRecoveryPass(initialValues, token)
 
   return (
     <section className={styles.container}>
