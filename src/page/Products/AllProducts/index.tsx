@@ -19,7 +19,13 @@ const allProducts = [
 ]
 
 const AllProducts = () => {
-  return <Products products={allProducts} page="/ Todos" />
+  return (
+    <Products
+      products={allProducts}
+      page="/ Todos"
+      title="TODOS LOS PRODUCTOS"
+    />
+  )
 }
 
 export default AllProducts
