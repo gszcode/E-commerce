@@ -9,6 +9,7 @@ interface CarouselProps {
 
 const Carousel = ({ products }: CarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [containerWidth, setContainerWidth] = useState(window.innerWidth)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -32,6 +33,15 @@ const Carousel = ({ products }: CarouselProps) => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % products.length)
   }
 
+  const handleTransitionEnd = () => {
+    const lastVisibleIndex =
+      Math.floor(containerWidth / (containerWidth / itemsPerScreen)) - 1
+
+    if (currentIndex === lastVisibleIndex) {
+      setCurrentIndex(0)
+    }
+  }
+
   const getItemsPerScreen = () => {
     const screenWidth = window.innerWidth
     if (screenWidth >= 1025) {
@@ -46,12 +56,16 @@ const Carousel = ({ products }: CarouselProps) => {
   const itemsPerScreen = getItemsPerScreen()
 
   return (
-    <div className={styles.carousel}>
+    <div
+      className={styles.carousel}
+      style={{ maxWidth: `${itemsPerScreen * 100}%` }}
+    >
       <div
         className={styles.carousel_container}
         style={{
           transform: `translateX(-${currentIndex * (100 / itemsPerScreen)}%)`
         }}
+        onTransitionEnd={handleTransitionEnd}
       >
         {products.map((product) => (
           <ProductCard key={product.id} {...product} />
