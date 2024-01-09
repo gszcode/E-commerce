@@ -10,9 +10,10 @@ import Message from '../../components/Message'
 interface ProductsProps {
   products: Array<Product>
   page: string
+  title: string
 }
 
-const Products = ({ products, page = '' }: ProductsProps) => {
+const Products = ({ products, page = '', title }: ProductsProps) => {
   const [currentPage, setCurrentPage] = useState(0)
   const itemsPerPage = 12
   const indexOfLastProduct = (currentPage + 1) * itemsPerPage
@@ -30,6 +31,7 @@ const Products = ({ products, page = '' }: ProductsProps) => {
     <section className={styles.container}>
       <BreadCrumbs page={`Productos ${page}`} />
       <div className={styles.products_container}>
+        <h1 className={styles.title}>{title}</h1>
         <div className={styles.filters}>
           <div className={styles.filter}>
             <button title="Filtro">
