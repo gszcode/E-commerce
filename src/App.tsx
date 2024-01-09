@@ -25,6 +25,10 @@ import Sofas from './page/Products/HomeProducts/Sofas'
 import Several from './page/Products/HomeProducts/Several'
 import SportProducts from './page/Products/SportProducts'
 import RecoveryPassword from './page/RecoveryPassword'
+import HomeProducts from './page/Products/HomeProducts'
+import OffersProducts from './page/Products/OffersProducts'
+import ComplementsProducts from './page/Products/ComplementsProducts'
+import RoadBikes from './page/Products/BikeProducts'
 axios.defaults.withCredentials = true
 
 function App() {
@@ -55,6 +59,13 @@ function App() {
           <Route path="/products/sofas" element={<Sofas />} />
           <Route path="/products/several" element={<Several />} />
           <Route path="/products/sports" element={<SportProducts />} />
+          <Route path="/products/home" element={<HomeProducts />} />
+          <Route path="/products/amazing-deals" element={<OffersProducts />} />
+          <Route path="/products/road-bikes" element={<RoadBikes />} />
+          <Route
+            path="/products/complements"
+            element={<ComplementsProducts />}
+          />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route
             path="/recovery-password/:token"
