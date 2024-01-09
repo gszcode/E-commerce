@@ -9,9 +9,9 @@ export const banners = [
   {
     id: 2,
     image: '/assets/home_section_banner_02.jpg',
-    altText: 'Equipment Banner',
-    title: 'EQUIPAMIENTO',
-    href: 'products/equipment'
+    altText: 'Complement Banner',
+    title: 'COMPLEMENTO',
+    href: 'products/complements'
   },
   {
     id: 3,
