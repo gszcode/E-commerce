@@ -3,6 +3,12 @@
 .container {
   .products_container {
     padding: 40px 20px;
+    .title {
+      @include size-weight(30px, 500);
+      text-align: center;
+      color: $text-color;
+      margin: -20px 0 20px 0;
+    }
     .filters {
       .filter {
         @include flex(row, space-between, center);
