@@ -5,8 +5,8 @@ import styles from './product_card.module.scss'
 
 const ProductCard = ({
   id,
-  image,
-  title,
+  images,
+  product_name,
   rating,
   description,
   price,
@@ -14,9 +14,9 @@ const ProductCard = ({
 }: Product) => {
   return (
     <Link to={`/product/${id}`} className={styles.carousel_item}>
-      <img src={image} alt={title} />
+      <img src={images[0]} alt={product_name} />
       <div className={styles.product_info}>
-        <h2 className={styles.title}>{title.toLocaleUpperCase()}</h2>
+        <h2 className={styles.title}>{product_name.toLocaleUpperCase()}</h2>
         <div className={styles.rating}>
           {Array.from({ length: rating }).map((_, index) => (
             <span key={index}>★</span>
