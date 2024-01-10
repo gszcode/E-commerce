@@ -1,0 +1,19 @@
+@import '../../../index.scss';
+
+.amount {
+  @include width-height(100%, auto);
+  @include size-weight(14px, 400);
+  border: $border-color;
+  border-radius: 5px;
+  padding: 8px 18px;
+  color: $text-color;
+  margin: 15px 0;
+  outline: none;
+}
+
+// Media queries
+@media (min-width: 1024px) {
+  .amout {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,38 @@
+@import '../../../index.scss';
+
+.image_container {
+  @include flex(column, center, center, 25px);
+  padding-top: 80px;
+  .img {
+    @include width-height(100%, auto);
+    min-width: 450px;
+    min-height: 300px;
+    img {
+      @include width-height(100%, 100%);
+      object-fit: cover;
+    }
+  }
+  .secondary_imgs {
+    @include width-height(100%, auto);
+    @include flex(row, space-evenly, center);
+    img {
+      @include width-height(80px, auto);
+      min-width: 80px;
+      min-height: 55px;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+// Media queries
+@media (min-width: 1024px) {
+  .image_container {
+    min-width: 530px;
+    padding: 40px;
+  }
+}
