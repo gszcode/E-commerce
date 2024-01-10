@@ -9,7 +9,7 @@ interface CarouselProps {
 
 const Carousel = ({ products }: CarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [containerWidth, setContainerWidth] = useState(window.innerWidth)
+  const [containerWidth] = useState(window.innerWidth)
 
   useEffect(() => {
     const interval = setInterval(() => {
