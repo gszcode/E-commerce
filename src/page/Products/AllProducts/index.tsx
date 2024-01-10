@@ -1,12 +1,13 @@
 import Products from '..'
 import { products } from '../../../json/offers_products'
-import { productsPage } from '../../../json/products'
 import { blankets, several, sofas } from '../../../json/home_products'
 import {
   pajamas_blankets,
   sneakers,
   underwear
 } from '../../../json/clothes_products'
+import { sports } from '../../../json/sports_products'
+import { bikes } from '../../../json/bikes_products'
 const allProducts = [
   ...products,
   ...pajamas_blankets,
@@ -15,7 +16,8 @@ const allProducts = [
   ...underwear,
   ...sneakers,
   ...several,
-  ...productsPage
+  ...sports,
+  ...bikes
 ]
 
 const AllProducts = () => {
