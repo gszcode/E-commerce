@@ -6,27 +6,6 @@
     padding: 40px 20px;
     .detail {
       position: relative;
-      .image_container {
-        @include flex(column, center, center, 25px);
-        padding-top: 80px;
-        .img {
-          @include width-height(100%, auto);
-          img {
-            @include width-height(100%, 100%);
-            object-fit: cover;
-          }
-        }
-        .secondary_imgs {
-          @include width-height(100%, auto);
-          @include flex(row, space-evenly, center);
-          img {
-            min-width: 80px;
-            min-height: 55px;
-            @include width-height(80px, auto);
-            object-fit: cover;
-          }
-        }
-      }
       .shopping_container {
         margin: 25px 0;
         .title {
@@ -39,23 +18,19 @@
         .price {
           @include size-weight(20px, 600);
           color: $price-color;
+          letter-spacing: 0.5px;
         }
-        .rating {
-          color: gold;
-          span {
+        .rating_container {
+          .rating {
             @include size-weight(14px, 300);
+            color: gold;
+          }
+          p {
+            @include size-weight(16px, 300);
+            display: inline;
+            margin-left: 5px;
             color: $price-color;
           }
-        }
-        .amount {
-          @include width-height(100%, auto);
-          @include size-weight(14px, 400);
-          border: $border-color;
-          border-radius: 5px;
-          padding: 8px 18px;
-          color: $text-color;
-          margin: 15px 0;
-          outline: none;
         }
         .btn_container {
           @include flex(row, space-between, center);
@@ -73,6 +48,25 @@
               color: $hover-color;
             }
           }
+        }
+        .stock {
+          width: 100%;
+          padding: 8px 18px;
+          text-align: center;
+          border-radius: 5px;
+          margin: 15px 0;
+          @include size-weight(14px, 600);
+          color: $text-color;
+        }
+        .green {
+          border: 1px solid #5cb85c;
+          background-color: #5cb85c30;
+          color: #5cb85c;
+        }
+        .red {
+          border: 1px solid $error-color;
+          background-color: #ed211430;
+          color: $error-color;
         }
       }
     }
@@ -117,21 +111,13 @@
     .product {
       .detail {
         @include flex(row, space-evenly, flex-start);
-        .image_container {
-          min-width: 530px;
-          padding: 40px;
-        }
         .shopping_container {
           @include flex(column, flex-start, flex-start, 10px);
           padding: 40px;
           .title,
           .price {
-            font-size: 25px;
+            font-size: 30px;
             position: relative;
-          }
-          .rating,
-          .amout {
-            font-size: 16px;
           }
           .btn_container {
             gap: 25px;
