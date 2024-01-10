@@ -1,66 +1,202 @@
 export const bikes = [
   {
-    id: 1,
-    image: '/assets/bike_01.jpg',
-    title: 'Product 1',
+    id: 11,
+    product_name: 'Nombre de Producto',
+    images: [
+      '/assets/bike_01.jpg',
+      '/assets/bike_02.jpg',
+      '/assets/bike_03.jpg',
+      '/assets/bike_04.jpg'
+    ],
     rating: 4,
     description: 'Description for Product 1',
-    price: 50
+    price: 50,
+    stock: 7,
+    category: 'Productos Bicicletas',
+    characteristics: [
+      'Potencia: 140 W',
+      'Frecuencia: 50 Hz',
+      'Tensión: 220-240 V',
+      'Intervalo de temperatura: 7-18 °C',
+      'Enfría bajo la temperatura ambiente hasta: 18°C',
+      'Clase energética: C',
+      'Consumo de energía anual: 193 kWh'
+    ],
+    size: null
   },
   {
-    id: 2,
-    image: '/assets/bike_02.jpg',
-    title: 'Product 2',
+    id: 12,
+    product_name: 'Nombre de Producto',
+    images: [
+      '/assets/bike_02.jpg',
+      '/assets/bike_02.jpg',
+      '/assets/bike_03.jpg',
+      '/assets/bike_04.jpg'
+    ],
     rating: 3,
     description: 'Description for Product 2',
-    price: 35
+    price: 35,
+    stock: 0,
+    category: 'Productos Bicicletas',
+    characteristics: [
+      'Potencia: 140 W',
+      'Frecuencia: 50 Hz',
+      'Tensión: 220-240 V',
+      'Intervalo de temperatura: 7-18 °C',
+      'Enfría bajo la temperatura ambiente hasta: 18°C',
+      'Clase energética: C',
+      'Consumo de energía anual: 193 kWh'
+    ],
+    size: null
   },
   {
-    id: 3,
-    image: '/assets/bike_03.jpg',
-    title: 'Product 3',
+    id: 13,
+    product_name: 'Nombre de Producto',
+    images: [
+      '/assets/bike_03.jpg',
+      '/assets/bike_02.jpg',
+      '/assets/bike_03.jpg',
+      '/assets/bike_04.jpg'
+    ],
     rating: 4,
     description: 'Description for Product 3',
-    price: 50
+    price: 50,
+    stock: 7,
+    category: 'Productos Bicicletas',
+    characteristics: [
+      'Potencia: 140 W',
+      'Frecuencia: 50 Hz',
+      'Tensión: 220-240 V',
+      'Intervalo de temperatura: 7-18 °C',
+      'Enfría bajo la temperatura ambiente hasta: 18°C',
+      'Clase energética: C',
+      'Consumo de energía anual: 193 kWh'
+    ],
+    size: null
   },
   {
-    id: 4,
-    image: '/assets/bike_04.jpg',
-    title: 'Product 4',
+    id: 14,
+    product_name: 'Nombre de Producto',
+    images: [
+      '/assets/bike_04.jpg',
+      '/assets/bike_02.jpg',
+      '/assets/bike_03.jpg',
+      '/assets/bike_04.jpg'
+    ],
     rating: 3,
     description: 'Description for Product 4',
-    price: 35
+    price: 35,
+    stock: 12,
+    category: 'Productos Bicicletas',
+    characteristics: [
+      'Potencia: 140 W',
+      'Frecuencia: 50 Hz',
+      'Tensión: 220-240 V',
+      'Intervalo de temperatura: 7-18 °C',
+      'Enfría bajo la temperatura ambiente hasta: 18°C',
+      'Clase energética: C',
+      'Consumo de energía anual: 193 kWh'
+    ],
+    size: null
   },
   {
-    id: 5,
-    image: '/assets/bike_05.jpg',
-    title: 'Product 5',
+    id: 15,
+    product_name: 'Nombre de Producto',
+    images: [
+      '/assets/bike_05.jpg',
+      '/assets/bike_02.jpg',
+      '/assets/bike_03.jpg',
+      '/assets/bike_04.jpg'
+    ],
     rating: 3,
     description: 'Description for Product 5',
-    price: 35
+    price: 35,
+    stock: 7,
+    category: 'Productos Bicicletas',
+    characteristics: [
+      'Potencia: 140 W',
+      'Frecuencia: 50 Hz',
+      'Tensión: 220-240 V',
+      'Intervalo de temperatura: 7-18 °C',
+      'Enfría bajo la temperatura ambiente hasta: 18°C',
+      'Clase energética: C',
+      'Consumo de energía anual: 193 kWh'
+    ],
+    size: null
   },
   {
-    id: 6,
-    image: '/assets/bike_06.jpg',
-    title: 'Product 6',
+    id: 16,
+    product_name: 'Nombre de Producto',
+    images: [
+      '/assets/bike_06.jpg',
+      '/assets/bike_02.jpg',
+      '/assets/bike_03.jpg',
+      '/assets/bike_04.jpg'
+    ],
     rating: 3,
     description: 'Description for Product 6',
-    price: 35
+    price: 35,
+    stock: 90,
+    category: 'Productos Bicicletas',
+    characteristics: [
+      'Potencia: 140 W',
+      'Frecuencia: 50 Hz',
+      'Tensión: 220-240 V',
+      'Intervalo de temperatura: 7-18 °C',
+      'Enfría bajo la temperatura ambiente hasta: 18°C',
+      'Clase energética: C',
+      'Consumo de energía anual: 193 kWh'
+    ],
+    size: null
   },
   {
-    id: 7,
-    image: '/assets/bike_07.jpg',
-    title: 'Product 7',
+    id: 17,
+    product_name: 'Nombre de Producto',
+    images: [
+      '/assets/bike_07.jpg',
+      '/assets/bike_02.jpg',
+      '/assets/bike_03.jpg',
+      '/assets/bike_04.jpg'
+    ],
     rating: 3,
     description: 'Description for Product 7',
-    price: 35
+    price: 35,
+    stock: 7,
+    category: 'Productos Bicicletas',
+    characteristics: [
+      'Potencia: 140 W',
+      'Frecuencia: 50 Hz',
+      'Tensión: 220-240 V',
+      'Intervalo de temperatura: 7-18 °C',
+      'Enfría bajo la temperatura ambiente hasta: 18°C',
+      'Clase energética: C',
+      'Consumo de energía anual: 193 kWh'
+    ],
+    size: null
   },
   {
-    id: 8,
-    image: '/assets/bike_08.jpg',
-    title: 'Product 8',
+    id: 18,
+    product_name: 'Nombre de Producto',
+    images: [
+      '/assets/bike_08.jpg',
+      '/assets/bike_02.jpg',
+      '/assets/bike_03.jpg',
+      '/assets/bike_04.jpg'
+    ],
     rating: 3,
     description: 'Description for Product 8',
-    price: 35
+    price: 35,
+    stock: 7,
+    category: 'Productos Bicicletas',
+    characteristics: [
+      'Potencia: 140 W',
+      'Frecuencia: 50 Hz',
+      'Tensión: 220-240 V',
+      'Intervalo de temperatura: 7-18 °C',
+      'Enfría bajo la temperatura ambiente hasta: 18°C',
+      'Clase energética: C',
+      'Consumo de energía anual: 193 kWh'
+    ],
+    size: null
   }
 ]
