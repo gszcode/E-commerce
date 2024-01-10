@@ -47,13 +47,14 @@ const ProductDetail = () => {
       />
       <div className={styles.product}>
         <div className={styles.detail}>
-          // Sección de Imagenes
+          {/* Sección de Imagenes */}
           <ImagesCard
             selectImage={selectImage}
             productFound={productFound!}
             handleSelectImage={handleSelectImage}
           />
-          // Sección de Compras
+
+          {/* Sección de Compras */}
           <div className={styles.shopping_container}>
             <h3 className={styles.title}>{productFound?.product_name}</h3>
             <span className={styles.price}>{productFound?.price}$</span>
@@ -67,10 +68,13 @@ const ProductDetail = () => {
               )}
               <p>( rating )</p>
             </div>
-            // Selección de Cantidad
+
+            {/* Selección de Cantidad */}
             <SelectAmout productFound={productFound!} />
-            // Selección de Talle
+
+            {/* Selección de Talle */}
             <SelectSize productFound={productFound!} />
+
             <div className={styles.btn_container}>
               <Button text="AÑADIR AL CARRITO" />
               <button className={styles.favorite}>
