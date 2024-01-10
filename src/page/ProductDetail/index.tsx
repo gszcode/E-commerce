@@ -2,44 +2,87 @@ import { useParams } from 'react-router-dom'
 import BreadCrumbs from '../../components/BreadCrumbs'
 import styles from './product_detail.module.scss'
 import Button from '../../components/Button'
+import { sports } from '../../json/sports_products'
+import { products } from '../../json/offers_products'
+import {
+  pajamas_blankets,
+  sneakers,
+  underwear
+} from '../../json/clothes_products'
+import { blankets, several, sofas } from '../../json/home_products'
+import { bikes } from '../../json/bikes_products'
+import { useState } from 'react'
+import ImagesCard from './ImagesCard'
+import SelectAmout from './SelectAmount'
+import SelectSize from './SelectSize'
+
+const allProducts = [
+  ...products,
+  ...pajamas_blankets,
+  ...sofas,
+  ...blankets,
+  ...underwear,
+  ...sneakers,
+  ...several,
+  ...sports,
+  ...bikes
+]
 
 const ProductDetail = () => {
   const { id } = useParams()
-  console.log(id)
+  const [selectImage, setSelectImage] = useState<null | string>(null)
+
+  const handleSelectImage = (img: string) => {
+    setSelectImage(img)
+  }
+
+  const productFound = allProducts.find(
+    (product) => product.id === parseInt(id!)
+  )
 
   return (
     <section className={styles.container}>
-      <BreadCrumbs page="id" />
+      <BreadCrumbs
+        page={`${productFound?.category} / ${productFound?.product_name}`}
+      />
       <div className={styles.product}>
         <div className={styles.detail}>
-          <div className={styles.image_container}>
-            <div className={styles.img}>
-              <img src="/assets/bike_01.jpg" alt="product" />
-            </div>
-            <div className={styles.secondary_imgs}>
-              <img src="/assets/bike_02.jpg" alt="product" />
-              <img src="/assets/bike_03.jpg" alt="product" />
-              <img src="/assets/bike_04.jpg" alt="product" />
-            </div>
-          </div>
+          // Sección de Imagenes
+          <ImagesCard
+            selectImage={selectImage}
+            productFound={productFound!}
+            handleSelectImage={handleSelectImage}
+          />
+          // Sección de Compras
           <div className={styles.shopping_container}>
-            <h3 className={styles.title}>VINOTECA DOBLE TRISTAR WR7512</h3>
-            <span className={styles.price}>744,92€</span>
-            <p className={styles.rating}>
-              ★ ★ ★ ★ ★ <span>( 0 Opiniones )</span>
-            </p>
-            <select className={styles.amount}>
-              <option>
-                Cantidad: 1 <span className={styles.s}>(100 disponibles)</span>
-              </option>
-              <option>Cantidad: 2</option>
-              <option>Cantidad: 3</option>
-            </select>
+            <h3 className={styles.title}>{productFound?.product_name}</h3>
+            <span className={styles.price}>{productFound?.price}$</span>
+            <div className={styles.rating_container}>
+              {Array.from({ length: productFound?.rating ?? 0 }).map(
+                (_, index) => (
+                  <span key={index} className={styles.rating}>
+                    ★
+                  </span>
+                )
+              )}
+              <p>( rating )</p>
+            </div>
+            // Selección de Cantidad
+            <SelectAmout productFound={productFound!} />
+            // Selección de Talle
+            <SelectSize productFound={productFound!} />
             <div className={styles.btn_container}>
               <Button text="AÑADIR AL CARRITO" />
               <button className={styles.favorite}>
                 <span>❤</span> AÑADIR A FAVORITOS
               </button>
+            </div>
+            <div
+              className={`${styles.stock} ${
+                productFound?.stock ? styles.green : styles.red
+              }`}
+            >
+              {productFound?.stock ? <p>En Stock</p> : <p>Sin Stock</p>}
             </div>
           </div>
         </div>
@@ -49,24 +92,18 @@ const ProductDetail = () => {
             <p className={styles.data}>
               ¡Te presentamos{' '}
               <span className={styles.product_name}>
-                Anillo Mujer Folli Follie 3R0F044C (16,8 mm)
+                {productFound?.product_name}
               </span>{' '}
-              y una amplia gama de anillos, pulseras, pendientes, colgantes,
-              etc., a buen precio. Descubre exclusivas y elegantes piezas de
-              joyería y bisutería para todos los gustos y estilos.
+              {productFound?.description}
             </p>
           </div>
           <div className={styles.data_container}>
             <h4 className={styles.title}>CARACTERÍSTICAS:</h4>
             <p className={styles.data}>
               <ul className={styles.list}>
-                <li>Potencia: 140 W</li>
-                <li>Frecuencia: 50 Hz</li>
-                <li>Tensión: 220-240 V</li>
-                <li>Intervalo de temperatura: 7-18 °C</li>
-                <li>Enfría bajo la temperatura ambiente hasta: 18°C</li>
-                <li>Clase energética: C</li>
-                <li>Consumo de energía anual: 193 kWh</li>
+                {productFound?.characteristics.map((c) => (
+                  <li key={c}>{c}</li>
+                ))}
               </ul>
             </p>
           </div>
