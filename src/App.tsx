@@ -29,6 +29,7 @@ import HomeProducts from './page/Products/HomeProducts'
 import OffersProducts from './page/Products/OffersProducts'
 import ComplementsProducts from './page/Products/ComplementsProducts'
 import RoadBikes from './page/Products/BikeProducts'
+import ProductDetail from './page/ProductDetail'
 axios.defaults.withCredentials = true
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
         <Loader />
       ) : (
         <Routes>
+          {/* Rutas públicas */}
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
@@ -62,6 +64,7 @@ function App() {
           <Route path="/products/home" element={<HomeProducts />} />
           <Route path="/products/amazing-deals" element={<OffersProducts />} />
           <Route path="/products/road-bikes" element={<RoadBikes />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
           <Route
             path="/products/complements"
             element={<ComplementsProducts />}
@@ -72,6 +75,7 @@ function App() {
             element={<RecoveryPassword />}
           />
 
+          {/* Rutas protegidas */}
           <Route element={<ProtectedRoute />}>
             <Route path="/account" element={<Account />} />
             <Route path="/account/edit-data" element={<EditData />} />

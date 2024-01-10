@@ -4,7 +4,7 @@
   .products_container {
     padding: 40px 20px;
     .title {
-      @include size-weight(30px, 500);
+      @include size-weight(20px, 500);
       text-align: center;
       color: $text-color;
       margin: -20px 0 20px 0;
@@ -91,6 +91,9 @@
 @media (min-width: 768px) {
   .container {
     .products_container {
+      .title {
+        font-size: 25px;
+      }
       .products {
         @include flex(row, center, center, 15px);
       }
@@ -100,6 +103,9 @@
 @media (min-width: 1024px) {
   .container {
     .products_container {
+      .title {
+        font-size: 30px;
+      }
       .filters {
         @include flex(row, space-between, center);
         padding: 0 50px;

@@ -4,6 +4,7 @@ import Button from '../Button'
 import styles from './product_card.module.scss'
 
 const ProductCard = ({
+  id,
   image,
   title,
   rating,
@@ -12,7 +13,7 @@ const ProductCard = ({
   prev_price
 }: Product) => {
   return (
-    <Link to="/" className={styles.carousel_item}>
+    <Link to={`/product/${id}`} className={styles.carousel_item}>
       <img src={image} alt={title} />
       <div className={styles.product_info}>
         <h2 className={styles.title}>{title.toLocaleUpperCase()}</h2>
