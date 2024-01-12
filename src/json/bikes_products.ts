@@ -1,6 +1,6 @@
 export const bikes = [
   {
-    id: 11,
+    id: '11',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/bike_01.jpg',
@@ -25,7 +25,7 @@ export const bikes = [
     size: null
   },
   {
-    id: 12,
+    id: '12',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/bike_02.jpg',
@@ -50,7 +50,7 @@ export const bikes = [
     size: null
   },
   {
-    id: 13,
+    id: '13',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/bike_03.jpg',
@@ -75,7 +75,7 @@ export const bikes = [
     size: null
   },
   {
-    id: 14,
+    id: '14',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/bike_04.jpg',
@@ -100,7 +100,7 @@ export const bikes = [
     size: null
   },
   {
-    id: 15,
+    id: '15',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/bike_05.jpg',
@@ -125,7 +125,7 @@ export const bikes = [
     size: null
   },
   {
-    id: 16,
+    id: '16',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/bike_06.jpg',
@@ -150,7 +150,7 @@ export const bikes = [
     size: null
   },
   {
-    id: 17,
+    id: '17',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/bike_07.jpg',
@@ -175,7 +175,7 @@ export const bikes = [
     size: null
   },
   {
-    id: 18,
+    id: '18',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/bike_08.jpg',

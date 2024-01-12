@@ -1,6 +1,6 @@
 export const products = [
   {
-    id: 91,
+    id: '91',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/offers_01.webp',
@@ -26,7 +26,7 @@ export const products = [
     size: null
   },
   {
-    id: 92,
+    id: '92',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/offers_02.webp',
@@ -52,7 +52,7 @@ export const products = [
     size: null
   },
   {
-    id: 93,
+    id: '93',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/offers_02.webp',
@@ -78,7 +78,7 @@ export const products = [
     size: null
   },
   {
-    id: 94,
+    id: '94',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/offers_02.webp',
@@ -104,7 +104,7 @@ export const products = [
     size: null
   },
   {
-    id: 95,
+    id: '95',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/offers_02.webp',
@@ -130,7 +130,7 @@ export const products = [
     size: null
   },
   {
-    id: 96,
+    id: '96',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/offers_02.webp',
@@ -156,7 +156,7 @@ export const products = [
     size: null
   },
   {
-    id: 97,
+    id: '97',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/offers_02.webp',

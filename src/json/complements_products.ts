@@ -1,6 +1,6 @@
 export const complements = [
   {
-    id: 51,
+    id: '51',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/equipment_01.jpg',
@@ -25,7 +25,7 @@ export const complements = [
     size: null
   },
   {
-    id: 52,
+    id: '52',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/equipment_02.jpg',
@@ -50,7 +50,7 @@ export const complements = [
     size: null
   },
   {
-    id: 53,
+    id: '53',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/equipment_03.jpg',
@@ -75,7 +75,7 @@ export const complements = [
     size: null
   },
   {
-    id: 54,
+    id: '54',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/equipment_04.jpg',
@@ -100,7 +100,7 @@ export const complements = [
     size: null
   },
   {
-    id: 55,
+    id: '55',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/equipment_05.jpg',
@@ -125,7 +125,7 @@ export const complements = [
     size: null
   },
   {
-    id: 56,
+    id: '56',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/equipment_06.jpg',
@@ -150,7 +150,7 @@ export const complements = [
     size: null
   },
   {
-    id: 57,
+    id: '57',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/equipment_07.jpg',
@@ -175,7 +175,7 @@ export const complements = [
     size: null
   },
   {
-    id: 58,
+    id: '58',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/equipment_08.jpg',
@@ -200,7 +200,7 @@ export const complements = [
     size: null
   },
   {
-    id: 59,
+    id: '59',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/equipment_09.jpg',
@@ -225,7 +225,7 @@ export const complements = [
     size: null
   },
   {
-    id: 510,
+    id: '510',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/equipment_10.jpg',
@@ -250,7 +250,7 @@ export const complements = [
     size: null
   },
   {
-    id: 511,
+    id: '511',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/equipment_11.jpg',

@@ -1,6 +1,6 @@
 export const pajamas_blankets = [
   {
-    id: 21,
+    id: '21',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/pajama_blanket_01.jpg',
@@ -25,7 +25,7 @@ export const pajamas_blankets = [
     size: ['S', 'M', 'L', 'XL', 'XXL']
   },
   {
-    id: 22,
+    id: '22',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/pajama_blanket_02.jpg',
@@ -50,7 +50,7 @@ export const pajamas_blankets = [
     size: ['S', 'M', 'L', 'XL', 'XXL']
   },
   {
-    id: 23,
+    id: '23',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/pajama_blanket_03.jpg',
@@ -75,7 +75,7 @@ export const pajamas_blankets = [
     size: ['S', 'M', 'L', 'XL', 'XXL']
   },
   {
-    id: 24,
+    id: '24',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/pajama_blanket_04.jpg',
@@ -103,7 +103,7 @@ export const pajamas_blankets = [
 
 export const underwear = [
   {
-    id: 31,
+    id: '31',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/underwear_01.jpg',
@@ -128,7 +128,7 @@ export const underwear = [
     size: ['S', 'M', 'L', 'XL', 'XXL']
   },
   {
-    id: 32,
+    id: '32',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/underwear_02.jpg',
@@ -153,7 +153,7 @@ export const underwear = [
     size: ['S', 'M', 'L', 'XL', 'XXL']
   },
   {
-    id: 33,
+    id: '33',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/underwear_03.jpg',
@@ -178,7 +178,7 @@ export const underwear = [
     size: ['S', 'M', 'L', 'XL', 'XXL']
   },
   {
-    id: 34,
+    id: '34',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/underwear_04.jpg',
@@ -203,7 +203,7 @@ export const underwear = [
     size: ['S', 'M', 'L', 'XL', 'XXL']
   },
   {
-    id: 36,
+    id: '36',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/underwear_06.jpg',
@@ -228,7 +228,7 @@ export const underwear = [
     size: ['S', 'M', 'L', 'XL', 'XXL']
   },
   {
-    id: 37,
+    id: '37',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/underwear_07.jpg',
@@ -253,7 +253,7 @@ export const underwear = [
     size: ['S', 'M', 'L', 'XL', 'XXL']
   },
   {
-    id: 38,
+    id: '38',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/underwear_08.jpg',
@@ -278,7 +278,7 @@ export const underwear = [
     size: ['S', 'M', 'L', 'XL', 'XXL']
   },
   {
-    id: 39,
+    id: '39',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/underwear_09.jpg',
@@ -303,7 +303,7 @@ export const underwear = [
     size: ['S', 'M', 'L', 'XL', 'XXL']
   },
   {
-    id: 310,
+    id: '310',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/underwear_10.jpg',
@@ -331,7 +331,7 @@ export const underwear = [
 
 export const sneakers = [
   {
-    id: 41,
+    id: '41',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/sneaker_01.jpg',
@@ -356,7 +356,7 @@ export const sneakers = [
     size: ['36', '37', '38', '39', '40']
   },
   {
-    id: 42,
+    id: '42',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/sneaker_02.jpg',
@@ -381,7 +381,7 @@ export const sneakers = [
     size: ['36', '37', '38', '39', '40']
   },
   {
-    id: 43,
+    id: '43',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/sneaker_03.jpg',
@@ -406,7 +406,7 @@ export const sneakers = [
     size: ['36', '37', '38', '39', '40']
   },
   {
-    id: 44,
+    id: '44',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/sneaker_04.jpg',
@@ -431,7 +431,7 @@ export const sneakers = [
     size: ['36', '37', '38', '39', '40']
   },
   {
-    id: 45,
+    id: '45',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/sneaker_05.jpg',

@@ -1,6 +1,6 @@
 export const sports = [
   {
-    id: 901,
+    id: '901',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/sport_01.jpg',
@@ -25,7 +25,7 @@ export const sports = [
     size: null
   },
   {
-    id: 902,
+    id: '902',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/sport_02.jpg',
@@ -50,7 +50,7 @@ export const sports = [
     size: null
   },
   {
-    id: 903,
+    id: '903',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/sport_03.jpg',
@@ -75,7 +75,7 @@ export const sports = [
     size: null
   },
   {
-    id: 904,
+    id: '904',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/sport_04.jpg',
@@ -100,7 +100,7 @@ export const sports = [
     size: null
   },
   {
-    id: 905,
+    id: '905',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/sport_05.jpg',
@@ -125,7 +125,7 @@ export const sports = [
     size: null
   },
   {
-    id: 906,
+    id: '906',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/sport_06.jpg',
@@ -150,7 +150,7 @@ export const sports = [
     size: null
   },
   {
-    id: 907,
+    id: '907',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/sport_07.jpg',
@@ -175,7 +175,7 @@ export const sports = [
     size: null
   },
   {
-    id: 908,
+    id: '908',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/sport_08.jpg',

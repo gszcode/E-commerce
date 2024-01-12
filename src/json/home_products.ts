@@ -1,6 +1,6 @@
 export const blankets = [
   {
-    id: 61,
+    id: '61',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/blanket_01.jpg',
@@ -25,7 +25,7 @@ export const blankets = [
     size: null
   },
   {
-    id: 62,
+    id: '62',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/blanket_02.jpg',
@@ -50,7 +50,7 @@ export const blankets = [
     size: null
   },
   {
-    id: 63,
+    id: '63',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/blanket_03.jpg',
@@ -75,7 +75,7 @@ export const blankets = [
     size: null
   },
   {
-    id: 64,
+    id: '64',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/blanket_04.jpg',
@@ -103,7 +103,7 @@ export const blankets = [
 
 export const sofas = [
   {
-    id: 71,
+    id: '71',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/sofa_01.jpg',
@@ -128,7 +128,7 @@ export const sofas = [
     size: null
   },
   {
-    id: 72,
+    id: '72',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/sofa_02.jpg',
@@ -153,7 +153,7 @@ export const sofas = [
     size: null
   },
   {
-    id: 73,
+    id: '73',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/sofa_03.jpg',
@@ -178,7 +178,7 @@ export const sofas = [
     size: null
   },
   {
-    id: 74,
+    id: '74',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/sofa_04.jpg',
@@ -203,7 +203,7 @@ export const sofas = [
     size: null
   },
   {
-    id: 75,
+    id: '75',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/sofa_05.jpg',
@@ -228,7 +228,7 @@ export const sofas = [
     size: null
   },
   {
-    id: 76,
+    id: '76',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/sofa_06.jpg',
@@ -253,7 +253,7 @@ export const sofas = [
     size: null
   },
   {
-    id: 77,
+    id: '77',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/sofa_07.jpg',
@@ -281,7 +281,7 @@ export const sofas = [
 
 export const several = [
   {
-    id: 81,
+    id: '81',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/several_01.jpg',
@@ -306,7 +306,7 @@ export const several = [
     size: null
   },
   {
-    id: 82,
+    id: '82',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/several_02.jpg',
@@ -331,7 +331,7 @@ export const several = [
     size: null
   },
   {
-    id: 83,
+    id: '83',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/several_03.jpg',
@@ -356,7 +356,7 @@ export const several = [
     size: null
   },
   {
-    id: 84,
+    id: '84',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/several_04.jpg',
@@ -381,7 +381,7 @@ export const several = [
     size: null
   },
   {
-    id: 85,
+    id: '85',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/several_05.jpg',
@@ -406,7 +406,7 @@ export const several = [
     size: null
   },
   {
-    id: 86,
+    id: '86',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/several_06.jpg',
@@ -431,7 +431,7 @@ export const several = [
     size: null
   },
   {
-    id: 87,
+    id: '87',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/several_07.jpg',
@@ -456,7 +456,7 @@ export const several = [
     size: null
   },
   {
-    id: 88,
+    id: '88',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/several_08.jpg',
@@ -481,7 +481,7 @@ export const several = [
     size: null
   },
   {
-    id: 89,
+    id: '89',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/several_09.jpg',
@@ -506,7 +506,7 @@ export const several = [
     size: null
   },
   {
-    id: 810,
+    id: '810',
     product_name: 'Nombre de Producto',
     images: [
       '/assets/several_10.jpg',
