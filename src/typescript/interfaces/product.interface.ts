@@ -1,5 +1,5 @@
 export interface Product {
-  id: number
+  id: string
   images: Array<string>
   product_name: string
   rating: number
