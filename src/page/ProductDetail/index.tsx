@@ -36,9 +36,7 @@ const ProductDetail = () => {
     setSelectImage(img)
   }
 
-  const productFound = allProducts.find(
-    (product) => product.id === parseInt(id!)
-  )
+  const productFound = allProducts.find((product) => product.id === id!)
 
   return (
     <section className={styles.container}>
