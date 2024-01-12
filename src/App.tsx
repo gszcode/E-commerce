@@ -30,6 +30,7 @@ import OffersProducts from './page/Products/OffersProducts'
 import ComplementsProducts from './page/Products/ComplementsProducts'
 import RoadBikes from './page/Products/BikeProducts'
 import ProductDetail from './page/ProductDetail'
+import Cart from './page/Cart'
 axios.defaults.withCredentials = true
 
 function App() {
@@ -54,6 +55,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/products" element={<AllProducts />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/products/pajama-blanket" element={<PajamaBlanket />} />
           <Route path="/products/underwear" element={<Underwear />} />
           <Route path="/products/sneakers" element={<Sneakers />} />
