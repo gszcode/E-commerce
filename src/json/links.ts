@@ -54,7 +54,7 @@ export const active_user_menu_links = [
   },
   {
     link: 'Mis favoritos',
-    href: 'favorite-products',
+    href: 'products/favorites',
     icon: 'heart'
   },
   {

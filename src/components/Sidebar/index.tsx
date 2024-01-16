@@ -28,7 +28,7 @@ const Sidebar = () => {
         </li>
         <li className={styles.item}>
           <Image img="heart" alt="My favorite products" />
-          <Link to="/favorite-products">Mis productos favoritos</Link>
+          <Link to="/products/favorites">Mis productos favoritos</Link>
         </li>
         <li className={styles.item}>
           <Image img="logout" alt="Logout" />
