@@ -8,4 +8,12 @@
   padding: 8px 18px;
   color: $text-color;
   outline: none;
+  margin: 15px 0;
+}
+
+// Media queries
+@media (min-width: 1024px) {
+  .amount {
+    margin: 0;
+  }
 }
