@@ -54,7 +54,9 @@ const ProductDetail = () => {
 
           {/* Sección de Compras */}
           <div className={styles.shopping_container}>
+            <p className={styles.id}>ID: {productFound?.id}</p>
             <h3 className={styles.title}>{productFound?.product_name}</h3>
+            <p className={styles.iva}>IVA incluido</p>
             <span className={styles.price}>{productFound?.price}$</span>
             <div className={styles.rating_container}>
               {Array.from({ length: productFound?.rating ?? 0 }).map(
