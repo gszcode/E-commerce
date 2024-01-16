@@ -103,13 +103,13 @@ const ProductDetail = () => {
           </div>
           <div className={styles.data_container}>
             <h4 className={styles.title}>CARACTERÍSTICAS:</h4>
-            <p className={styles.data}>
+            <div className={styles.data}>
               <ul className={styles.list}>
                 {productFound?.characteristics.map((c) => (
                   <li key={c}>{c}</li>
                 ))}
               </ul>
-            </p>
+            </div>
           </div>
         </div>
       </div>

@@ -22,7 +22,12 @@ const ImagesCard = ({
       </div>
       <div className={styles.secondary_imgs}>
         {productFound?.images.map((img) => (
-          <img src={img} alt="Product" onClick={() => handleSelectImage(img)} />
+          <img
+            key={img}
+            src={img}
+            alt="Product"
+            onClick={() => handleSelectImage(img)}
+          />
         ))}
       </div>
     </div>
