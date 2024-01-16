@@ -82,7 +82,7 @@ function App() {
             <Route path="/account" element={<Account />} />
             <Route path="/account/edit-data" element={<EditData />} />
             <Route path="/orders" element={<Orders />} />
-            <Route path="/favorite-products" element={<FavoriteProducts />} />
+            <Route path="/products/favorites" element={<FavoriteProducts />} />
           </Route>
 
           <Route path="*" element={<NotFound />} />
