@@ -36,7 +36,7 @@ const Cart = () => {
           {loading ? (
             <Loader />
           ) : cart.length === 0 ? (
-            <EmptyCart />
+            <EmptyCart page="cart" />
           ) : (
             <>
               {cart.map((item: Product) => (

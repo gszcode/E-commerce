@@ -25,6 +25,20 @@
   }
   .icons {
     @include flex(row, space-evenly, center, 35px);
+    .cart {
+      position: relative;
+      .count {
+        @include width-height(18px, 18px);
+        @include size-weight(12px, 400);
+        @include flex(row, center, center);
+        background-color: $hover-color;
+        border-radius: 50%;
+        color: $background-color;
+        position: absolute;
+        top: -10px;
+        right: -15px;
+      }
+    }
   }
 }
 

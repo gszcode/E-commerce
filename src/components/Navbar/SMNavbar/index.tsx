@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import styles from './smnavbar.module.scss'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import SubNav from '../SubNav'
 import LGNavbar from '../LGNavbar'
 import { active_user_menu_links, user_menu_links } from '../../../json/links'
@@ -10,12 +10,18 @@ import { SubMenu } from '../../../typescript/types/submenu'
 import SubNavCart from '../SubNavCart'
 import { useAuthenticate } from '../../../hooks/useAuthenticate'
 import { useCloseDrop } from '../../../hooks/useCloseDrop'
+import { storeCart } from '../../../utils/getProductsCart'
 
 const SMNavbar = () => {
   const [openMenu, setOpenMenu] = useState(false)
   const [openUserMenu, setOpenUserMenu] = useState<SubMenu>(null)
+  const [cartState, setCartState] = useState([])
   const { isAuthenticated } = useAuthenticate()
   const { closeRef } = useCloseDrop(setOpenUserMenu)
+
+  useEffect(() => {
+    setCartState(storeCart)
+  }, [cartState])
 
   const handleOpenMenu = () => {
     setOpenMenu((prev) => !prev)
@@ -24,6 +30,8 @@ const SMNavbar = () => {
   const handleOpenSubNav = (menu: SubMenu) => {
     setOpenUserMenu(() => (openUserMenu === menu ? null : menu))
   }
+
+  const PRODUCTS_CART = cartState.length
 
   return (
     <nav className={styles.container}>
@@ -48,16 +56,25 @@ const SMNavbar = () => {
 
       <div className={styles.icons} ref={closeRef}>
         <Image img="search" alt="Search" title="Buscar" />
-        <button onClick={() => handleOpenSubNav('cart')} className="icon_btn">
-          <Image img="cart" alt="Cart" title="Carrito" />
+        {cartState.length > 0 ? (
+          <>
+            <Link to="/products/cart" className={styles.cart}>
+              <span className={styles.count}>{PRODUCTS_CART}</span>
+              <Image img="cart" alt="Cart" title="Carrito" />
+            </Link>
+          </>
+        ) : (
+          <button onClick={() => handleOpenSubNav('cart')} className="icon_btn">
+            <Image img="cart" alt="Cart" title="Carrito" />
 
-          {openUserMenu === 'cart' && (
-            <SubNavCart
-              openSubNav={openUserMenu}
-              setOpenSubNav={setOpenUserMenu}
-            />
-          )}
-        </button>
+            {openUserMenu === 'cart' && (
+              <SubNavCart
+                openSubNav={openUserMenu}
+                setOpenSubNav={setOpenUserMenu}
+              />
+            )}
+          </button>
+        )}
         <button onClick={() => handleOpenSubNav('user')} className="icon_btn">
           <Image img="user" alt="User" title="Mi cuenta" />
 
