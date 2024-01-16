@@ -1,0 +1,63 @@
+@import '../../../index.scss';
+
+.container {
+  max-width: 600px;
+  margin-top: 40px;
+  position: relative;
+  > button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  .product {
+    border-top: 1px solid #ccc;
+    padding: 30px 20px 0 20px;
+    .product_img {
+      @include width-height(100%, auto);
+      img {
+        @include width-height(100%, 100%);
+        object-fit: contain;
+      }
+    }
+    .product_info {
+      @include flex(column, center, flex-start, 5px);
+      margin-top: 15px;
+      .item {
+        @include size-weight(16px, 500);
+        span {
+          @include size-weight(16px, 300);
+          text-transform: lowercase;
+        }
+        .price {
+          font-weight: 600;
+          color: $price-color;
+        }
+        .quantity {
+          font-weight: 600;
+          color: #5cb85c;
+        }
+      }
+    }
+  }
+}
+
+// Media queries
+@media (min-width: 640px) {
+  .container {
+    .product {
+      @include flex(row, space-between, flex-start);
+      .product_img {
+        max-width: 275px;
+      }
+    }
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    max-width: 100%;
+    .product {
+      @include flex(row, space-evenly, flex-start);
+      min-width: 900px;
+    }
+  }
+}
