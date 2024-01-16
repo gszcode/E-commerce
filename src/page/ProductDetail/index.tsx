@@ -15,6 +15,7 @@ import { useState } from 'react'
 import ImagesCard from './ImagesCard'
 import SelectAmout from './SelectAmount'
 import SelectSize from './SelectSize'
+import { addProductToFavorite } from '../../utils/addProductFavorite'
 
 const allProducts = [
   ...products,
@@ -37,6 +38,10 @@ const ProductDetail = () => {
   }
 
   const productFound = allProducts.find((product) => product.id === id!)
+
+  const addFavorite = () => {
+    addProductToFavorite(productFound!.id)
+  }
 
   return (
     <section className={styles.container}>
@@ -77,7 +82,7 @@ const ProductDetail = () => {
 
             <div className={styles.btn_container}>
               <Button text="AÑADIR AL CARRITO" />
-              <button className={styles.favorite}>
+              <button className={styles.favorite} onClick={addFavorite}>
                 <span>❤</span> AÑADIR A FAVORITOS
               </button>
             </div>
