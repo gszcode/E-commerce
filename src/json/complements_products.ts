@@ -22,7 +22,8 @@ export const complements = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '52',
@@ -47,7 +48,8 @@ export const complements = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '53',
@@ -72,7 +74,8 @@ export const complements = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '54',
@@ -97,7 +100,8 @@ export const complements = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '55',
@@ -122,7 +126,8 @@ export const complements = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '56',
@@ -147,7 +152,8 @@ export const complements = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '57',
@@ -172,7 +178,8 @@ export const complements = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '58',
@@ -197,7 +204,8 @@ export const complements = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '59',
@@ -222,7 +230,8 @@ export const complements = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '510',
@@ -247,7 +256,8 @@ export const complements = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '511',
@@ -272,6 +282,7 @@ export const complements = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   }
 ]

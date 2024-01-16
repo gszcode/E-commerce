@@ -4,4 +4,46 @@
   .cart {
     padding: 40px 20px;
   }
+  .buy {
+    @include width-height(100%, auto);
+    @include flex(column, center, center, 10px);
+    max-width: 600px;
+    border: 1px solid $background-secondary;
+    padding: 15px 20px;
+    margin: 0 20px 30px 20px;
+    .total,
+    .action {
+      @include width-height(100%, auto);
+      @include flex(row, space-between, center);
+      p {
+        @include size-weight(14px, 400);
+        color: $text-color;
+      }
+      span {
+        @include size-weight(16px, 600);
+        color: $price-color;
+      }
+      .empty {
+        @include flex(row, center, center, 3px);
+        @include size-weight(12px, 400);
+        border: none;
+        background-color: transparent;
+        color: $error-color;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+// Media queries
+@media (min-width: 1024px) {
+  .container {
+    .buy {
+      min-width: 52vw;
+      .total,
+      .action {
+        justify-content: space-evenly;
+      }
+    }
+  }
 }

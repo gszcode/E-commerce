@@ -23,7 +23,8 @@ export const products = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '92',
@@ -49,7 +50,8 @@ export const products = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '93',
@@ -75,7 +77,8 @@ export const products = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '94',
@@ -101,7 +104,8 @@ export const products = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '95',
@@ -127,7 +131,8 @@ export const products = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '96',
@@ -153,7 +158,8 @@ export const products = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '97',
@@ -179,6 +185,7 @@ export const products = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   }
 ]

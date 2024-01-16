@@ -22,7 +22,8 @@ export const sports = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '902',
@@ -47,7 +48,8 @@ export const sports = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '903',
@@ -72,7 +74,8 @@ export const sports = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '904',
@@ -97,7 +100,8 @@ export const sports = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '905',
@@ -122,7 +126,8 @@ export const sports = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '906',
@@ -147,7 +152,8 @@ export const sports = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '907',
@@ -172,7 +178,8 @@ export const sports = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '908',
@@ -197,6 +204,7 @@ export const sports = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   }
 ]

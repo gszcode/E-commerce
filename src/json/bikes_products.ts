@@ -22,7 +22,8 @@ export const bikes = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '12',
@@ -47,7 +48,8 @@ export const bikes = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '13',
@@ -72,7 +74,8 @@ export const bikes = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '14',
@@ -97,7 +100,8 @@ export const bikes = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '15',
@@ -122,7 +126,8 @@ export const bikes = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '16',
@@ -147,7 +152,8 @@ export const bikes = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '17',
@@ -172,7 +178,8 @@ export const bikes = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '18',
@@ -197,6 +204,7 @@ export const bikes = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   }
 ]

@@ -22,7 +22,8 @@ export const blankets = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '62',
@@ -47,7 +48,8 @@ export const blankets = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '63',
@@ -72,7 +74,8 @@ export const blankets = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '64',
@@ -97,7 +100,8 @@ export const blankets = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   }
 ]
 
@@ -125,7 +129,8 @@ export const sofas = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '72',
@@ -150,7 +155,8 @@ export const sofas = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '73',
@@ -175,7 +181,8 @@ export const sofas = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '74',
@@ -200,7 +207,8 @@ export const sofas = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '75',
@@ -225,7 +233,8 @@ export const sofas = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '76',
@@ -250,7 +259,8 @@ export const sofas = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '77',
@@ -275,7 +285,8 @@ export const sofas = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   }
 ]
 
@@ -303,7 +314,8 @@ export const several = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '82',
@@ -328,7 +340,8 @@ export const several = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '83',
@@ -353,7 +366,8 @@ export const several = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '84',
@@ -378,7 +392,8 @@ export const several = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '85',
@@ -403,7 +418,8 @@ export const several = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '86',
@@ -428,7 +444,8 @@ export const several = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '87',
@@ -453,7 +470,8 @@ export const several = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '88',
@@ -478,7 +496,8 @@ export const several = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '89',
@@ -503,7 +522,8 @@ export const several = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   },
   {
     id: '810',
@@ -528,6 +548,7 @@ export const several = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: null
+    size: null,
+    quantity: 1
   }
 ]

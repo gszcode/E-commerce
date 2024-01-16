@@ -22,7 +22,8 @@ export const pajamas_blankets = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: ['S', 'M', 'L', 'XL', 'XXL']
+    size: ['S', 'M', 'L', 'XL', 'XXL'],
+    quantity: 1
   },
   {
     id: '22',
@@ -47,7 +48,8 @@ export const pajamas_blankets = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: ['S', 'M', 'L', 'XL', 'XXL']
+    size: ['S', 'M', 'L', 'XL', 'XXL'],
+    quantity: 1
   },
   {
     id: '23',
@@ -72,7 +74,8 @@ export const pajamas_blankets = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: ['S', 'M', 'L', 'XL', 'XXL']
+    size: ['S', 'M', 'L', 'XL', 'XXL'],
+    quantity: 1
   },
   {
     id: '24',
@@ -97,7 +100,8 @@ export const pajamas_blankets = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: ['S', 'M', 'L', 'XL', 'XXL']
+    size: ['S', 'M', 'L', 'XL', 'XXL'],
+    quantity: 1
   }
 ]
 
@@ -125,7 +129,8 @@ export const underwear = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: ['S', 'M', 'L', 'XL', 'XXL']
+    size: ['S', 'M', 'L', 'XL', 'XXL'],
+    quantity: 1
   },
   {
     id: '32',
@@ -150,7 +155,8 @@ export const underwear = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: ['S', 'M', 'L', 'XL', 'XXL']
+    size: ['S', 'M', 'L', 'XL', 'XXL'],
+    quantity: 1
   },
   {
     id: '33',
@@ -175,7 +181,8 @@ export const underwear = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: ['S', 'M', 'L', 'XL', 'XXL']
+    size: ['S', 'M', 'L', 'XL', 'XXL'],
+    quantity: 1
   },
   {
     id: '34',
@@ -200,7 +207,8 @@ export const underwear = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: ['S', 'M', 'L', 'XL', 'XXL']
+    size: ['S', 'M', 'L', 'XL', 'XXL'],
+    quantity: 1
   },
   {
     id: '36',
@@ -225,7 +233,8 @@ export const underwear = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: ['S', 'M', 'L', 'XL', 'XXL']
+    size: ['S', 'M', 'L', 'XL', 'XXL'],
+    quantity: 1
   },
   {
     id: '37',
@@ -250,7 +259,8 @@ export const underwear = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: ['S', 'M', 'L', 'XL', 'XXL']
+    size: ['S', 'M', 'L', 'XL', 'XXL'],
+    quantity: 1
   },
   {
     id: '38',
@@ -275,7 +285,8 @@ export const underwear = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: ['S', 'M', 'L', 'XL', 'XXL']
+    size: ['S', 'M', 'L', 'XL', 'XXL'],
+    quantity: 1
   },
   {
     id: '39',
@@ -300,7 +311,8 @@ export const underwear = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: ['S', 'M', 'L', 'XL', 'XXL']
+    size: ['S', 'M', 'L', 'XL', 'XXL'],
+    quantity: 1
   },
   {
     id: '310',
@@ -325,7 +337,8 @@ export const underwear = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: ['S', 'M', 'L', 'XL', 'XXL']
+    size: ['S', 'M', 'L', 'XL', 'XXL'],
+    quantity: 1
   }
 ]
 
@@ -353,7 +366,8 @@ export const sneakers = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: ['36', '37', '38', '39', '40']
+    size: ['36', '37', '38', '39', '40'],
+    quantity: 1
   },
   {
     id: '42',
@@ -378,7 +392,8 @@ export const sneakers = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: ['36', '37', '38', '39', '40']
+    size: ['36', '37', '38', '39', '40'],
+    quantity: 1
   },
   {
     id: '43',
@@ -403,7 +418,8 @@ export const sneakers = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: ['36', '37', '38', '39', '40']
+    size: ['36', '37', '38', '39', '40'],
+    quantity: 1
   },
   {
     id: '44',
@@ -428,7 +444,8 @@ export const sneakers = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: ['36', '37', '38', '39', '40']
+    size: ['36', '37', '38', '39', '40'],
+    quantity: 1
   },
   {
     id: '45',
@@ -453,6 +470,7 @@ export const sneakers = [
       'Clase energética: C',
       'Consumo de energía anual: 193 kWh'
     ],
-    size: ['36', '37', '38', '39', '40']
+    size: ['36', '37', '38', '39', '40'],
+    quantity: 1
   }
 ]
