@@ -14,7 +14,7 @@ const CartContent = ({
   price,
   quantity
 }: OrderProduct) => {
-  const DeleteProduct = (id: string) => {
+  const deleteProduct = (id: string) => {
     const updatedCart = storeCart.filter(
       (product: Product) => product.id !== id
     )
@@ -25,7 +25,7 @@ const CartContent = ({
 
   return (
     <div className={styles.container}>
-      <button className="icon_btn" onClick={() => DeleteProduct(id)}>
+      <button className="icon_btn" onClick={() => deleteProduct(id)}>
         <Image img="close" alt="Delete" title="Eliminar del Carrito" />
       </button>
       <div className={styles.product}>
