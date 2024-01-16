@@ -10,4 +10,5 @@ export interface Product {
   stock: number
   characteristics: Array<string>
   size?: Array<string> | null
+  quantity?: number | null
 }
