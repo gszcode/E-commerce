@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { Product } from '../../typescript/interfaces/product.interface'
 import Button from '../Button'
 import styles from './product_card.module.scss'
+import { addProductToCart } from '../../utils/addProductCart'
 
 const ProductCard = ({
   id,
@@ -12,6 +13,10 @@ const ProductCard = ({
   price,
   prev_price
 }: Product) => {
+  const click = () => {
+    addProductToCart(id)
+  }
+
   return (
     <div className={styles.container}>
       <Link to={`/product/${id}`} className={styles.carousel_item}>
@@ -32,7 +37,7 @@ const ProductCard = ({
           </p>
         </div>
       </Link>
-      <div className={styles.button} title="Añadir al 🛒">
+      <div className={styles.button} title="Añadir al 🛒" onClick={click}>
         <Button text="Añadir al carrito" />
       </div>
     </div>
