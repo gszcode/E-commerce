@@ -5,7 +5,6 @@
   padding-top: 80px;
   .img {
     @include width-height(100%, auto);
-    min-width: 450px;
     min-height: 300px;
     img {
       @include width-height(100%, 100%);
@@ -14,12 +13,10 @@
   }
   .secondary_imgs {
     @include width-height(100%, auto);
-    @include flex(row, space-evenly, center);
+    @include flex(row, space-evenly, center, 5px);
     img {
-      @include width-height(80px, auto);
-      min-width: 80px;
-      min-height: 55px;
-      object-fit: cover;
+      @include width-height(70px, 45px);
+      object-fit: contain;
       cursor: pointer;
       transition: transform 0.3s ease;
       &:hover {
