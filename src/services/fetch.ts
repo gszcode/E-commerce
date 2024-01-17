@@ -4,7 +4,9 @@ const api = 'https://imperio-shoes.onrender.com/api/v1'
 
 const post = async (url: string, data?: Post): Promise<AxiosResponse> => {
   try {
-    const response = await axios.post(`${api}/${url}`, data)
+    const response = await axios.post(`${api}/${url}`, data, {
+      withCredentials: true
+    })
     return response
   } catch (error) {
     const axiosError = error as AxiosError
@@ -28,7 +30,9 @@ const get = async (url: string): Promise<AxiosResponse> => {
 
 const put = async (url: string, data?: Put): Promise<AxiosResponse> => {
   try {
-    const response = await axios.put(`${api}/${url}`, data)
+    const response = await axios.put(`${api}/${url}`, data, {
+      withCredentials: true
+    })
     return response
   } catch (error) {
     const axiosError = error as AxiosError
