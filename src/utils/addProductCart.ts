@@ -1,22 +1,6 @@
-import { pajamas_blankets, sneakers, underwear } from '../json/clothes_products'
-import { blankets, several, sofas } from '../json/home_products'
-import { sports } from '../json/sports_products'
-import { bikes } from '../json/bikes_products'
 import { messageToast } from '../utils/toastSuccess'
-import { products } from '../json/offers_products'
 import { Product } from '../typescript/interfaces/product.interface'
-
-const allProducts = [
-  ...products,
-  ...pajamas_blankets,
-  ...sofas,
-  ...blankets,
-  ...underwear,
-  ...sneakers,
-  ...several,
-  ...sports,
-  ...bikes
-]
+import { allProducts } from './getAllProducts'
 
 const { notify, notifyError } = messageToast()
 
