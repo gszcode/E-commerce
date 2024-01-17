@@ -10,21 +10,24 @@ import { Product } from '../../typescript/interfaces/product.interface'
 import Button from '../../components/Button'
 import Image from '../../components/Image'
 import { TOTAL_PRICE } from '../../utils/getTotalPrice'
-import { storeCart } from '../../utils/getProductsCart'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from '../../store/store'
+import { setEmptyCart } from '../../store/features/cart/cartSlice'
 
 const Cart = () => {
-  const [cart, setCart] = useState([])
+  const dispatch = useDispatch()
+  const [cartState, setCartState] = useState<Product[]>([])
+  const { cart } = useSelector((state: RootState) => state.cart)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     setLoading(true)
-    setCart(storeCart)
+    setCartState(cart)
     setLoading(false)
-  }, [])
+  }, [cart])
 
   const emptyCart = () => {
-    localStorage.removeItem('cart')
-    window.location.reload()
+    dispatch(setEmptyCart())
   }
 
   return (
@@ -39,7 +42,7 @@ const Cart = () => {
             <EmptyCart page="cart" />
           ) : (
             <>
-              {cart.map((item: Product) => (
+              {cartState.map((item: Product) => (
                 <CartContent key={item.id} {...item} />
               ))}
 
