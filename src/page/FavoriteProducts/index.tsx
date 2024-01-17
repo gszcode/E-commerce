@@ -4,28 +4,29 @@ import BreadCrumbs from '../../components/BreadCrumbs'
 import Sidebar from '../../components/Sidebar'
 import Wrapper from '../../components/Wrapper'
 import styles from './favorite_products.module.scss'
-import { storeFavorites } from '../../utils/getProductsFavorites'
 import Loader from '../../components/Loader'
 import EmptyFavorite from '../Cart/EmptyCartOrFavorites'
 import { Product } from '../../typescript/interfaces/product.interface'
 import ProductCard from '../../components/ProductCard'
 import Image from '../../components/Image'
+import { RootState } from '../../store/store'
+import { useDispatch, useSelector } from 'react-redux'
+import { removeProductFromFavorites } from '../../store/features/favorites/favoriteSlice'
 
 const FavoriteProducts = () => {
-  const [favorites, setFavorites] = useState([])
+  const dispatch = useDispatch()
+  const [favoriteState, setFavoriteState] = useState<Product[]>([])
+  const { favorites } = useSelector((state: RootState) => state.favorites)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     setLoading(true)
-    setFavorites(storeFavorites)
+    setFavoriteState(favorites)
     setLoading(false)
-  }, [])
+  }, [favorites])
 
   const deleteFavorite = (id: string) => {
-    const favorites = storeFavorites.filter((prod: Product) => prod.id !== id)
-
-    localStorage.setItem('favorites', JSON.stringify(favorites))
-    window.location.reload()
+    dispatch(removeProductFromFavorites(id))
   }
 
   return (
@@ -40,11 +41,11 @@ const FavoriteProducts = () => {
             </div>
             {loading ? (
               <Loader />
-            ) : favorites.length === 0 ? (
+            ) : favoriteState.length === 0 ? (
               <EmptyFavorite page="favorite" />
             ) : (
               <>
-                {favorites.map((item: Product) => (
+                {favoriteState.map((item: Product) => (
                   <div key={item.id} className={styles.favorite_product}>
                     <button
                       className={`icon_btn ${styles.remove_button}`}

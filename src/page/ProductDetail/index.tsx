@@ -2,35 +2,22 @@ import { useParams } from 'react-router-dom'
 import BreadCrumbs from '../../components/BreadCrumbs'
 import styles from './product_detail.module.scss'
 import Button from '../../components/Button'
-import { sports } from '../../json/sports_products'
-import { products } from '../../json/offers_products'
-import {
-  pajamas_blankets,
-  sneakers,
-  underwear
-} from '../../json/clothes_products'
-import { blankets, several, sofas } from '../../json/home_products'
-import { bikes } from '../../json/bikes_products'
 import { useState } from 'react'
 import ImagesCard from './ImagesCard'
 import SelectAmout from './SelectAmount'
 import SelectSize from './SelectSize'
-import { addProductToFavorite } from '../../utils/addProductFavorite'
-
-const allProducts = [
-  ...products,
-  ...pajamas_blankets,
-  ...sofas,
-  ...blankets,
-  ...underwear,
-  ...sneakers,
-  ...several,
-  ...sports,
-  ...bikes
-]
+import { allProducts } from '../../utils/getAllProducts'
+import { useDispatch, useSelector } from 'react-redux'
+import { setProductsToFavorites } from '../../store/features/favorites/favoriteSlice'
+import { RootState } from '../../store/store'
+import { Product } from '../../typescript/interfaces/product.interface'
+import { messageToast } from '../../utils/toastSuccess'
 
 const ProductDetail = () => {
   const { id } = useParams()
+  const dispatch = useDispatch()
+  const { notify, notifyError } = messageToast()
+  const { favorites } = useSelector((state: RootState) => state.favorites)
   const [selectImage, setSelectImage] = useState<null | string>(null)
 
   const handleSelectImage = (img: string) => {
@@ -38,9 +25,17 @@ const ProductDetail = () => {
   }
 
   const productFound = allProducts.find((product) => product.id === id!)
+  const addToFavorite = () => {
+    const productInFavorites = favorites.find((prod: Product) => prod.id === id)
 
-  const addFavorite = () => {
-    addProductToFavorite(productFound!.id)
+    if (productInFavorites) {
+      notifyError('El producto ya se encuentra en favoritos')
+    }
+
+    if (productFound && !productInFavorites) {
+      dispatch(setProductsToFavorites(productFound))
+      notify('Producto añadido a favoritos')
+    }
   }
 
   return (
@@ -82,7 +77,10 @@ const ProductDetail = () => {
 
             <div className={styles.btn_container}>
               <Button text="AÑADIR AL CARRITO" />
-              <button className={styles.favorite} onClick={addFavorite}>
+              <button
+                className={styles.favorite}
+                onClick={() => addToFavorite()}
+              >
                 <span>❤</span> AÑADIR A FAVORITOS
               </button>
             </div>
