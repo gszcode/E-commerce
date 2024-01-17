@@ -1,6 +1,6 @@
 import axios, { AxiosError, AxiosResponse } from 'axios'
 import { Post, Put } from '../typescript/types/fetch'
-const api = 'http://localhost:3000/api/v1'
+const api = 'https://imperio-shoes.onrender.com/api/v1'
 
 const post = async (url: string, data?: Post): Promise<AxiosResponse> => {
   try {
