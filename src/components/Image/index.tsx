@@ -13,6 +13,7 @@ const Image = ({ img, alt, title }: ImageProps) => {
       src={`/icons/${img}.svg`}
       alt={alt}
       title={title}
+      loading="lazy"
     />
   )
 }

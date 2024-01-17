@@ -13,25 +13,33 @@ const LazyAccountRoute = lazy(() => import('./page/Account'))
 const LazyAccountEditRoute = lazy(() => import('./page/EditData'))
 const LazyOrdersRoute = lazy(() => import('./page/Orders'))
 const LazyFavoritesRoute = lazy(() => import('./page/FavoriteProducts'))
+const LazyAllProducts = lazy(() => import('./page/Products/AllProducts'))
+const LazyPajamaBlanket = lazy(
+  () => import('./page/Products/ClothesProducts/PajamasBlankets')
+)
+const LazyUnderwear = lazy(
+  () => import('./page/Products/ClothesProducts/Underwear')
+)
+const LazySneakers = lazy(
+  () => import('./page/Products/ClothesProducts/Sneakers')
+)
+const LazyBlankets = lazy(() => import('./page/Products/HomeProducts/Blankets'))
+const LazySofas = lazy(() => import('./page/Products/HomeProducts/Sofas'))
+const LazySeveral = lazy(() => import('./page/Products/HomeProducts/Several'))
+const LazySportProducts = lazy(() => import('./page/Products/SportProducts'))
+const LazyHomeProducts = lazy(() => import('./page/Products/HomeProducts'))
+const LazyOffersProducts = lazy(() => import('./page/Products/OffersProducts'))
+const LazyComplementsProducts = lazy(
+  () => import('./page/Products/ComplementsProducts')
+)
+const LazyRoadBikes = lazy(() => import('./page/Products/BikeProducts'))
 import Home from './page/Home'
 import Login from './page/Login'
 import Register from './page/Register'
 import NotFound from './page/NotFound'
 import Contact from './page/Contact'
 import ForgotPassword from './page/ForgotPassword'
-import AllProducts from './page/Products/AllProducts'
-import PajamaBlanket from './page/Products/ClothesProducts/PajamasBlankets'
-import Underwear from './page/Products/ClothesProducts/Underwear'
-import Sneakers from './page/Products/ClothesProducts/Sneakers'
-import Blankets from './page/Products/HomeProducts/Blankets'
-import Sofas from './page/Products/HomeProducts/Sofas'
-import Several from './page/Products/HomeProducts/Several'
-import SportProducts from './page/Products/SportProducts'
 import RecoveryPassword from './page/RecoveryPassword'
-import HomeProducts from './page/Products/HomeProducts'
-import OffersProducts from './page/Products/OffersProducts'
-import ComplementsProducts from './page/Products/ComplementsProducts'
-import RoadBikes from './page/Products/BikeProducts'
 import ProductDetail from './page/ProductDetail'
 import Cart from './page/Cart'
 
@@ -42,20 +50,20 @@ const publicRoutes = [
   { path: '/login', element: <Login /> },
   { path: '/register', element: <Register /> },
   { path: '/contact', element: <Contact /> },
-  { path: '/products', element: <AllProducts /> },
+  { path: '/products', element: <LazyAllProducts /> },
   { path: '/products/cart', element: <Cart /> },
-  { path: '/products/pajama-blanket', element: <PajamaBlanket /> },
-  { path: '/products/underwear', element: <Underwear /> },
-  { path: '/products/sneakers', element: <Sneakers /> },
-  { path: '/products/blankets', element: <Blankets /> },
-  { path: '/products/sofas', element: <Sofas /> },
-  { path: '/products/several', element: <Several /> },
-  { path: '/products/sports', element: <SportProducts /> },
-  { path: '/products/home', element: <HomeProducts /> },
-  { path: '/products/amazing-deals', element: <OffersProducts /> },
-  { path: '/products/road-bikes', element: <RoadBikes /> },
+  { path: '/products/pajama-blanket', element: <LazyPajamaBlanket /> },
+  { path: '/products/underwear', element: <LazyUnderwear /> },
+  { path: '/products/sneakers', element: <LazySneakers /> },
+  { path: '/products/blankets', element: <LazyBlankets /> },
+  { path: '/products/sofas', element: <LazySofas /> },
+  { path: '/products/several', element: <LazySeveral /> },
+  { path: '/products/sports', element: <LazySportProducts /> },
+  { path: '/products/home', element: <LazyHomeProducts /> },
+  { path: '/products/amazing-deals', element: <LazyOffersProducts /> },
+  { path: '/products/road-bikes', element: <LazyRoadBikes /> },
+  { path: '/products/complements', element: <LazyComplementsProducts /> },
   { path: '/product/:id', element: <ProductDetail /> },
-  { path: '/products/complements', element: <ComplementsProducts /> },
   { path: '/forgot-password', element: <ForgotPassword /> },
   { path: '/recovery-password/:token', element: <RecoveryPassword /> }
 ]

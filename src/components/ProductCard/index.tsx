@@ -20,7 +20,7 @@ const ProductCard = ({
   return (
     <div className={styles.container}>
       <Link to={`/product/${id}`} className={styles.carousel_item}>
-        <img src={images[0]} alt={product_name} />
+        <img src={images[0]} alt={product_name} loading="lazy" />
         <div className={styles.product_info}>
           <h2 className={styles.title}>{product_name.toLocaleUpperCase()}</h2>
           <div className={styles.rating}>

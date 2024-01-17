@@ -18,6 +18,7 @@ const ImagesCard = ({
         <img
           src={selectImage ? selectImage : productFound?.images[0]}
           alt={productFound?.product_name}
+          loading="lazy"
         />
       </div>
       <div className={styles.secondary_imgs}>
@@ -27,6 +28,7 @@ const ImagesCard = ({
             src={img}
             alt="Product"
             onClick={() => handleSelectImage(img)}
+            loading="lazy"
           />
         ))}
       </div>
