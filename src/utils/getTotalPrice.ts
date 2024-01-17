@@ -1,6 +1,6 @@
 import { Product } from '../typescript/interfaces/product.interface'
 
-export const TOTAL_PRICE = (cart: never[]) => {
+export const TOTAL_PRICE = (cart: Product[]) => {
   return cart
     .filter((item: Product) => item.quantity! > 0)
     .reduce(
