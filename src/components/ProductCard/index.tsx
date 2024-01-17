@@ -2,7 +2,11 @@ import { Link } from 'react-router-dom'
 import { Product } from '../../typescript/interfaces/product.interface'
 import Button from '../Button'
 import styles from './product_card.module.scss'
-import { addProductToCart } from '../../utils/addProductCart'
+import { useDispatch, useSelector } from 'react-redux'
+import { setProductsToCart } from '../../store/features/cart/cartSlice'
+import { allProducts } from '../../utils/getAllProducts'
+import { messageToast } from '../../utils/toastSuccess'
+import { RootState } from '../../store/store'
 
 const ProductCard = ({
   id,
@@ -13,8 +17,26 @@ const ProductCard = ({
   price,
   prev_price
 }: Product) => {
-  const click = () => {
-    addProductToCart(id)
+  const dispatch = useDispatch()
+  const { cart } = useSelector((state: RootState) => state.cart)
+  const { notify, notifyError } = messageToast()
+
+  const addToCart = (id: string) => {
+    const productInCart = cart.find((prod: Product) => prod.id === id)
+
+    if (productInCart) {
+      notify('Este producto ya está en el carrito')
+      return
+    }
+
+    const productFount = allProducts.find((prod) => prod.id === id)
+
+    if (productFount && productFount?.stock > 0) {
+      dispatch(setProductsToCart(productFount!))
+      notify('Producto agregado al carrito')
+    } else {
+      notifyError('No hay stock de este producto')
+    }
   }
 
   return (
@@ -37,7 +59,11 @@ const ProductCard = ({
           </p>
         </div>
       </Link>
-      <div className={styles.button} title="Añadir al 🛒" onClick={click}>
+      <div
+        className={styles.button}
+        title="Añadir al 🛒"
+        onClick={() => addToCart(id)}
+      >
         <Button text="Añadir al carrito" />
       </div>
     </div>

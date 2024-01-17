@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom'
 import { OrderProduct } from '../../../typescript/types/order_product'
 import styles from './cart_content.module.scss'
 import Image from '../../../components/Image'
-import { storeCart } from '../../../utils/getProductsCart'
-import { Product } from '../../../typescript/interfaces/product.interface'
+import { useDispatch } from 'react-redux'
+import { removeProductFromCart } from '../../../store/features/cart/cartSlice'
 
 const CartContent = ({
   id,
@@ -14,18 +14,15 @@ const CartContent = ({
   price,
   quantity
 }: OrderProduct) => {
-  const deleteProduct = (id: string) => {
-    const updatedCart = storeCart.filter(
-      (product: Product) => product.id !== id
-    )
+  const dispatch = useDispatch()
 
-    localStorage.setItem('cart', JSON.stringify(updatedCart))
-    window.location.reload()
+  const deleteProductFromCart = (id: string) => {
+    dispatch(removeProductFromCart(id))
   }
 
   return (
     <div className={styles.container}>
-      <button className="icon_btn" onClick={() => deleteProduct(id)}>
+      <button className="icon_btn" onClick={() => deleteProductFromCart(id)}>
         <Image img="close" alt="Delete" title="Eliminar del Carrito" />
       </button>
       <div className={styles.product}>
