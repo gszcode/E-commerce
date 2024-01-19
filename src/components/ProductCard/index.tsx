@@ -2,11 +2,9 @@ import { Link } from 'react-router-dom'
 import { Product } from '../../typescript/interfaces/product.interface'
 import Button from '../Button'
 import styles from './product_card.module.scss'
-import { useDispatch, useSelector } from 'react-redux'
-import { setProductsToCart } from '../../store/features/cart/cartSlice'
-import { allProducts } from '../../utils/getAllProducts'
-import { messageToast } from '../../utils/toastSuccess'
+import { useSelector } from 'react-redux'
 import { RootState } from '../../store/store'
+import { useAddProductCart } from '../../hooks/useAddProductCart'
 
 const ProductCard = ({
   id,
@@ -15,28 +13,22 @@ const ProductCard = ({
   rating,
   description,
   price,
-  prev_price
+  prev_price,
+  quantity,
+  size
 }: Product) => {
-  const dispatch = useDispatch()
   const { cart } = useSelector((state: RootState) => state.cart)
-  const { notify, notifyError } = messageToast()
+  const addToCart = useAddProductCart(cart)
 
-  const addToCart = (id: string) => {
-    const productInCart = cart.find((prod: Product) => prod.id === id)
-
-    if (productInCart) {
-      notify('Este producto ya está en el carrito')
-      return
+  const createOrder = () => {
+    const order = {
+      id,
+      product_name,
+      price,
+      quantity,
+      size
     }
-
-    const productFount = allProducts.find((prod) => prod.id === id)
-
-    if (productFount && productFount?.stock > 0) {
-      dispatch(setProductsToCart(productFount!))
-      notify('Producto agregado al carrito')
-    } else {
-      notifyError('No hay stock de este producto')
-    }
+    console.log(order)
   }
 
   return (
@@ -62,7 +54,10 @@ const ProductCard = ({
       <div
         className={styles.button}
         title="Añadir al 🛒"
-        onClick={() => addToCart(id)}
+        onClick={() => {
+          addToCart(id)
+          createOrder()
+        }}
       >
         <Button text="Añadir al carrito" />
       </div>
