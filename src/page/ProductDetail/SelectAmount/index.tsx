@@ -3,11 +3,17 @@ import { Product } from '../../../typescript/interfaces/product.interface'
 
 interface SelectProps {
   productFound: Product
+  handleSelectAmount: React.ChangeEventHandler<HTMLSelectElement>
 }
 
-const SelectAmout = ({ productFound }: SelectProps) => {
+const SelectAmout = ({ productFound, handleSelectAmount }: SelectProps) => {
   return (
-    <select className={styles.amount} defaultValue="1">
+    <select
+      className={styles.amount}
+      defaultValue="1"
+      name="selectAmount"
+      onChange={handleSelectAmount}
+    >
       {productFound?.stock ? (
         <>
           <option value="1">
