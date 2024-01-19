@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom'
 import BreadCrumbs from '../../components/BreadCrumbs'
 import styles from './product_detail.module.scss'
 import Button from '../../components/Button'
-import { useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 import ImagesCard from './ImagesCard'
 import SelectAmout from './SelectAmount'
 import SelectSize from './SelectSize'
@@ -12,6 +12,7 @@ import { setProductsToFavorites } from '../../store/features/favorites/favoriteS
 import { RootState } from '../../store/store'
 import { Product } from '../../typescript/interfaces/product.interface'
 import { messageToast } from '../../utils/toastSuccess'
+import { useAddProductCart } from '../../hooks/useAddProductCart'
 
 const ProductDetail = () => {
   const { id } = useParams()
@@ -19,6 +20,10 @@ const ProductDetail = () => {
   const { notify, notifyError } = messageToast()
   const { favorites } = useSelector((state: RootState) => state.favorites)
   const [selectImage, setSelectImage] = useState<null | string>(null)
+  const [selectAmount, setSelectAmount] = useState<number>(1)
+  const [selectSize, setSelectSize] = useState<string>('')
+  const { cart } = useSelector((state: RootState) => state.cart)
+  const addToCart = useAddProductCart(cart)
 
   const handleSelectImage = (img: string) => {
     setSelectImage(img)
@@ -36,6 +41,25 @@ const ProductDetail = () => {
       dispatch(setProductsToFavorites(productFound))
       notify('Producto añadido a favoritos')
     }
+  }
+
+  const handleSelectAmount = (e: ChangeEvent<HTMLSelectElement>) => {
+    setSelectAmount(JSON.parse(e.target.value))
+  }
+
+  const handleSelectSize = (e: ChangeEvent<HTMLSelectElement>) => {
+    setSelectSize(e.target.value)
+  }
+
+  const createOrder = () => {
+    const order = {
+      id: productFound?.id,
+      product_name: productFound?.product_name,
+      price: productFound?.price,
+      quantity: selectAmount,
+      size: selectSize
+    }
+    console.log(order)
   }
 
   return (
@@ -70,13 +94,28 @@ const ProductDetail = () => {
             </div>
 
             {/* Selección de Cantidad */}
-            <SelectAmout productFound={productFound!} />
+            <SelectAmout
+              productFound={productFound!}
+              handleSelectAmount={handleSelectAmount}
+            />
 
             {/* Selección de Talle */}
-            <SelectSize productFound={productFound!} />
+            <SelectSize
+              productFound={productFound!}
+              handleSelectSize={handleSelectSize}
+            />
 
             <div className={styles.btn_container}>
-              <Button text="AÑADIR AL CARRITO" />
+              <div
+                className={styles.button}
+                title="Añadir al 🛒"
+                onClick={() => {
+                  addToCart(productFound ? productFound?.id : '')
+                  createOrder()
+                }}
+              >
+                <Button text="Añadir al carrito" />
+              </div>
               <button
                 className={styles.favorite}
                 onClick={() => addToFavorite()}
