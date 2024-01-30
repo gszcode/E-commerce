@@ -19,7 +19,8 @@ const ProductCard = ({
   prev_price,
   quantity,
   size,
-  stock
+  stock,
+  category
 }: Product) => {
   const dispatch = useDispatch()
   const { cart } = useSelector((state: RootState) => state.cart)
@@ -37,10 +38,11 @@ const ProductCard = ({
       product_name,
       price,
       quantity: quantity || 1,
-      size: size ? size![0] : ''
+      size: size ? size![0] : '',
+      images,
+      stock,
+      category
     }
-
-    console.log('Product Cart', order)
 
     dispatch(createProductOrder(order))
     notify('Producto agregado al carrito')
