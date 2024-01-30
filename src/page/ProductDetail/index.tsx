@@ -13,6 +13,8 @@ import { RootState } from '../../store/store'
 import { Product } from '../../typescript/interfaces/product.interface'
 import { messageToast } from '../../utils/toastSuccess'
 import { useAddProductCart } from '../../hooks/useAddProductCart'
+import { createProductOrder } from '../../store/features/order/orderSlice'
+import { Order } from '../../typescript/interfaces/order.interface'
 
 const ProductDetail = () => {
   const { id } = useParams()
@@ -52,14 +54,24 @@ const ProductDetail = () => {
   }
 
   const createOrder = () => {
-    const order = {
+    if (!productFound || productFound.stock < 1) {
+      notifyError('No hay stock de este producto')
+      return
+    }
+
+    const order: Order = {
       id: productFound?.id,
+      category: productFound?.category,
       product_name: productFound?.product_name,
       price: productFound?.price,
       quantity: selectAmount,
-      size: selectSize
+      size: selectSize,
+      images: productFound?.images,
+      stock: productFound?.stock
     }
-    console.log(order)
+
+    dispatch(createProductOrder(order))
+    notify('Producto agregado al carrito')
   }
 
   return (
