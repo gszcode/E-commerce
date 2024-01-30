@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
-import { OrderProduct } from '../../../typescript/types/order_product'
 import styles from './cart_content.module.scss'
 import Image from '../../../components/Image'
 import { useDispatch } from 'react-redux'
 import { removeProductFromCart } from '../../../store/features/cart/cartSlice'
+import { Order } from '../../../typescript/interfaces/order.interface'
 
 const CartContent = ({
   id,
@@ -13,7 +13,7 @@ const CartContent = ({
   size,
   price,
   quantity
-}: OrderProduct) => {
+}: Order) => {
   const dispatch = useDispatch()
 
   const deleteProductFromCart = (id: string) => {
@@ -38,7 +38,7 @@ const CartContent = ({
           </h3>
           {size && (
             <p className={styles.item}>
-              Talle: <span>{size[0]}</span>
+              Talle: <span>{size.split(':')[1]}</span>
             </p>
           )}
           <p className={styles.item}>
