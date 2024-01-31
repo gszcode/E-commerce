@@ -2,9 +2,12 @@ import { Link } from 'react-router-dom'
 import { Product } from '../../typescript/interfaces/product.interface'
 import Button from '../Button'
 import styles from './product_card.module.scss'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../store/store'
 import { useAddProductCart } from '../../hooks/useAddProductCart'
+import { messageToast } from '../../utils/toastSuccess'
+import { createProductOrder } from '../../store/features/order/orderSlice'
+import { Order } from '../../typescript/interfaces/order.interface'
 
 const ProductCard = ({
   id,
@@ -15,20 +18,34 @@ const ProductCard = ({
   price,
   prev_price,
   quantity,
-  size
+  size,
+  stock,
+  category
 }: Product) => {
+  const dispatch = useDispatch()
   const { cart } = useSelector((state: RootState) => state.cart)
   const addToCart = useAddProductCart(cart)
+  const { notify, notifyError } = messageToast()
 
   const createOrder = () => {
-    const order = {
+    if (stock < 1) {
+      notifyError('No hay stock de este producto')
+      return
+    }
+
+    const order: Order = {
       id,
       product_name,
       price,
-      quantity,
-      size
+      quantity: quantity || 1,
+      size: size ? size![0] : '',
+      images,
+      stock,
+      category
     }
-    console.log(order)
+
+    dispatch(createProductOrder(order))
+    notify('Producto agregado al carrito')
   }
 
   return (

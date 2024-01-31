@@ -6,28 +6,41 @@ import { useEffect, useState } from 'react'
 import EmptyCart from './EmptyCartOrFavorites'
 import Loader from '../../components/Loader'
 import CartContent from './CartContent'
-import { Product } from '../../typescript/interfaces/product.interface'
 import Button from '../../components/Button'
 import Image from '../../components/Image'
 import { TOTAL_PRICE } from '../../utils/getTotalPrice'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../store/store'
 import { setEmptyCart } from '../../store/features/cart/cartSlice'
+import { Order } from '../../typescript/interfaces/order.interface'
+import { UserApi } from '../../typescript/interfaces/user.interface'
+import { useNavigate } from 'react-router-dom'
 
 const Cart = () => {
   const dispatch = useDispatch()
-  const [cartState, setCartState] = useState<Product[]>([])
   const { cart } = useSelector((state: RootState) => state.cart)
+  const { orders } = useSelector((state: RootState) => state.orders)
   const [loading, setLoading] = useState(true)
+  const navigate = useNavigate()
+  const { isAuthenticated } = useSelector(
+    (state: UserApi) => state.user as UserApi
+  )
+
+  console.log(isAuthenticated)
 
   useEffect(() => {
     setLoading(true)
-    setCartState(cart)
     setLoading(false)
   }, [cart])
 
   const emptyCart = () => {
     dispatch(setEmptyCart())
+  }
+
+  const handleOrder = () => {
+    if (!isAuthenticated) {
+      navigate('/login')
+    }
   }
 
   return (
@@ -42,7 +55,7 @@ const Cart = () => {
             <EmptyCart page="cart" />
           ) : (
             <>
-              {cartState.map((item: Product) => (
+              {orders.map((item: Order) => (
                 <CartContent key={item.id} {...item} />
               ))}
 
@@ -56,7 +69,9 @@ const Cart = () => {
                   </span>
                 </div>
                 <div className={styles.action}>
-                  <Button text="COMENZAR PEDIDO" />
+                  <button onClick={handleOrder}>
+                    <Button text="COMENZAR PEDIDO" />
+                  </button>
                   <button className={styles.empty} onClick={emptyCart}>
                     <Image img="delete" alt="Delete" /> VACIAR CARRITO
                   </button>
