@@ -6,7 +6,7 @@ import Sidebar from '../../components/Sidebar'
 import Wrapper from '../../components/Wrapper'
 import Input from './Input'
 import { useSelector } from 'react-redux'
-import { useState } from 'react'
+// import { useState } from 'react'
 
 const setNewPasswords = {
   current_pass: '',
@@ -16,7 +16,7 @@ const setNewPasswords = {
 
 const EditData = () => {
   const { user } = useSelector((state) => state.user)
-  const [passwords, setPasswords] = useState(setNewPasswords)
+  // const [passwords, setPasswords] = useState(setNewPasswords)
 
   console.log(user)
 
