@@ -6,7 +6,8 @@ import Sidebar from '../../components/Sidebar'
 import Wrapper from '../../components/Wrapper'
 import Input from './Input'
 import { useSelector } from 'react-redux'
-import { useState } from 'react'
+import { UserApi } from '../../typescript/interfaces/user.interface'
+// import { useState } from 'react'
 
 const setNewPasswords = {
   current_pass: '',
@@ -15,8 +16,8 @@ const setNewPasswords = {
 }
 
 const EditData = () => {
-  const { user } = useSelector((state) => state.user)
-  const [passwords, setPasswords] = useState(setNewPasswords)
+  const { user } = useSelector((state: UserApi) => state.user as UserApi)
+  // const [passwords, setPasswords] = useState(setNewPasswords)
 
   console.log(user)
 
@@ -34,19 +35,22 @@ const EditData = () => {
                   label="NOMBRE"
                   type="text"
                   name="name"
-                  value={user.first_name}
+                  // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
+                  value={user?.first_name!}
                 />
                 <Input
                   label="APELLIDO"
                   type="text"
                   name="surname"
-                  value={user.last_name}
+                  // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
+                  value={user?.last_name!}
                 />
                 <Input
                   label="EMAIL"
                   type="email"
                   name="email"
-                  value={user.email}
+                  // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
+                  value={user?.email!}
                 />
               </div>
               <div className={styles.inputs}>
