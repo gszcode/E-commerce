@@ -41,19 +41,19 @@ const SubNav = ({ links, openSubNav, setOpenSubNav, active }: SubNavProps) => {
       <ul className={styles.sub_list}>
         {links &&
           links.map(({ link, href, icon }) => (
-            <>
+            <div key={href}>
               {link === 'Cerrar sesión' ? (
                 <button className="icon_btn" onClick={handleLogout}>
                   {icon && <Image img={icon!} alt={icon!} />}
                   {link}
                 </button>
               ) : (
-                <Link key={href} to={`/${href}`} onClick={handleLinkClick}>
+                <Link to={`/${href}`} onClick={handleLinkClick}>
                   {icon && <Image img={icon!} alt={icon!} />}
                   {link}
                 </Link>
               )}
-            </>
+            </div>
           ))}
       </ul>
     </div>

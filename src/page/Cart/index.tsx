@@ -13,14 +13,20 @@ import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../store/store'
 import { setEmptyCart } from '../../store/features/cart/cartSlice'
 import { Order } from '../../typescript/interfaces/order.interface'
+import { UserApi } from '../../typescript/interfaces/user.interface'
+import { useNavigate } from 'react-router-dom'
 
 const Cart = () => {
   const dispatch = useDispatch()
   const { cart } = useSelector((state: RootState) => state.cart)
   const { orders } = useSelector((state: RootState) => state.orders)
   const [loading, setLoading] = useState(true)
+  const navigate = useNavigate()
+  const { isAuthenticated } = useSelector(
+    (state: UserApi) => state.user as UserApi
+  )
 
-  console.log(orders)
+  console.log(isAuthenticated)
 
   useEffect(() => {
     setLoading(true)
@@ -29,6 +35,12 @@ const Cart = () => {
 
   const emptyCart = () => {
     dispatch(setEmptyCart())
+  }
+
+  const handleOrder = () => {
+    if (!isAuthenticated) {
+      navigate('/login')
+    }
   }
 
   return (
@@ -57,7 +69,9 @@ const Cart = () => {
                   </span>
                 </div>
                 <div className={styles.action}>
-                  <Button text="COMENZAR PEDIDO" />
+                  <button onClick={handleOrder}>
+                    <Button text="COMENZAR PEDIDO" />
+                  </button>
                   <button className={styles.empty} onClick={emptyCart}>
                     <Image img="delete" alt="Delete" /> VACIAR CARRITO
                   </button>
