@@ -1,76 +1,80 @@
-@import '../../../index.scss';
+@import "../../../index.scss";
 
 .container {
-  @include width-height(100%, 50px);
-  @include flex(row, space-between, center);
-  @include position(absolute, none, none, none, none, 1000);
-  background-color: $background-color;
-  padding: 0 20px;
-  border-bottom: $border-color;
-  .title_container {
-    @include flex(row, space-evenly, center, 35px);
-    .title {
-      @include size-weight(16px, 500);
-      color: #888;
-      span {
-        @include size-weight(16px, 700);
-        color: $hover-color;
-      }
-    }
-    .bars {
-      border: none;
-      background-color: $background-color;
-      height: 20px;
-    }
-  }
-  .icons {
-    @include flex(row, space-evenly, center, 35px);
-    .cart {
-      position: relative;
-      .count {
-        @include width-height(18px, 18px);
-        @include size-weight(12px, 400);
-        @include flex(row, center, center);
-        background-color: $hover-color;
-        border-radius: 50%;
-        color: $background-color;
-        position: absolute;
-        top: -10px;
-        right: -15px;
-      }
-    }
-  }
+	@include width-height(100%, 50px);
+	@include flex(row, space-between, center);
+	position: fixed;
+	z-index: 1000;
+	// @include position(absolute, none, none, none, none, 1000);
+	background-color: $background-color;
+	padding: 0 20px;
+	border-bottom: $border-color;
+
+	.title_container {
+		@include flex(row, space-evenly, center, 35px);
+		.title {
+			@include size-weight(16px, 500);
+			color: #888;
+			span {
+				@include size-weight(16px, 700);
+				color: $hover-color;
+			}
+		}
+		.bars {
+			border: none;
+			background-color: $background-color;
+			height: 20px;
+		}
+	}
+	.icons {
+		@include flex(row, space-evenly, center, 35px);
+		z-index: 1000;
+		.cart {
+			position: relative;
+			.count {
+				@include width-height(18px, 18px);
+				@include size-weight(12px, 400);
+				@include flex(row, center, center);
+				background-color: $hover-color;
+				border-radius: 50%;
+				color: $background-color;
+				position: absolute;
+				top: -10px;
+				right: -15px;
+			}
+		}
+	}
 }
 
 // Media queries
 @media (min-width: 768px) {
-  .container {
-    .title_container {
-      @include flex(row, space-evenly, center, 35px);
-      .title {
-        font-size: 30px;
-        span {
-          font-size: 30px;
-        }
-      }
-    }
-  }
+	.container {
+		.title_container {
+			@include flex(row, space-evenly, center, 35px);
+			.title {
+				font-size: 30px;
+				span {
+					font-size: 30px;
+				}
+			}
+		}
+	}
 }
 
 @media (min-width: 1024px) {
-  .container {
-    height: 60px;
-    padding: 0 35px;
-    .title_container {
-      .bars {
-        display: none;
-      }
-      .title {
-        font-size: 35px;
-        span {
-          font-size: 35px;
-        }
-      }
-    }
-  }
+	.container {
+		height: 60px;
+		padding: 0 35px;
+		.title_container {
+			.bars {
+				display: none;
+			}
+			.title {
+				font-size: 35px;
+				span {
+					font-size: 35px;
+				}
+			}
+		}
+	}
 }

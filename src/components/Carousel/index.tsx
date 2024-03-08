@@ -1,105 +1,70 @@
-import { useState, useEffect } from 'react'
-import styles from './carousel.module.scss'
-import ProductCard from '../ProductCard'
-import { Product } from '../../typescript/interfaces/product.interface'
+import styles from "./carousel.module.scss";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import ProductCard from "../ProductCard";
+import { Product } from "../../typescript/interfaces/product.interface";
+import { useEffect, useState } from "react";
 
 interface CarouselProps {
-  products: Product[]
+	products: Product[];
 }
 
 const Carousel = ({ products }: CarouselProps) => {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [containerWidth] = useState(window.innerWidth)
+	const [slidesPerView, setSlidesPerView] = useState<number>(6);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % products.length)
-    }, 3000)
+	useEffect(() => {
+		const handleResize = () => {
+			const windowWidth = window.innerWidth;
+			if (windowWidth <= 500) {
+				setSlidesPerView(1);
+			} else if (windowWidth <= 640) {
+				setSlidesPerView(2);
+			} else if (windowWidth <= 1024) {
+				setSlidesPerView(3);
+			} else if (windowWidth <= 1400) {
+				setSlidesPerView(4);
+			} else {
+				setSlidesPerView(6);
+			}
+		};
 
-    return () => clearInterval(interval)
-  }, [currentIndex, products.length])
+		handleResize();
 
-  const handleDotClick = (index: number) => {
-    setCurrentIndex(index)
-  }
+		window.addEventListener("resize", handleResize);
 
-  const handlePrevClick = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + products.length) % products.length
-    )
-  }
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	}, []);
 
-  const handleNextClick = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % products.length)
-  }
+	return (
+		<div className={styles.container}>
+			<Swiper
+				slidesPerView={slidesPerView}
+				spaceBetween={30}
+				autoplay={{
+					delay: 1500,
+					disableOnInteraction: false,
+				}}
+				loop={true}
+				pagination={{
+					clickable: true,
+				}}
+				navigation={true}
+				modules={[Autoplay, Pagination, Navigation]}
+				className={styles.my_swiper}
+			>
+				{products.map(product => (
+					<SwiperSlide>
+						<ProductCard key={product.id} {...product} />
+					</SwiperSlide>
+				))}
+			</Swiper>
+		</div>
+	);
+};
 
-  const handleTransitionEnd = () => {
-    const lastVisibleIndex =
-      Math.floor(containerWidth / (containerWidth / itemsPerScreen)) - 1
-
-    if (currentIndex === lastVisibleIndex) {
-      setCurrentIndex(0)
-    }
-  }
-
-  const getItemsPerScreen = () => {
-    const screenWidth = window.innerWidth
-    if (screenWidth >= 1025) {
-      return 4
-    } else if (screenWidth >= 641) {
-      return 3
-    } else {
-      return 2
-    }
-  }
-
-  const itemsPerScreen = getItemsPerScreen()
-
-  return (
-    <div
-      className={styles.carousel}
-      style={{ maxWidth: `${itemsPerScreen * 100}%` }}
-    >
-      <div
-        className={styles.carousel_container}
-        style={{
-          transform: `translateX(-${currentIndex * (100 / itemsPerScreen)}%)`
-        }}
-        onTransitionEnd={handleTransitionEnd}
-      >
-        {products.map((product) => (
-          <ProductCard key={product.id} {...product} />
-        ))}
-      </div>
-
-      {/* Carousel Navegation */}
-      <div className={styles.navigation}>
-        <span
-          className={`${styles.arrow} ${styles.prev}`}
-          onClick={handlePrevClick}
-        >
-          &lt;
-        </span>
-        <div className={styles.pagination}>
-          {products.map((_, index) => (
-            <span
-              key={index}
-              className={`${styles.dot} ${
-                currentIndex === index ? styles.active : ''
-              }`}
-              onClick={() => handleDotClick(index)}
-            />
-          ))}
-        </div>
-        <span
-          className={`${styles.arrow} ${styles.next}`}
-          onClick={handleNextClick}
-        >
-          &gt;
-        </span>
-      </div>
-    </div>
-  )
-}
-
-export default Carousel
+export default Carousel;
