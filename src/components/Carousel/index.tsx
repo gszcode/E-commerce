@@ -48,6 +48,7 @@ const Carousel = ({ products }: CarouselProps) => {
 				autoplay={{
 					delay: 1500,
 					disableOnInteraction: false,
+					pauseOnMouseEnter: true,
 				}}
 				loop={true}
 				pagination={{
