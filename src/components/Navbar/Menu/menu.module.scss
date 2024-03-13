@@ -1,73 +1,73 @@
-@import '../../../index.scss';
+@import "../../../index.scss";
 
 .menu_container {
-  @include width-height(100%, 100%);
-  @include position(absolute, 0, none, 0, none);
-  min-height: 100vh;
-  background-color: $background-color;
-  margin-right: 100%;
-  transition: margin 0.4s ease;
-  .header {
-    @include flex(row, space-between, center);
-    padding: 5px 20px;
-    border-bottom: $border-color;
-    .title {
-      @include size-weight(16px, 600);
-      color: $text-color;
-    }
-    .close {
-      @include width-height(40px, 40px);
-      padding: 10px;
-      border: none;
-      background-color: $background-color;
-      cursor: pointer;
-    }
-  }
-  .list {
-    @include flex(column, center, flex-start, 10px);
-    padding: 15px 20px;
-    position: relative;
-    span {
-      width: 100%;
-    }
-    .item {
-      @include size-weight(12px, 600);
-      color: $text-color-secondary;
-      cursor: pointer;
-      transition: color 0.3s ease;
-      &:hover {
-        color: $hover-color;
-      }
-    }
-    .drop {
-      @include flex(row, space-between, center);
-    }
-  }
+	@include width-height(100%, 100%);
+	@include position(absolute, 0, none, 0, none);
+	min-height: 100vh;
+	background-color: $background-color;
+	margin-right: 100%;
+	transition: margin 0.4s ease;
+	.header {
+		@include flex(row, space-between, center);
+		padding: 5px 20px;
+		border-bottom: $border-color;
+		.title {
+			@include size-weight(16px, 600);
+			color: $text-color;
+		}
+		.close {
+			@include width-height(40px, 40px);
+			padding: 10px;
+			border: none;
+			background-color: $background-color;
+			cursor: pointer;
+		}
+	}
+	.list {
+		@include flex(column, center, flex-start, 10px);
+		padding: 15px 20px;
+		position: relative;
+		span {
+			width: 100%;
+		}
+		.item {
+			@include size-weight(12px, 600);
+			color: $text-color-secondary;
+			cursor: pointer;
+			transition: color 0.3s ease;
+			&:hover {
+				color: $hover-color;
+			}
+		}
+		.drop {
+			@include flex(row, space-between, center);
+		}
+	}
 }
 .show {
-  margin-right: 0;
+	margin-right: 0;
 }
 
 // Media queries
 @media (min-width: 640px) {
-  .menu_container {
-    width: 50%;
-  }
-  .show {
-    margin-right: 50%;
-  }
+	.menu_container {
+		width: 50%;
+	}
+	.show {
+		margin-right: 50%;
+	}
 }
 @media (min-width: 768px) {
-  .menu_container {
-    .list {
-      .item {
-        @include size-weight(14px, 500);
-      }
-    }
-  }
+	.menu_container {
+		.list {
+			.item {
+				@include size-weight(14px, 500);
+			}
+		}
+	}
 }
 @media (min-width: 1024px) {
-  .menu_container {
-    display: none;
-  }
+	.menu_container {
+		display: none;
+	}
 }

@@ -1,25 +1,27 @@
-@import '../../../index.scss';
+@import "../../../index.scss";
 
 .large_menu {
-  display: none;
-  position: relative;
-  .list {
-    @include flex(row, center, center, 20px);
-    .item {
-      @include size-weight(14px, 300);
-      color: $text-color;
-      cursor: pointer;
-      transition: color 0.3s ease;
-      &:hover {
-        color: $hover-color;
-      }
-    }
-  }
+	@include width-height(100%, auto);
+	@include flex(row, center, center, 20px);
+	display: none;
+	.list {
+		@include flex(row, center, center, 20px);
+		.item {
+			@include size-weight(14px, 300);
+			color: $text-color;
+			cursor: pointer;
+			transition: color 0.3s ease;
+			&:hover {
+				color: $hover-color;
+			}
+		}
+	}
 }
 
 // Media queries
 @media (min-width: 1024px) {
-  .large_menu {
-    display: block;
-  }
+	.large_menu {
+		display: block;
+		position: fixed;
+	}
 }
